@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- QUITAR esta línea el día del lanzamiento: evita que Google indexe la web mientras está en pruebas -->
+<meta name="robots" content="noindex">
+<title>Mystika by Mer in Balance · Barre, Pilates y Yoga en Sant Cugat</title>
+<meta name="description" content="Estudio de barre, Pilates y yoga en Sant Cugat. Clases que combinan movimiento, intención y momentos de conexión: astrología, tarot, meditación y journaling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --lino:#F4EDE6;      /* fondo principal */
+  --arena:#EADFD5;     /* fondo secciones alternas */
+  --nacar:#FAF6F1;     /* fondo tarjetas */
+  --rosa:#D9BFB4;      /* arco, acentos suaves */
+  --cacao:#5F4B41;     /* botones, sección oscura */
+  --tinta:#3E322C;     /* texto principal */
+  --niebla:#857369;    /* texto secundario */
+  --linea:#DCCCC0;     /* bordes */
+  --serif:"Bodoni Moda", Georgia, serif;
+  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  --script:"Pinyon Script", cursive;
+  --gutter:20px;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--lino);color:var(--tinta);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cacao);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(40px,8vw,68px);text-wrap:balance}
+h3{font-size:28px}
+p{max-width:58ch}
+.lead{font-size:19px;color:var(--niebla)}
+.kicker{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla);margin-bottom:18px}
+section{padding:96px 0}
+
+/* ============ BOTONES ============ */
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:400;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:1px solid var(--cacao);transition:background .2s,color .2s}
+.btn-solid{background:var(--cacao);color:var(--lino)}
+.btn-solid:hover{background:var(--tinta);border-color:var(--tinta)}
+.btn-line{color:var(--cacao)}
+.btn-line:hover{background:var(--cacao);color:var(--lino)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.link{font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--linea);padding-bottom:4px}
+.link:hover{border-color:var(--cacao)}
+
+/* ============ CABECERA ============ */
+.top{position:sticky;top:0;z-index:50;background:rgba(244,237,230,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-color:var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{text-decoration:none;line-height:1.1}
+.logo b{display:block;font-family:var(--sans);font-weight:400;font-size:23px;letter-spacing:.32em}
+.logo span{display:block;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin-top:3px}
+.nav{display:none;gap:30px;list-style:none}
+.nav a{text-decoration:none;font-size:14px;letter-spacing:.06em}
+.nav a:hover{color:var(--niebla)}
+.top-actions{display:flex;align-items:center;gap:14px}
+.top .btn{padding:11px 18px;font-size:12px}
+.burger{width:40px;height:40px;background:none;border:0;cursor:pointer;display:grid;place-content:center;gap:6px}
+.burger i{display:block;width:22px;height:1px;background:var(--tinta);transition:transform .3s}
+.menu-open .burger i:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .burger i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.drawer{position:fixed;inset:76px 0 0;background:var(--lino);z-index:49;padding:40px var(--gutter);display:none}
+.menu-open .drawer{display:block}
+.drawer a{display:block;font-family:var(--serif);font-size:34px;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--linea)}
+@media(min-width:960px){.nav{display:flex}.burger,.drawer{display:none!important}}
+
+/* ============ HERO ============ */
+.hero{padding:56px 0 80px}
+.hero .wrap{display:grid;gap:56px;align-items:center}
+.hero .script{font-family:var(--script);font-size:clamp(40px,8vw,58px);line-height:1;color:var(--niebla);margin-bottom:-4px}
+.hero h1{font-size:clamp(72px,17vw,148px);line-height:.92;letter-spacing:-.025em}
+.hero .lead{margin-top:28px}
+.arch{position:relative;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}
+.arch-shape{position:absolute;inset:0;border-radius:999px 999px 0 0;background:linear-gradient(170deg,#DCC2B7 0%,#E8D8CE 100%);overflow:hidden;display:grid;place-items:center}
+.arch-shape img{width:100%;height:100%;object-fit:cover}
+.placeholder{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(62,50,44,.45)}
+.moon{position:absolute;width:22%;aspect-ratio:1;border-radius:50%;background:var(--cacao);right:-4%;top:9%;animation:rise 1.6s cubic-bezier(.2,.7,.2,1) .3s both}
+.orbit{position:absolute;inset:-5% -5% auto;aspect-ratio:1;border:1px solid var(--rosa);border-radius:50%;pointer-events:none}
+@keyframes rise{from{transform:translate(-120%,60%);opacity:0}to{transform:none;opacity:1}}
+@media(min-width:960px){.hero{padding:90px 0 120px}.hero .wrap{grid-template-columns:1.1fr .9fr}}
+
+/* ============ PILARES ============ */
+.pillars{padding:24px 0 8px}
+.pillars .wrap{display:grid;gap:16px}
+.pillar{text-align:center;padding:52px 24px;border:1px solid var(--linea);background:var(--nacar);display:flex;flex-direction:column;align-items:center}
+.pillar .link{margin-top:auto}
+.pillar svg{width:52px;height:52px;margin:0 auto 18px;stroke:var(--cacao)}
+.pillar h3{font-size:34px;margin-bottom:8px}
+.pillar p{color:var(--niebla);margin:0 auto 18px}
+@media(min-width:960px){.pillars{padding:40px 0 0}.pillars .wrap{grid-template-columns:repeat(3,1fr);gap:24px}.pillar{padding:60px 28px}}
+
+/* ============ CLASES ============ */
+.classes-head{display:grid;gap:22px;margin-bottom:64px}
+.group{margin-top:56px}
+.group-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;padding-bottom:16px;border-bottom:1px solid var(--tinta)}
+.group-head h3{font-size:30px}
+.group-head p{color:var(--niebla);font-size:15px}
+details.class{border-bottom:1px solid var(--linea)}
+details.class summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:34px 1fr 24px;gap:16px;align-items:center;padding:26px 0}
+details.class summary::-webkit-details-marker{display:none}
+.glyph{width:28px;height:28px;stroke:var(--cacao)}
+.class-title{font-family:var(--serif);font-size:clamp(28px,6vw,40px);line-height:1.05;display:block}
+.class-tag{display:block;color:var(--niebla);font-size:15px;margin-top:6px}
+.plus{width:20px;height:20px;position:relative;justify-self:end}
+.plus::before,.plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--tinta);transition:transform .3s}
+.plus::after{transform:rotate(90deg)}
+details[open] .plus::after{transform:rotate(0)}
+.class-body{padding:0 0 34px 50px;display:grid;gap:14px}
+.class-body p{color:var(--tinta)}
+.class-body p+p{margin-top:12px}
+.class-meta{display:grid;gap:10px;margin-top:8px;padding:18px 20px;background:var(--nacar);border-left:2px solid var(--rosa);font-size:15px}
+.class-meta strong{font-weight:500}
+.mantra{font-family:var(--serif);font-style:italic;font-size:21px;color:var(--cacao);margin-top:6px}
+@media(min-width:960px){.classes-head{grid-template-columns:1.2fr .8fr;align-items:end}.class-body{grid-template-columns:1.3fr 1fr;column-gap:56px;padding-left:50px}.class-body .col-b{align-self:start}}
+
+/* ============ BIENESTAR (oscura) ============ */
+.dark{background:var(--cacao);color:var(--lino)}
+.dark .kicker{color:var(--rosa)}
+.dark .lead{color:#E6D7CD}
+.rituals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(244,237,230,.25);border:1px solid rgba(244,237,230,.25);margin-top:56px}
+.ritual{background:var(--cacao);padding:44px 18px 40px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.ritual svg{width:46px;height:46px;stroke:var(--rosa);margin-bottom:26px}
+.ritual h3{font-size:26px;margin-bottom:8px}
+.ritual p{font-size:15px;color:#E6D7CD;max-width:24ch}
+@media(min-width:960px){.rituals{grid-template-columns:repeat(4,1fr)}.ritual{padding:64px 30px 58px}.ritual svg{width:56px;height:56px;margin-bottom:30px}}
+
+/* ============ UNIVERSO / NEWSLETTER ============ */
+.universe{background:var(--arena)}
+.universe .wrap{display:grid;gap:56px}
+.perks{list-style:none;margin-top:40px;border-top:1px solid var(--linea)}
+.perks li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--linea)}
+.perks svg{width:32px;height:32px;stroke:var(--cacao);margin-top:4px}
+.perks h3{font-size:24px;margin-bottom:4px}
+.perks p{color:var(--niebla);font-size:15px}
+.signup{background:var(--nacar);border:1px solid var(--linea);padding:40px 28px;align-self:start}
+.signup h3{font-size:32px;margin-bottom:8px}
+.signup .intro{color:var(--niebla);font-size:15px;margin-bottom:30px}
+.signup .thanks p{color:var(--niebla);margin:8px auto 0}
+.field{display:block;margin-bottom:22px}
+.field span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--niebla);margin-bottom:4px}
+.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--tinta);padding:10px 0;font:300 17px var(--sans);color:var(--tinta);border-radius:0}
+.field input:focus{outline:none;border-bottom:2px solid var(--cacao)}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:14px;color:var(--niebla);margin:6px 0 28px;line-height:1.5}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--cacao)}
+.signup button{width:100%;cursor:pointer}
+.signup .small{font-size:13px;color:var(--niebla);margin-top:16px;text-align:center;max-width:none}
+.signup .thanks{display:none;text-align:center;padding:30px 0}
+.signup .thanks svg{width:44px;height:44px;stroke:var(--cacao);margin:0 auto 18px}
+.signup.sent form{display:none}
+.signup.sent .thanks{display:block}
+@media(min-width:960px){.universe .wrap{grid-template-columns:1.1fr .9fr;gap:88px;align-items:start}.signup{padding:52px 44px;position:sticky;top:110px}}
+
+/* ============ SOBRE MER / ESPACIO ============ */
+.split{display:grid;gap:44px;align-items:center}
+.photo{aspect-ratio:4/5;background:linear-gradient(160deg,#E4D3C8,#EFE4DB);display:grid;place-items:center}
+.photo.wide{aspect-ratio:5/4}
+.split p+p{margin-top:16px}
+.split .link{display:inline-block;margin-top:30px}
+.signature{font-family:var(--script);font-size:44px;color:var(--cacao);margin-top:22px;line-height:1}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;gap:88px}.split.rev .photo{order:2}}
+.space{background:var(--arena)}
+
+/* ============ TARIFAS ============ */
+.plans{display:grid;gap:16px;margin-top:52px}
+.plan{background:var(--nacar);border:1px solid var(--linea);padding:36px 30px;display:flex;flex-direction:column}
+.plan .name{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla)}
+.plan h3{font-size:34px;margin:10px 0 12px}
+.plan p{color:var(--niebla);font-size:15px}
+.price{font-family:var(--serif);font-size:46px;margin:28px 0 26px}
+.price small{font-family:var(--sans);font-size:14px;color:var(--niebla)}
+.plan .btn{margin-top:auto;text-align:center}
+.plan.feat{background:var(--cacao);border-color:var(--cacao);color:var(--lino)}
+.plan.feat .name,.plan.feat p,.plan.feat .price small{color:#E6D7CD}
+.plan.feat .btn{background:var(--lino);color:var(--cacao);border-color:var(--lino)}
+.plans-note{margin-top:22px;font-size:15px;color:var(--niebla)}
+@media(min-width:960px){.plans{grid-template-columns:repeat(3,1fr)}}
+
+/* ============ HORARIOS ============ */
+.schedule{background:var(--arena)}
+.widget{margin-top:48px;min-height:360px;border:1px dashed var(--niebla);background:var(--nacar);display:grid;place-content:center;text-align:center;padding:40px 24px;gap:10px}
+.widget strong{font-family:var(--serif);font-weight:400;font-size:26px}
+.widget span{color:var(--niebla);font-size:15px;max-width:40ch}
+
+/* ============ FAQ ============ */
+.faq-list{margin-top:44px;border-top:1px solid var(--linea)}
+.faq-list details{border-bottom:1px solid var(--linea)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0;font-family:var(--serif);font-size:clamp(22px,4.6vw,28px);line-height:1.2}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list details>p{padding:0 0 28px;color:var(--niebla)}
+@media(min-width:960px){.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.faq-list{margin-top:0}}
+
+/* ============ CIERRE + FOOTER ============ */
+.closing{text-align:center;padding:120px 0}
+.closing .script{font-family:var(--script);font-size:46px;color:var(--niebla);line-height:1}
+.closing h2{font-size:clamp(56px,13vw,112px);margin-top:4px}
+.closing .btns{justify-content:center}
+.closing p{margin:26px auto 0;color:var(--niebla)}
+footer{border-top:1px solid var(--linea);padding:56px 0 40px;font-size:15px}
+footer .wrap{display:grid;gap:36px}
+footer h4{font-weight:400;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla);margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+.legal{border-top:1px solid var(--linea);margin-top:44px;padding-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--niebla)}
+@media(min-width:960px){footer .wrap{grid-template-columns:1.4fr 1fr 1fr 1fr}.legal{grid-column:1/-1}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- Iconos (se reutilizan con <use href="#i-...">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></symbol>
+    <symbol id="i-moonstar" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><path d="M29 9a15 15 0 1 0 10 25A13 13 0 0 1 29 9Z"/><path d="M36 10v8M32 14h8"/></symbol>
+    <symbol id="i-circle3" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="15" r="5"/><circle cx="12" cy="21" r="4"/><circle cx="36" cy="21" r="4"/><path d="M14 40c0-6 4.5-10 10-10s10 4 10 10M4 36c0-4.5 3.5-8 8-8M44 36c0-4.5-3.5-8-8-8"/></symbol>
+    <symbol id="i-crescent" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M15.5 3.5A8.5 8.5 0 1 0 20.5 17a7 7 0 0 1-5-13.5Z"/></symbol>
+    <symbol id="i-half" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 2.5l1.6 7.9 7.9 1.6-7.9 1.6L12 21.5l-1.6-7.9L2.5 12l7.9-1.6Z"/></symbol>
+    <symbol id="i-astro" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="2.5" fill="var(--lino)"/></symbol>
+    <symbol id="i-solar" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+    <symbol id="i-mat" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" stroke-dasharray="2 2.2"/></symbol>
+    <symbol id="i-barre" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 8.5h19M5.5 8.5V21M18.5 8.5V21"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 14c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0M2.5 9c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M4 20h16M6 16l10-10 2.5 2.5-10 10H6Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M3 20c4-1 5-5 9-6s5-5 9-9"/><circle cx="21" cy="5" r="1.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ CABECERA ============ -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Mystika, inicio"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+    <ul class="nav">
+      <li><a href="#clases">Clases</a></li>
+      <li><a href="#experiencias">Experiencias</a></li>
+      <li><a href="#universo">Universo</a></li>
+      <li><a href="#mer">Sobre Mer</a></li>
+      <li><a href="#tarifas">Tarifas</a></li>
+      <li><a href="#faq">Preguntas</a></li>
+    </ul>
+    <div class="top-actions">
+      <a href="#horarios" class="btn btn-solid">Reservar</a>
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" aria-label="Menú">
+  <a href="#clases">Clases</a>
+  <a href="#experiencias">Experiencias</a>
+  <a href="#universo">Universo Mystika</a>
+  <a href="#mer">Sobre Mer</a>
+  <a href="#espacio">El espacio</a>
+  <a href="#tarifas">Tarifas</a>
+  <a href="#horarios">Horarios</a>
+  <a href="#faq">Preguntas</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Sant Cugat del Vallès – Barcelona</p>
+      <p class="script">Un espacio para</p>
+      <h1>volver<br>a ti.</h1>
+      <p class="lead">Barre, Pilates y yoga con algo más: astrología, tarot, meditación y journaling para cuidar tu cuerpo, escuchar tu mundo interior y encontrar tu propio ritmo.</p>
+      <div class="btns">
+        <a href="#horarios" class="btn btn-solid">Reservar una clase</a>
+        <a href="#clases" class="btn btn-line">Ver las clases</a>
+      </div>
+    </div>
+    <div class="arch" aria-hidden="true">
+      <div class="orbit"></div>
+      <div class="arch-shape">
+        <!-- Sustituir por: <img src="img/hero.jpg" alt=""> -->
+        <span class="placeholder">Foto del estudio</span>
+      </div>
+      <div class="moon"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILARES ============ -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillar">
+      <svg><use href="#i-sun"/></svg>
+      <h3>Movimiento</h3>
+      <p>Barre, Pilates y yoga</p>
+      <a href="#clases" class="link">Descubre las clases</a>
+    </div>
+    <div class="pillar">
+      <svg><use href="#i-moonstar"/></svg>
+      <h3>Conexión</h3>
+      <p>Meditación, journaling, astrología y tarot</p>
+      <a href="#experiencias" class="link">Explora las experiencias</a>
+    </div>
+    <div class="pillar">
+      <svg><use href="#i-circle3"/></svg>
+      <h3>Comunidad</h3>
+      <p>Eventos, talleres y retiros</p>
+      <a href="#universo" class="link">Únete a Mystika</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLASES ============ -->
+<section id="clases">
+  <div class="wrap">
+    <div class="classes-head">
+      <h2>Aquí ninguna clase es simplemente una clase.</h2>
+      <p class="lead">Algunas sesiones se centran en el entrenamiento; otras incorporan astrología, tarot, meditación o journaling. Todas comparten un propósito: moverte, reconectar y encontrar tu equilibrio.</p>
+    </div>
+
+    <!-- GRUPO 1 -->
+    <div class="group">
+      <div class="group-head">
+        <h3>Movimiento esencial</h3>
+        <p>La base: fuerza, control y movilidad.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-barre"/></svg><span><span class="class-title">Barre</span><span class="class-tag">Fuerza, elegancia y movimiento.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una clase dinámica que combina elementos del ballet, el Pilates y el entrenamiento funcional para trabajar la fuerza, la resistencia muscular, el equilibrio y la coordinación.</p>
+            <p>A través de movimientos controlados, repeticiones pequeñas y secuencias fluidas en la barra y en la esterilla, activarás todo el cuerpo, especialmente piernas, glúteos y abdomen.</p>
+            <p>Una práctica retadora y divertida en la que la precisión y la constancia son las protagonistas. No necesitas experiencia previa en ballet: solo ganas de moverte y disfrutar.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal para:</strong> tonificar, ganar resistencia muscular, mejorar el equilibrio y salir de la rutina.</span></div>
+            <p class="mantra">Pequeños movimientos. Grandes cambios.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-mat"/></svg><span><span class="class-title">Pilates Mat</span><span class="class-tag">Conecta con tu cuerpo. Fortalece desde dentro.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una práctica consciente que combina fuerza, control, estabilidad y movilidad para ayudarte a construir una relación más fuerte y equilibrada con tu cuerpo.</p>
+            <p>A través de ejercicios sobre la esterilla, trabajarás la musculatura profunda, el abdomen, la postura y la coordinación, prestando atención a la respiración y a la calidad de cada movimiento.</p>
+            <p>Una clase para ganar fuerza y estabilidad, mejorar tu postura y sentirte más conectada contigo misma, respetando tu propio ritmo.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal para:</strong> mejorar la fuerza, la postura, el control corporal y la movilidad.</span></div>
+            <p class="mantra">Tu cuerpo es tu hogar. Aprende a habitarlo.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-wave"/></svg><span><span class="class-title">Yoga</span><span class="class-tag">Encuentra el equilibrio entre movimiento y quietud.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una práctica que conecta cuerpo, respiración y mente a través de posturas, transiciones conscientes y momentos de atención plena.</p>
+            <p>Durante la sesión trabajaremos movilidad, equilibrio, flexibilidad y fuerza, adaptando la práctica al ritmo y las necesidades del grupo. La respiración nos ayudará a mantener la presencia en cada movimiento y a crear un espacio para desconectar del exterior.</p>
+            <p>Según el estilo de la sesión, la práctica podrá ser más dinámica y fluida o más pausada y restaurativa.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal para:</strong> mejorar la movilidad, cultivar la presencia y encontrar un equilibrio entre actividad y descanso.</span></div>
+            <p class="mantra">Inhala presencia. Exhala lo que ya no necesitas.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- GRUPO 2 -->
+    <div class="group" id="experiencias">
+      <div class="group-head">
+        <h3>Experiencias Mystika</h3>
+        <p>Movimiento con intención. Formato Barre o Pilates según el horario.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-astro"/></svg><span><span class="class-title">Astro Barre</span><span class="class-tag">Muévete con intención. Conecta con tu energía.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Astro Barre une la intensidad y precisión del barre con la inspiración de la astrología para crear una experiencia que va más allá del entrenamiento convencional.</p>
+            <p>Comenzaremos activando el cuerpo con una secuencia de barre diseñada para trabajar fuerza, resistencia y control. La clase estará acompañada de una temática astrológica que nos servirá como hilo conductor para conectar el movimiento con nuestro momento vital.</p>
+            <p>Según la sesión, exploraremos un signo, una energía planetaria, una fase lunar o un tema de autoconocimiento, a través de pequeñas reflexiones y propuestas para llevar esa intención a tu día a día.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal para:</strong> quienes quieren entrenar con energía y añadir una dimensión de autoconocimiento a su práctica.</span></div>
+            <p class="mantra">El movimiento también puede ser una forma de escucharte.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-spark"/></svg><span><span class="class-title">Mystic Flow</span><span class="class-tag">Una clase. Una carta. Un mensaje para ti.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Mystic Flow es una experiencia que combina movimiento consciente, conexión interior y el simbolismo del tarot.</p>
+            <p>A través de una práctica de movimiento, crearemos un espacio para soltar las tensiones del día, volver al cuerpo y escuchar cómo nos sentimos. Al finalizar, tendrás la oportunidad de elegir intuitivamente una carta y descubrir el mensaje que la acompaña.</p>
+            <p>Cada carta estará vinculada a una reflexión personal y a una pregunta para tu journal, para que puedas llevarte algo más que la sensación de haber entrenado: un pequeño espacio para observarte y conectar contigo.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Formato:</strong> Barre o Pilates, según la clase programada. La modalidad aparece en el horario de reservas.</span>
+              <span><strong>Ideal para:</strong> quienes buscan combinar movimiento, introspección y una experiencia diferente.</span>
+            </div>
+            <p class="mantra">No se trata de encontrar todas las respuestas, sino de hacerte las preguntas adecuadas.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-half"/></svg><span><span class="class-title">Lunar Flow</span><span class="class-tag">Honra tus ciclos. Muévete a tu ritmo.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una práctica de movimiento consciente inspirada en los ciclos de la Luna y en la conexión con nuestro mundo interior.</p>
+            <p>A través de secuencias de movimiento, exploraremos una forma de entrenar más conectada con nuestras sensaciones y necesidades. Cada sesión podrá inspirarse en una fase lunar o en una temática relacionada con los ciclos, la intuición, los nuevos comienzos o el proceso de soltar.</p>
+            <p>La experiencia se completará con una intención o reflexión que te acompañará más allá de la esterilla.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Formato:</strong> Barre o Pilates, según la clase programada. La modalidad aparece en el horario de reservas.</span>
+              <span><strong>Ideal para:</strong> quienes desean una práctica consciente, con espacio para la conexión interior y el autoconocimiento.</span>
+            </div>
+            <p class="mantra">No tienes que estar siempre en tu máximo esplendor. También necesitas espacio para recogerte.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-crescent"/></svg><span><span class="class-title">Slow Moon</span><span class="class-tag">Baja el ritmo. Respira. Vuelve a ti.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Un espacio para desacelerar y regalarte un momento de calma en medio de la rutina.</p>
+            <p>Slow Moon combina movimientos suaves, estiramientos, movilidad, respiración consciente y relajación para liberar tensiones y cultivar una conexión más amable con el cuerpo.</p>
+            <p>La práctica se desarrolla sin prisas, respetando las sensaciones de cada persona y dejando espacio para la pausa y la presencia. Puede incorporar momentos de meditación, pequeñas reflexiones o propuestas de journaling inspiradas en la temática de la sesión.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Formato:</strong> Pilates o Barre, según la clase programada, con un ritmo pausado y consciente.</span>
+              <span><strong>Ideal para:</strong> quienes buscan desconectar, mejorar su movilidad y encontrar un espacio de calma y bienestar.</span>
+            </div>
+            <p class="mantra">No todo crecimiento necesita prisa.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-solar"/></svg><span><span class="class-title">Solar Heat</span><span class="class-tag">Activa tu fuerza. Enciende tu energía.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una experiencia dinámica inspirada en la energía del Sol, la vitalidad y la confianza en una misma.</p>
+            <p>A través de una práctica de movimiento más enérgica, trabajarás la fuerza, la resistencia muscular y el control corporal. La intensidad de la sesión te permitirá desafiarte, salir de la inercia y conectar con tu energía desde el movimiento.</p>
+            <p>Solar Heat representa la acción, la determinación y la capacidad de ocupar tu propio espacio. Una experiencia para terminar la clase sintiéndote fuerte, activa y presente.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Formato:</strong> Barre o Pilates, según la clase programada, siempre con un enfoque dinámico y energético.</span>
+              <span><strong>Ideal para:</strong> quienes disfrutan de los entrenamientos dinámicos y quieren trabajar fuerza, resistencia y energía.</span>
+            </div>
+            <p class="mantra">Ocupa tu espacio. Confía en tu fuerza. Brilla a tu manera.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIENESTAR ============ -->
+<section class="dark" id="comunidad">
+  <div class="wrap">
+    <p class="kicker">Más allá de la esterilla</p>
+    <h2>El bienestar también ocurre aquí.</h2>
+    <p class="lead" style="margin-top:24px">Talleres, rituales y retiros para crear momentos de pausa, reflexión y conexión.</p>
+    <div class="rituals">
+      <div class="ritual"><svg><use href="#i-crescent"/></svg><h3>Astrología</h3><p>Conocer el cielo para conocerte un poco más.</p></div>
+      <div class="ritual"><svg><use href="#i-spark"/></svg><h3>Tarot</h3><p>Espacios para escuchar el mensaje de las cartas.</p></div>
+      <div class="ritual"><svg><use href="#i-pen"/></svg><h3>Journaling</h3><p>Preguntas, escritura y claridad interior.</p></div>
+      <div class="ritual"><svg><use href="#i-path"/></svg><h3>Retiros</h3><p>Experiencias para desconectar de fuera y volver a ti.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIVERSO MYSTIKA (NEWSLETTER) ============ -->
+<section class="universe" id="universo">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Universo Mystika</p>
+      <h2>Si esto resuena contigo, quédate cerca.</h2>
+      <p class="lead" style="margin-top:24px">Suscríbete a nuestra newsletter y recibe en tu correo lo que se mueve en el cielo y en el estudio.</p>
+      <ul class="perks">
+        <li><svg><use href="#i-astro"/></svg><div><h3>Tránsitos del mes</h3><p>Qué energía trae cada mes y cómo llevarla a tu práctica y a tu día a día.</p></div></li>
+        <li><svg><use href="#i-half"/></svg><div><h3>Lunas y eclipses</h3><p>Fases lunares, eclipses y pequeños rituales para acompañarlos.</p></div></li>
+        <li><svg><use href="#i-spark"/></svg><div><h3>Eventos antes que nadie</h3><p>Talleres, retiros y clases especiales, para que reserves tu plaza primero.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="signup" id="signup">
+      <!-- NEWSLETTER: cuando tengas la herramienta (Brevo, MailerLite...), sustituye
+           action="#" por la URL que te den, o pega aquí su formulario. -->
+      <form action="#" method="post">
+        <h3>Únete al universo</h3>
+        <p class="intro">Cuando la luna y las estrellas tengan algo que contarte, te escribiremos.</p>
+        <label class="field"><span>Nombre</span><input type="text" name="nombre" autocomplete="given-name"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="consent"><input type="checkbox" name="consentimiento" required><span>Quiero recibir la newsletter de Mystika y acepto la <a href="#">política de privacidad</a>.</span></label>
+        <button type="submit" class="btn btn-solid">Suscribirme</button>
+        <p class="small">Puedes darte de baja cuando quieras.</p>
+      </form>
+      <div class="thanks" role="status">
+        <svg><use href="#i-crescent"/></svg>
+        <h3>Ya formas parte.</h3>
+        <p>Revisa tu correo: te hemos enviado un mensaje para confirmar tu suscripción.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE MER ============ -->
+<section id="mer">
+  <div class="wrap split">
+    <div class="photo"><span class="placeholder">Foto de Mer</span></div>
+    <div>
+      <p class="kicker">Sobre Mer</p>
+      <h2>Esto no es solo un estudio.<br>Es mi historia.</h2>
+      <p class="lead" style="margin-top:28px">Durante mucho tiempo hice lo que se suponía que tenía que hacer. Hasta que llegó un momento en el que dejé de reconocerme en esa vida.</p>
+      <p>Volver al cuerpo, escucharme y construir una vida más alineada conmigo cambió mi manera de entender el bienestar.</p>
+      <p>Mystika nace de ese proceso y de las ganas de crear un espacio donde otras mujeres también puedan parar, conectar y encontrar su propio ritmo.</p>
+      <p class="signature">Mer</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL ESPACIO ============ -->
+<section class="space" id="espacio">
+  <div class="wrap split rev">
+    <div class="photo wide"><span class="placeholder">Foto del espacio</span></div>
+    <div>
+      <p class="kicker">El espacio</p>
+      <h2>Un pequeño refugio en Sant Cugat.</h2>
+      <p class="lead" style="margin-top:28px">Un estudio pensado para moverte, respirar, parar y sentirte en casa.</p>
+      <a class="link" href="https://maps.google.com/?q=Sant+Cugat+del+Vallès" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFAS ============ -->
+<section id="tarifas">
+  <div class="wrap">
+    <p class="kicker">Formas de vivir Mystika</p>
+    <h2>Elige tu ritmo.</h2>
+    <p class="lead" style="margin-top:22px">Una propuesta flexible para que encuentres la frecuencia que mejor encaja contigo.</p>
+    <div class="plans">
+      <div class="plan">
+        <span class="name">Esencial</span>
+        <h3>1 práctica / semana</h3>
+        <p>Para crear un momento para ti cada semana.</p>
+        <div class="price">—€ <small>/ mes</small></div>
+        <a href="#horarios" class="btn btn-line">Empezar</a>
+      </div>
+      <div class="plan feat">
+        <span class="name">Balance</span>
+        <h3>2 prácticas / semana</h3>
+        <p>Para integrar el movimiento en tu rutina y disfrutar de la experiencia Mystika.</p>
+        <div class="price">—€ <small>/ mes</small></div>
+        <a href="#horarios" class="btn">Empezar</a>
+      </div>
+      <div class="plan">
+        <span class="name">Experiencia</span>
+        <h3>3 prácticas / semana</h3>
+        <p>Para hacer de Mystika parte de tu semana.</p>
+        <div class="price">—€ <small>/ mes</small></div>
+        <a href="#horarios" class="btn btn-line">Empezar</a>
+      </div>
+    </div>
+    <p class="plans-note">Talleres, eventos y retiros se reservan aparte.</p>
+  </div>
+</section>
+
+<!-- ============ HORARIOS ============ -->
+<section class="schedule" id="horarios">
+  <div class="wrap">
+    <p class="kicker">Horarios y reservas</p>
+    <h2>Tu práctica, tu ritmo.</h2>
+    <p class="lead" style="margin-top:22px">Consulta la programación de la semana y reserva tu plaza.</p>
+    <!-- PEGAR AQUÍ EL WIDGET DE RESERVAS -->
+    <div class="widget" id="widget-reservas">
+      <strong>Aquí va el widget de horarios</strong>
+      <span>Este bloque se sustituye por el código que te da tu software de reservas.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Preguntas frecuentes</p>
+      <h2>Antes de tu primera clase.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>¿Necesito experiencia previa?<span class="plus"></span></summary>
+        <p>No. Cada clase se adapta a tu nivel y siempre tendrás opciones para hacer cada ejercicio más suave o más intenso. Si es tu primera vez, Barre o Pilates Mat son un buen punto de partida.</p>
+      </details>
+      <details>
+        <summary>¿Mystika es un estudio de Pilates?<span class="plus"></span></summary>
+        <p>Es un estudio de movimiento: barre, Pilates y yoga. Algunas clases añaden astrología, tarot, meditación o journaling, pero el movimiento siempre está en el centro.</p>
+      </details>
+      <details>
+        <summary>¿Qué hace diferentes las clases?<span class="plus"></span></summary>
+        <p>Cada experiencia tiene su propia intención. En unas el foco es entrenar; en otras, la práctica se acompaña de una fase lunar, un tema astrológico o una carta de tarot con una pregunta para tu journal.</p>
+      </details>
+      <details>
+        <summary>¿Cómo sé si una clase es Barre o Pilates?<span class="plus"></span></summary>
+        <p>Mystic Flow, Lunar Flow, Slow Moon y Solar Heat pueden ser en formato Barre o Pilates. La modalidad de cada sesión aparece en el horario de reservas.</p>
+      </details>
+      <details>
+        <summary>¿Qué tengo que traer?<span class="plus"></span></summary>
+        <p>Ropa cómoda, una botella de agua y una toalla. Del resto nos encargamos nosotras.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="closing">
+  <div class="wrap">
+    <p class="script">Haz espacio</p>
+    <h2>para ti.</h2>
+    <p>Elige tu práctica y reserva tu plaza.</p>
+    <div class="btns">
+      <a href="#horarios" class="btn btn-solid">Reservar una clase</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn btn-line">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#" class="logo"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+      <p style="margin-top:18px;color:var(--niebla)">Tu cuerpo. Tu equilibrio. Tu ritmo.</p>
+    </div>
+    <div>
+      <h4>Estudio</h4>
+      <ul><li>Calle —, Sant Cugat del Vallès</li><li><a href="mailto:hola@mystika.es">hola@mystika.es</a></li><li><a href="tel:+34000000000">+34 000 000 000</a></li></ul>
+    </div>
+    <div>
+      <h4>Explora</h4>
+      <ul><li><a href="#clases">Clases</a></li><li><a href="#horarios">Horarios</a></li><li><a href="#tarifas">Tarifas</a></li><li><a href="#comunidad">Comunidad</a></li><li><a href="#universo">Newsletter</a></li></ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul><li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 Mystika by Mer in Balance</span>
+      <a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Menú móvil
+  const body = document.body, burger = document.querySelector('.burger');
+  burger.addEventListener('click', () => {
+    const open = body.classList.toggle('menu-open');
+    burger.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('.drawer a').forEach(a => a.addEventListener('click', () => {
+    body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false);
+  }));
+  // Newsletter: mientras no esté conectada a una herramienta, solo muestra el mensaje de gracias
+  const form = document.querySelector('#signup form');
+  form.addEventListener('submit', e => {
+    if (form.getAttribute('action') === '#') { e.preventDefault(); document.getElementById('signup').classList.add('sent'); }
+  });
+  // Línea bajo la cabecera al hacer scroll
+  const header = document.getElementById('top');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), {passive:true});
+</script>
+</body>
+</html>
