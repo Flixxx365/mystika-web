@@ -163,6 +163,9 @@ details[open] .plus::after{transform:rotate(0)}
 .split{display:grid;gap:44px;align-items:center}
 .photo{aspect-ratio:4/5;background:linear-gradient(160deg,#E4D3C8,#EFE4DB);display:grid;place-items:center}
 .photo.wide{aspect-ratio:5/4}
+.photo{overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.portrait{aspect-ratio:2/3;object-position:50% 30%}
 .split p+p{margin-top:16px}
 .split .link{display:inline-block;margin-top:30px}
 .signature{font-family:var(--script);font-size:44px;color:var(--cacao);margin-top:22px;line-height:1}
@@ -526,7 +529,7 @@ footer a:hover{text-decoration:underline}
 <!-- ============ SOBRE MER ============ -->
 <section id="mer">
   <div class="wrap split">
-    <div class="photo"><span class="placeholder">Foto de Mer</span></div>
+    <div class="photo portrait"><img src="img/mer.jpg" alt="Mer, fundadora de Mystika" width="1080" height="1676" loading="lazy"></div>
     <div>
       <p class="kicker">Sobre Mer</p>
       <h2>Esto no es solo un estudio.<br>Es mi historia.</h2>
