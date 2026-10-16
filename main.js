@@ -9,7 +9,7 @@
   }));
   // Newsletter: mientras no esté conectada a una herramienta, solo muestra el mensaje de gracias
   const form = document.querySelector('#signup form');
-  form.addEventListener('submit', e => {
+  if (form) form.addEventListener('submit', e => {
     if (form.getAttribute('action') === '#') { e.preventDefault(); document.getElementById('signup').classList.add('sent'); }
   });
   // Línea bajo la cabecera al hacer scroll

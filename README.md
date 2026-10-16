@@ -8,6 +8,7 @@ Web estática: HTML, CSS y JavaScript sin dependencias. No necesita servidor ni 
 
 - `index.html`: la web en español (versión principal).
 - `en/index.html`: la misma web en inglés. Cualquier cambio de texto o estructura se hace en las dos.
+- `astrologia.html` y `en/astrology.html`: página de servicios de Astrología y Tarot (ES y EN).
 - `styles.css`: el diseño (colores, tipografías, espaciados), compartido por los dos idiomas.
 - `main.js`: menú móvil y formulario de newsletter.
 - `img/`: fotos de la web (hero, Mer, el espacio).

@@ -37,6 +37,10 @@ section{padding:96px 0}
 .btn-line{color:var(--cacao)}
 .btn-line:hover{background:var(--cacao);color:var(--lino)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn-light{background:var(--lino);color:var(--cacao);border-color:var(--lino)}
+.btn-light:hover{background:var(--nacar)}
+.btn-ghost{color:var(--lino);border-color:rgba(244,237,230,.55)}
+.btn-ghost:hover{border-color:var(--lino);background:rgba(244,237,230,.08)}
 .link{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--linea);padding-bottom:4px}
 .link:hover{border-color:var(--cacao)}
 
@@ -47,7 +51,7 @@ section{padding:96px 0}
 .logo{text-decoration:none;line-height:1.1}
 .logo b{display:block;font-family:var(--sans);font-weight:400;font-size:23px;letter-spacing:.32em}
 .logo span{display:block;white-space:nowrap;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin-top:3px}
-.nav{display:none;gap:30px;list-style:none}
+.nav{display:none;gap:26px;list-style:none}
 .nav a{text-decoration:none;font-size:14px;letter-spacing:.06em}
 .nav a:hover{color:var(--niebla)}
 .top-actions{display:flex;align-items:center;gap:10px}
@@ -66,7 +70,7 @@ section{padding:96px 0}
 .drawer{position:fixed;inset:76px 0 0;background:var(--lino);z-index:49;padding:40px var(--gutter);display:none}
 .menu-open .drawer{display:block}
 .drawer a{display:block;font-family:var(--serif);font-size:34px;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--linea)}
-@media(min-width:960px){.nav{display:flex}.burger,.drawer{display:none!important}}
+@media(min-width:1180px){.nav{display:flex}.burger,.drawer{display:none!important}}
 
 /* ============ HERO ============ */
 .hero{padding:56px 0 80px}
@@ -157,7 +161,7 @@ details[open] .plus::after{transform:rotate(0)}
 /* ============ SOBRE MER / ESPACIO ============ */
 .split{display:grid;gap:44px;align-items:center}
 .photo{aspect-ratio:4/5;background:linear-gradient(160deg,#E4D3C8,#EFE4DB);display:grid;place-items:center}
-.photo.wide{aspect-ratio:5/4}
+.photo.wide{aspect-ratio:16/10}
 .photo{overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
 .split p+p{margin-top:16px}
@@ -211,3 +215,46 @@ footer a:hover{text-decoration:underline}
 @media(min-width:960px){footer .wrap{grid-template-columns:1.4fr 1fr 1fr 1fr}.legal{grid-column:1/-1}}
 
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+/* ============ ENLACE A ASTROLOGÍA DESDE LA HOME ============ */
+.dark .more{display:inline-block;margin-top:40px;border-color:rgba(244,237,230,.45)}
+.dark .more:hover{border-color:var(--lino)}
+
+/* ============ PÁGINA ASTROLOGÍA Y TAROT ============ */
+.astro-hero{background:var(--cacao);color:var(--lino);padding:64px 0 80px;overflow:hidden}
+.astro-hero .wrap{display:grid;gap:48px;align-items:center}
+.astro-hero .kicker{color:var(--rosa)}
+.astro-hero h1{font-size:clamp(52px,11vw,104px);line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+.astro-hero .tagline{font-family:var(--serif);font-style:italic;font-size:clamp(21px,3.4vw,27px);line-height:1.35;color:#EBDDD3;margin-top:22px;max-width:30ch}
+.astro-hero .intro{color:#E6D7CD;margin-top:22px}
+.chart{width:100%;max-width:420px;justify-self:center}
+.chart svg{width:100%;height:auto;display:block;fill:none;stroke:var(--rosa)}
+.chart .spin{transform-origin:200px 200px;animation:spin 300s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(min-width:960px){.astro-hero{padding:96px 0 112px}.astro-hero .wrap{grid-template-columns:1.15fr .85fr;gap:72px}}
+
+.services-head{display:grid;gap:16px;margin-bottom:44px}
+.svc-list{border-top:1px solid var(--tinta)}
+.svc{display:grid;gap:12px;padding:32px 0;border-bottom:1px solid var(--linea)}
+.svc-name{display:flex;align-items:center;gap:16px}
+.svc-name svg{width:30px;height:30px;stroke:var(--cacao);flex:none}
+.svc-name h3{font-size:clamp(28px,5vw,36px)}
+.svc-price{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--cacao);white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums}
+.svc p{max-width:62ch}
+.svc-note{margin-top:24px;font-size:15px;color:var(--niebla)}
+@media(min-width:960px){.svc{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:64px;align-items:start;padding:40px 0}.svc-name{padding-right:8px}}
+
+.tarot{background:var(--arena)}
+.tarot .wrap{display:grid;gap:44px}
+.tarot .from{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--cacao);margin-top:14px}
+.durations{list-style:none;background:var(--nacar);border:1px solid var(--linea);padding:10px 28px}
+.durations li{display:flex;align-items:baseline;gap:14px;padding:18px 0;border-bottom:1px solid var(--linea)}
+.durations li:last-child{border-bottom:0}
+.durations .dots{flex:1;border-bottom:1px dotted var(--niebla);transform:translateY(-5px)}
+.durations b{font-family:var(--serif);font-weight:500;font-size:22px;font-variant-numeric:tabular-nums}
+@media(min-width:960px){.tarot .wrap{grid-template-columns:1fr 1fr;gap:88px;align-items:center}.durations{padding:14px 40px}}
+
+.closing.long h2{font-size:clamp(34px,6vw,60px);max-width:22ch;margin-left:auto;margin-right:auto;text-wrap:balance}
+.nav a[aria-current]{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
+.drawer a[aria-current]{color:var(--niebla)}
+.hero{overflow-x:clip}

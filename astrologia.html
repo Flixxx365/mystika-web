@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- QUITAR esta línea el día del lanzamiento: evita que Google indexe la web mientras está en pruebas -->
+<meta name="robots" content="noindex">
+<title>Astrología y Tarot · Mystika by Mer in Balance</title>
+<meta name="description" content="Carta astral, retorno solar, sinastría de pareja y lecturas de tarot en Mystika, Sant Cugat del Vallès.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=3">
+<link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/astrologia.html">
+<link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/astrology.html">
+</head>
+<body>
+
+<!-- Iconos (se reutilizan con <use href="#i-...">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></symbol>
+    <symbol id="i-moonstar" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><path d="M29 9a15 15 0 1 0 10 25A13 13 0 0 1 29 9Z"/><path d="M36 10v8M32 14h8"/></symbol>
+    <symbol id="i-circle3" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="15" r="5"/><circle cx="12" cy="21" r="4"/><circle cx="36" cy="21" r="4"/><path d="M14 40c0-6 4.5-10 10-10s10 4 10 10M4 36c0-4.5 3.5-8 8-8M44 36c0-4.5-3.5-8-8-8"/></symbol>
+    <symbol id="i-crescent" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M15.5 3.5A8.5 8.5 0 1 0 20.5 17a7 7 0 0 1-5-13.5Z"/></symbol>
+    <symbol id="i-half" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 2.5l1.6 7.9 7.9 1.6-7.9 1.6L12 21.5l-1.6-7.9L2.5 12l7.9-1.6Z"/></symbol>
+    <symbol id="i-astro" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="2.5" fill="var(--lino)"/></symbol>
+    <symbol id="i-solar" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+    <symbol id="i-mat" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" stroke-dasharray="2 2.2"/></symbol>
+    <symbol id="i-barre" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 8.5h19M5.5 8.5V21M18.5 8.5V21"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 14c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0M2.5 9c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M4 20h16M6 16l10-10 2.5 2.5-10 10H6Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M3 20c4-1 5-5 9-6s5-5 9-9"/><circle cx="21" cy="5" r="1.5"/></symbol>
+    <symbol id="i-synastry" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="9" cy="12" r="6.5"/><circle cx="15" cy="12" r="6.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ CABECERA ============ -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="./" class="logo" aria-label="Mystika, inicio"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+    <ul class="nav">
+      <li><a href="./#clases">Clases</a></li>
+      <li><a href="./#experiencias">Experiencias</a></li>
+      <li><a href="astrologia.html" aria-current="page">Astrología y Tarot</a></li>
+      <li><a href="./#universo">Universo</a></li>
+      <li><a href="./#mer">Sobre Mer</a></li>
+      <li><a href="./#tarifas">Tarifas</a></li>
+      <li><a href="./#faq">Preguntas</a></li>
+    </ul>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Idioma"><a href="astrologia.html" lang="es" aria-current="page">ES</a><span aria-hidden="true">/</span><a href="en/astrology.html" lang="en" hreflang="en">EN</a></div>
+      <a href="./#horarios" class="btn btn-solid">Reservar</a>
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" aria-label="Menú">
+  <a href="./#clases">Clases</a>
+  <a href="./#experiencias">Experiencias</a>
+  <a href="astrologia.html" aria-current="page">Astrología y Tarot</a>
+  <a href="./#universo">Universo Mystika</a>
+  <a href="./#mer">Sobre Mer</a>
+  <a href="./#espacio">El espacio</a>
+  <a href="./#tarifas">Tarifas</a>
+  <a href="./#horarios">Horarios</a>
+  <a href="./#faq">Preguntas</a>
+</nav>
+
+<main>
+
+<!-- ============ PORTADA ASTROLOGÍA ============ -->
+<section class="astro-hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Servicios Mystika</p>
+      <h1>Astrología<br>y Tarot</h1>
+      <p class="tagline">Conócete. Comprende tus ciclos. Encuentra tu propio equilibrio.</p>
+      <p class="intro">En MYSTIKA, la astrología y el tarot son herramientas de autoconocimiento que te ayudan a conectar contigo, comprender tu momento vital y explorar nuevas perspectivas. Un espacio para parar, escucharte y reconectar con tu esencia.</p>
+      <div class="btns">
+        <a href="./#horarios" class="btn btn-light">Reservar una sesión</a>
+        <a href="#lecturas" class="btn btn-ghost">Ver las lecturas</a>
+      </div>
+    </div>
+    <div class="chart" aria-hidden="true"><svg viewBox="0 0 400 400"><g class="spin"><circle cx="200" cy="200" r="192" stroke-width="0.9"/><circle cx="200" cy="200" r="172" stroke-width="0.7"/><path d="M392.0 200.0L372.0 200.0" stroke-width=".7"/><path d="M391.3 216.7L383.3 216.0" stroke-width=".7"/><path d="M389.1 233.3L381.2 232.0" stroke-width=".7"/><path d="M385.5 249.7L377.7 247.6" stroke-width=".7"/><path d="M380.4 265.7L372.9 262.9" stroke-width=".7"/><path d="M374.0 281.1L366.8 277.8" stroke-width=".7"/><path d="M366.3 296.0L349.0 286.0" stroke-width=".7"/><path d="M357.3 310.1L350.7 305.5" stroke-width=".7"/><path d="M347.1 323.4L341.0 318.3" stroke-width=".7"/><path d="M335.8 335.8L330.1 330.1" stroke-width=".7"/><path d="M323.4 347.1L318.3 341.0" stroke-width=".7"/><path d="M310.1 357.3L305.5 350.7" stroke-width=".7"/><path d="M296.0 366.3L286.0 349.0" stroke-width=".7"/><path d="M281.1 374.0L277.8 366.8" stroke-width=".7"/><path d="M265.7 380.4L262.9 372.9" stroke-width=".7"/><path d="M249.7 385.5L247.6 377.7" stroke-width=".7"/><path d="M233.3 389.1L232.0 381.2" stroke-width=".7"/><path d="M216.7 391.3L216.0 383.3" stroke-width=".7"/><path d="M200.0 392.0L200.0 372.0" stroke-width=".7"/><path d="M183.3 391.3L184.0 383.3" stroke-width=".7"/><path d="M166.7 389.1L168.0 381.2" stroke-width=".7"/><path d="M150.3 385.5L152.4 377.7" stroke-width=".7"/><path d="M134.3 380.4L137.1 372.9" stroke-width=".7"/><path d="M118.9 374.0L122.2 366.8" stroke-width=".7"/><path d="M104.0 366.3L114.0 349.0" stroke-width=".7"/><path d="M89.9 357.3L94.5 350.7" stroke-width=".7"/><path d="M76.6 347.1L81.7 341.0" stroke-width=".7"/><path d="M64.2 335.8L69.9 330.1" stroke-width=".7"/><path d="M52.9 323.4L59.0 318.3" stroke-width=".7"/><path d="M42.7 310.1L49.3 305.5" stroke-width=".7"/><path d="M33.7 296.0L51.0 286.0" stroke-width=".7"/><path d="M26.0 281.1L33.2 277.8" stroke-width=".7"/><path d="M19.6 265.7L27.1 262.9" stroke-width=".7"/><path d="M14.5 249.7L22.3 247.6" stroke-width=".7"/><path d="M10.9 233.3L18.8 232.0" stroke-width=".7"/><path d="M8.7 216.7L16.7 216.0" stroke-width=".7"/><path d="M8.0 200.0L28.0 200.0" stroke-width=".7"/><path d="M8.7 183.3L16.7 184.0" stroke-width=".7"/><path d="M10.9 166.7L18.8 168.0" stroke-width=".7"/><path d="M14.5 150.3L22.3 152.4" stroke-width=".7"/><path d="M19.6 134.3L27.1 137.1" stroke-width=".7"/><path d="M26.0 118.9L33.2 122.2" stroke-width=".7"/><path d="M33.7 104.0L51.0 114.0" stroke-width=".7"/><path d="M42.7 89.9L49.3 94.5" stroke-width=".7"/><path d="M52.9 76.6L59.0 81.7" stroke-width=".7"/><path d="M64.2 64.2L69.9 69.9" stroke-width=".7"/><path d="M76.6 52.9L81.7 59.0" stroke-width=".7"/><path d="M89.9 42.7L94.5 49.3" stroke-width=".7"/><path d="M104.0 33.7L114.0 51.0" stroke-width=".7"/><path d="M118.9 26.0L122.2 33.2" stroke-width=".7"/><path d="M134.3 19.6L137.1 27.1" stroke-width=".7"/><path d="M150.3 14.5L152.4 22.3" stroke-width=".7"/><path d="M166.7 10.9L168.0 18.8" stroke-width=".7"/><path d="M183.3 8.7L184.0 16.7" stroke-width=".7"/><path d="M200.0 8.0L200.0 28.0" stroke-width=".7"/><path d="M216.7 8.7L216.0 16.7" stroke-width=".7"/><path d="M233.3 10.9L232.0 18.8" stroke-width=".7"/><path d="M249.7 14.5L247.6 22.3" stroke-width=".7"/><path d="M265.7 19.6L262.9 27.1" stroke-width=".7"/><path d="M281.1 26.0L277.8 33.2" stroke-width=".7"/><path d="M296.0 33.7L286.0 51.0" stroke-width=".7"/><path d="M310.1 42.7L305.5 49.3" stroke-width=".7"/><path d="M323.4 52.9L318.3 59.0" stroke-width=".7"/><path d="M335.8 64.2L330.1 69.9" stroke-width=".7"/><path d="M347.1 76.6L341.0 81.7" stroke-width=".7"/><path d="M357.3 89.9L350.7 94.5" stroke-width=".7"/><path d="M366.3 104.0L349.0 114.0" stroke-width=".7"/><path d="M374.0 118.9L366.8 122.2" stroke-width=".7"/><path d="M380.4 134.3L372.9 137.1" stroke-width=".7"/><path d="M385.5 150.3L377.7 152.4" stroke-width=".7"/><path d="M389.1 166.7L381.2 168.0" stroke-width=".7"/><path d="M391.3 183.3L383.3 184.0" stroke-width=".7"/><circle cx="375.8" cy="247.1" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="328.7" cy="328.7" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="247.1" cy="375.8" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="152.9" cy="375.8" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="71.3" cy="328.7" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="24.2" cy="247.1" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="24.2" cy="152.9" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="71.3" cy="71.3" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="152.9" cy="24.2" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="247.1" cy="24.2" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="328.7" cy="71.3" r="1.6" fill="var(--rosa)" stroke="none"/><circle cx="375.8" cy="152.9" r="1.6" fill="var(--rosa)" stroke="none"/></g><circle cx="200" cy="200" r="128" stroke-width=".7"/><circle cx="200" cy="200" r="58" stroke-width=".7" opacity=".7"/><path d="M257.4 208.1L370.3 223.9" stroke-width="1.2" opacity="0.95"/><path d="M245.7 235.7L335.5 305.9" stroke-width="0.5" opacity="0.6"/><path d="M221.7 253.8L264.4 359.5" stroke-width="0.5" opacity="0.6"/><path d="M191.9 257.4L176.1 370.3" stroke-width="1.2" opacity="0.95"/><path d="M164.3 245.7L94.1 335.5" stroke-width="0.5" opacity="0.6"/><path d="M146.2 221.7L40.5 264.4" stroke-width="0.5" opacity="0.6"/><path d="M142.6 191.9L29.7 176.1" stroke-width="1.2" opacity="0.95"/><path d="M154.3 164.3L64.5 94.1" stroke-width="0.5" opacity="0.6"/><path d="M178.3 146.2L135.6 40.5" stroke-width="0.5" opacity="0.6"/><path d="M208.1 142.6L223.9 29.7" stroke-width="1.2" opacity="0.95"/><path d="M235.7 154.3L305.9 64.5" stroke-width="0.5" opacity="0.6"/><path d="M253.8 178.3L359.5 135.6" stroke-width="0.5" opacity="0.6"/><path d="M320.3 243.8L81.3 247.9" stroke-width=".6" opacity=".55"/><path d="M235.3 323.0L150.0 82.2" stroke-width=".6" opacity=".55"/><path d="M175.6 325.6L243.8 79.7" stroke-width=".6" opacity=".55"/><path d="M81.3 247.9L312.0 137.9" stroke-width=".6" opacity=".55"/><path d="M82.2 150.0L320.3 243.8" stroke-width=".6" opacity=".55"/><path d="M235.3 323.0L82.2 150.0" stroke-width=".6" opacity=".55"/><path d="M150.0 82.2L312.0 137.9" stroke-width=".6" opacity=".55"/><circle cx="320.3" cy="243.8" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="235.3" cy="323.0" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="175.6" cy="325.6" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="81.3" cy="247.9" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="82.2" cy="150.0" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="150.0" cy="82.2" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="243.8" cy="79.7" r="4" fill="var(--cacao)" stroke-width="1.1"/><circle cx="312.0" cy="137.9" r="4" fill="var(--cacao)" stroke-width="1.1"/></svg></div>
+  </div>
+</section>
+
+<!-- ============ LECTURAS ASTROLÓGICAS ============ -->
+<section id="lecturas">
+  <div class="wrap">
+    <div class="services-head">
+      <h2>Lecturas astrológicas</h2>
+      <p class="lead">Sesiones individuales con tu carta como punto de partida.</p>
+    </div>
+    <div class="svc-list">
+      <article class="svc">
+        <div class="svc-name"><svg><use href="#i-astro"/></svg><h3>Carta astral</h3><span class="svc-price">90 €</span></div>
+        <p>La carta astral es una representación del cielo en el momento exacto de tu nacimiento. A través de ella puedes conocer mejor tu personalidad, tus talentos, tus necesidades emocionales, tus aprendizajes y tu manera de relacionarte con el mundo.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-name"><svg><use href="#i-solar"/></svg><h3>Retorno solar</h3><span class="svc-price">60 €</span></div>
+        <p>El retorno solar es una lectura astrológica que se realiza alrededor de tu cumpleaños y analiza las energías, oportunidades, retos y aprendizajes que pueden acompañarte durante tu nuevo año personal.</p>
+      </article>
+      <article class="svc">
+        <div class="svc-name"><svg><use href="#i-synastry"/></svg><h3>Sinastría de pareja</h3><span class="svc-price">180 €</span></div>
+        <p>La sinastría compara las cartas astrales de dos personas para comprender la dinámica de la relación, la forma en que os comunicáis, vuestras afinidades, diferencias, necesidades emocionales y áreas de crecimiento conjunto. Puede ayudarte a comprender mejor el vínculo y a relacionarte desde una mayor consciencia.</p>
+      </article>
+    </div>
+    <p class="svc-note">Para preparar tu lectura necesitaremos tu fecha, hora y lugar de nacimiento.</p>
+  </div>
+</section>
+
+<!-- ============ TAROT ============ -->
+<section class="tarot" id="tarot">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Tarot</p>
+      <h2>Lecturas de Tarot</h2>
+      <p class="from">Desde 15 €</p>
+      <p class="lead" style="margin-top:20px">Sesiones personalizadas para explorar tus preguntas, comprender situaciones y encontrar nuevas perspectivas a través de las cartas.</p>
+    </div>
+    <ul class="durations" aria-label="Duración y precio de las lecturas de tarot">
+        <li><span>15 minutos</span><span class="dots" aria-hidden="true"></span><b>15 €</b></li>
+        <li><span>30 minutos</span><span class="dots" aria-hidden="true"></span><b>30 €</b></li>
+        <li><span>60 minutos</span><span class="dots" aria-hidden="true"></span><b>60 €</b></li>
+        <li><span>90 minutos</span><span class="dots" aria-hidden="true"></span><b>90 €</b></li>
+        <li><span>120 minutos</span><span class="dots" aria-hidden="true"></span><b>120 €</b></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="closing long">
+  <div class="wrap">
+    <p class="script">Un espacio para</p>
+    <h2>escucharte, comprenderte y volver a ti.</h2>
+    <p>Reserva tu sesión y regálate ese momento.</p>
+    <div class="btns">
+      <a href="./#horarios" class="btn btn-solid">Reservar una sesión</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="./" class="logo"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+      <p style="margin-top:18px;color:var(--niebla)">Tu cuerpo. Tu equilibrio. Tu ritmo.</p>
+    </div>
+    <div>
+      <h4>Estudio</h4>
+      <ul><li>Calle —, Sant Cugat del Vallès</li><li><a href="mailto:hola@mystika.es">hola@mystika.es</a></li><li><a href="tel:+34000000000">+34 000 000 000</a></li></ul>
+    </div>
+    <div>
+      <h4>Explora</h4>
+      <ul><li><a href="./#clases">Clases</a></li><li><a href="astrologia.html">Astrología y Tarot</a></li><li><a href="./#horarios">Horarios</a></li><li><a href="./#tarifas">Tarifas</a></li><li><a href="./#comunidad">Comunidad</a></li><li><a href="./#universo">Newsletter</a></li></ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul><li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 Mystika by Mer in Balance</span>
+      <a href="./">Aviso legal</a><a href="./">Privacidad</a><a href="./">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js?v=2"></script>
+</body>
+</html>
