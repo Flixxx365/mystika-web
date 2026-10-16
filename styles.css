@@ -8,7 +8,7 @@
   --tinta:#3E322C;     /* texto principal */
   --niebla:#74625A;    /* texto secundario */
   --linea:#DCCCC0;     /* bordes */
-  --serif:"Bodoni Moda", Georgia, serif;
+  --serif:"Fraunces", Georgia, serif;
   --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
   --script:"Pinyon Script", cursive;
   --gutter:20px;
@@ -24,6 +24,7 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
 h2{font-size:clamp(40px,8vw,68px);text-wrap:balance}
 h3{font-size:28px}
+h1,h2{font-weight:400}
 p{max-width:58ch}
 .lead{font-size:19px;color:var(--niebla)}
 .kicker{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla);margin-bottom:18px}
