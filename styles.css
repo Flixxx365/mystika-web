@@ -1,0 +1,212 @@
+/* ============ TOKENS ============ */
+:root{
+  --lino:#F4EDE6;      /* fondo principal */
+  --arena:#EADFD5;     /* fondo secciones alternas */
+  --nacar:#FAF6F1;     /* fondo tarjetas */
+  --rosa:#D9BFB4;      /* arco, acentos suaves */
+  --cacao:#5F4B41;     /* botones, sección oscura */
+  --tinta:#3E322C;     /* texto principal */
+  --niebla:#74625A;    /* texto secundario */
+  --linea:#DCCCC0;     /* bordes */
+  --serif:"Bodoni Moda", Georgia, serif;
+  --sans:"Jost", "Helvetica Neue", Arial, sans-serif;
+  --script:"Pinyon Script", cursive;
+  --gutter:20px;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--lino);color:var(--tinta);font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--cacao);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(40px,8vw,68px);text-wrap:balance}
+h3{font-size:28px}
+p{max-width:58ch}
+.lead{font-size:19px;color:var(--niebla)}
+.kicker{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla);margin-bottom:18px}
+section{padding:96px 0}
+
+/* ============ BOTONES ============ */
+.btn{display:inline-block;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;padding:16px 26px;border:1px solid var(--cacao);transition:background .2s,color .2s}
+.btn-solid{background:var(--cacao);color:var(--lino)}
+.btn-solid:hover{background:var(--tinta);border-color:var(--tinta)}
+.btn-line{color:var(--cacao)}
+.btn-line:hover{background:var(--cacao);color:var(--lino)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.link{font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--linea);padding-bottom:4px}
+.link:hover{border-color:var(--cacao)}
+
+/* ============ CABECERA ============ */
+.top{position:sticky;top:0;z-index:50;background:rgba(244,237,230,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-color:var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{text-decoration:none;line-height:1.1}
+.logo b{display:block;font-family:var(--sans);font-weight:400;font-size:23px;letter-spacing:.32em}
+.logo span{display:block;white-space:nowrap;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin-top:3px}
+.nav{display:none;gap:30px;list-style:none}
+.nav a{text-decoration:none;font-size:14px;letter-spacing:.06em}
+.nav a:hover{color:var(--niebla)}
+.top-actions{display:flex;align-items:center;gap:10px}
+.lang{display:flex;align-items:center;font-size:13px;font-weight:500;letter-spacing:.1em}
+.lang a{text-decoration:none;color:var(--niebla);padding:8px 4px}
+.lang a:hover{color:var(--tinta)}
+.lang a[aria-current]{color:var(--tinta);text-decoration:underline;text-underline-offset:5px}
+.lang span{color:var(--linea)}
+@media(max-width:400px){.top-actions{gap:6px}.top .btn{padding:10px 10px;letter-spacing:.08em}.logo b{font-size:20px;letter-spacing:.24em}.logo span{font-size:10px;letter-spacing:.12em}.lang a{padding:8px 3px}.burger{width:34px}}
+@media(min-width:960px){.top-actions{gap:18px}}
+.top .btn{padding:11px 18px;font-size:12px}
+.burger{width:40px;height:40px;background:none;border:0;cursor:pointer;display:grid;place-content:center;gap:6px}
+.burger i{display:block;width:22px;height:1px;background:var(--tinta);transition:transform .3s}
+.menu-open .burger i:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-open .burger i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.drawer{position:fixed;inset:76px 0 0;background:var(--lino);z-index:49;padding:40px var(--gutter);display:none}
+.menu-open .drawer{display:block}
+.drawer a{display:block;font-family:var(--serif);font-size:34px;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--linea)}
+@media(min-width:960px){.nav{display:flex}.burger,.drawer{display:none!important}}
+
+/* ============ HERO ============ */
+.hero{padding:56px 0 80px}
+.hero .wrap{display:grid;gap:56px;align-items:center}
+.hero .script{font-family:var(--script);font-size:clamp(40px,8vw,58px);line-height:1;color:var(--niebla);margin-bottom:-4px}
+.hero h1{font-size:clamp(72px,17vw,148px);line-height:.92;letter-spacing:-.025em}
+.hero .lead{margin-top:28px}
+.arch{position:relative;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}
+.arch-shape{position:absolute;inset:0;border-radius:999px 999px 0 0;background:linear-gradient(170deg,#DCC2B7 0%,#E8D8CE 100%);overflow:hidden;display:grid;place-items:center}
+.arch-shape img{width:100%;height:100%;object-fit:cover}
+.placeholder{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(62,50,44,.45)}
+.moon{position:absolute;width:22%;aspect-ratio:1;border-radius:50%;background:var(--cacao);right:-4%;top:9%;animation:rise 1.6s cubic-bezier(.2,.7,.2,1) .3s both}
+.orbit{position:absolute;inset:-5% -5% auto;aspect-ratio:1;border:1px solid var(--rosa);border-radius:50%;pointer-events:none}
+@keyframes rise{from{transform:translate(-120%,60%);opacity:0}to{transform:none;opacity:1}}
+@media(min-width:960px){.hero{padding:90px 0 120px}.hero .wrap{grid-template-columns:1.1fr .9fr}}
+
+/* ============ PILARES ============ */
+.pillars{padding:24px 0 8px}
+.pillars .wrap{display:grid;gap:16px}
+.pillar{text-align:center;padding:52px 24px;border:1px solid var(--linea);background:var(--nacar);display:flex;flex-direction:column;align-items:center}
+.pillar .link{margin-top:auto}
+.pillar svg{width:52px;height:52px;margin:0 auto 18px;stroke:var(--cacao)}
+.pillar h3{font-size:34px;margin-bottom:8px}
+.pillar p{color:var(--niebla);margin:0 auto 18px}
+@media(min-width:960px){.pillars{padding:40px 0 0}.pillars .wrap{grid-template-columns:repeat(3,1fr);gap:24px}.pillar{padding:60px 28px}}
+
+/* ============ CLASES ============ */
+.classes-head{display:grid;gap:22px;margin-bottom:64px}
+.group{margin-top:56px}
+.group-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 24px;padding-bottom:16px;border-bottom:1px solid var(--tinta)}
+.group-head h3{font-size:30px}
+.group-head p{color:var(--niebla);font-size:15px}
+details.class{border-bottom:1px solid var(--linea)}
+details.class summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:34px 1fr 24px;gap:16px;align-items:center;padding:26px 0}
+details.class summary::-webkit-details-marker{display:none}
+.glyph{width:28px;height:28px;stroke:var(--cacao)}
+.class-title{font-family:var(--serif);font-weight:500;font-size:clamp(28px,6vw,40px);line-height:1.05;display:block}
+.class-tag{display:block;color:var(--niebla);font-size:15px;margin-top:6px}
+.plus{width:20px;height:20px;position:relative;justify-self:end}
+.plus::before,.plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--tinta);transition:transform .3s}
+.plus::after{transform:rotate(90deg)}
+details[open] .plus::after{transform:rotate(0)}
+.class-body{padding:0 0 34px 50px;display:grid;gap:14px}
+.class-body p{color:var(--tinta)}
+.class-body p+p{margin-top:12px}
+.class-meta{display:grid;gap:10px;margin-top:8px;padding:18px 20px;background:var(--nacar);border-left:2px solid var(--rosa);font-size:15px}
+.class-meta strong{font-weight:600}
+.mantra{font-family:var(--serif);font-style:italic;font-weight:500;font-size:21px;color:var(--cacao);margin-top:6px}
+@media(min-width:960px){.classes-head{grid-template-columns:1.2fr .8fr;align-items:end}.class-body{grid-template-columns:1.3fr 1fr;column-gap:56px;padding-left:50px}.class-body .col-b{align-self:start}}
+
+/* ============ BIENESTAR (oscura) ============ */
+.dark{background:var(--cacao);color:var(--lino)}
+.dark .kicker{color:var(--rosa)}
+.dark .lead{color:#E6D7CD}
+.rituals{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(244,237,230,.25);border:1px solid rgba(244,237,230,.25);margin-top:56px}
+.ritual{background:var(--cacao);padding:44px 18px 40px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.ritual svg{width:46px;height:46px;stroke:var(--rosa);margin-bottom:26px}
+.ritual h3{font-size:26px;margin-bottom:8px}
+.ritual p{font-size:15px;color:#E6D7CD;max-width:24ch}
+@media(min-width:960px){.rituals{grid-template-columns:repeat(4,1fr)}.ritual{padding:64px 30px 58px}.ritual svg{width:56px;height:56px;margin-bottom:30px}}
+
+/* ============ UNIVERSO / NEWSLETTER ============ */
+.universe{background:var(--arena)}
+.universe .wrap{display:grid;gap:56px}
+.perks{list-style:none;margin-top:40px;border-top:1px solid var(--linea)}
+.perks li{display:grid;grid-template-columns:44px 1fr;gap:16px;padding:24px 0;border-bottom:1px solid var(--linea)}
+.perks svg{width:32px;height:32px;stroke:var(--cacao);margin-top:4px}
+.perks h3{font-size:24px;margin-bottom:4px}
+.perks p{color:var(--niebla);font-size:15px}
+.signup{background:var(--nacar);border:1px solid var(--linea);padding:40px 28px;align-self:start}
+.signup h3{font-size:32px;margin-bottom:8px}
+.signup .intro{color:var(--niebla);font-size:15px;margin-bottom:30px}
+.signup .thanks p{color:var(--niebla);margin:8px auto 0}
+.field{display:block;margin-bottom:22px}
+.field span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--niebla);margin-bottom:4px}
+.field input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--tinta);padding:10px 0;font:400 17px var(--sans);color:var(--tinta);border-radius:0}
+.field input:focus{outline:none;border-bottom:2px solid var(--cacao)}
+.consent{display:grid;grid-template-columns:20px 1fr;gap:12px;font-size:14px;color:var(--niebla);margin:6px 0 28px;line-height:1.5}
+.consent input{width:18px;height:18px;margin-top:2px;accent-color:var(--cacao)}
+.signup button{width:100%;cursor:pointer}
+.signup .small{font-size:13px;color:var(--niebla);margin-top:16px;text-align:center;max-width:none}
+.signup .thanks{display:none;text-align:center;padding:30px 0}
+.signup .thanks svg{width:44px;height:44px;stroke:var(--cacao);margin:0 auto 18px}
+.signup.sent form{display:none}
+.signup.sent .thanks{display:block}
+@media(min-width:960px){.universe .wrap{grid-template-columns:1.1fr .9fr;gap:88px;align-items:start}.signup{padding:52px 44px;position:sticky;top:110px}}
+
+/* ============ SOBRE MER / ESPACIO ============ */
+.split{display:grid;gap:44px;align-items:center}
+.photo{aspect-ratio:4/5;background:linear-gradient(160deg,#E4D3C8,#EFE4DB);display:grid;place-items:center}
+.photo.wide{aspect-ratio:5/4}
+.photo{overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.split p+p{margin-top:16px}
+.split .link{display:inline-block;margin-top:30px}
+.signature{font-family:var(--script);font-size:44px;color:var(--cacao);margin-top:22px;line-height:1}
+@media(min-width:960px){.split{grid-template-columns:1fr 1fr;gap:88px}.split.rev .photo{order:2}}
+.space{background:var(--arena)}
+
+/* ============ TARIFAS ============ */
+.plans{display:grid;gap:16px;margin-top:52px}
+.plan{background:var(--nacar);border:1px solid var(--linea);padding:36px 30px;display:flex;flex-direction:column}
+.plan .name{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla)}
+.plan h3{font-size:34px;margin:10px 0 12px}
+.plan p{color:var(--niebla);font-size:15px}
+.price{font-family:var(--serif);font-weight:500;font-size:46px;margin:28px 0 26px}
+.price small{font-family:var(--sans);font-size:14px;color:var(--niebla)}
+.plan .btn{margin-top:auto;text-align:center}
+.plan.feat{background:var(--cacao);border-color:var(--cacao);color:var(--lino)}
+.plan.feat .name,.plan.feat p,.plan.feat .price small{color:#E6D7CD}
+.plan.feat .btn{background:var(--lino);color:var(--cacao);border-color:var(--lino)}
+.plans-note{margin-top:22px;font-size:15px;color:var(--niebla)}
+@media(min-width:960px){.plans{grid-template-columns:repeat(3,1fr)}}
+
+/* ============ HORARIOS ============ */
+.schedule{background:var(--arena)}
+.widget{margin-top:48px;min-height:360px;border:1px dashed var(--niebla);background:var(--nacar);display:grid;place-content:center;text-align:center;padding:40px 24px;gap:10px}
+.widget strong{font-family:var(--serif);font-weight:500;font-size:26px}
+.widget span{color:var(--niebla);font-size:15px;max-width:40ch}
+
+/* ============ FAQ ============ */
+.faq-list{margin-top:44px;border-top:1px solid var(--linea)}
+.faq-list details{border-bottom:1px solid var(--linea)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0;font-family:var(--serif);font-weight:500;font-size:clamp(22px,4.6vw,28px);line-height:1.2}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list details>p{padding:0 0 28px;color:var(--niebla)}
+@media(min-width:960px){.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.faq-list{margin-top:0}}
+
+/* ============ CIERRE + FOOTER ============ */
+.closing{text-align:center;padding:120px 0}
+.closing .script{font-family:var(--script);font-size:46px;color:var(--niebla);line-height:1}
+.closing h2{font-size:clamp(56px,13vw,112px);margin-top:4px}
+.closing .btns{justify-content:center}
+.closing p{margin:26px auto 0;color:var(--niebla)}
+footer{border-top:1px solid var(--linea);padding:56px 0 40px;font-size:15px}
+footer .wrap{display:grid;gap:36px}
+footer h4{font-weight:400;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla);margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{text-decoration:underline}
+.legal{border-top:1px solid var(--linea);margin-top:44px;padding-top:24px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:13px;color:var(--niebla)}
+@media(min-width:960px){footer .wrap{grid-template-columns:1.4fr 1fr 1fr 1fr}.legal{grid-column:1/-1}}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}

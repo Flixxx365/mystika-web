@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- QUITAR esta línea el día del lanzamiento: evita que Google indexe la web mientras está en pruebas -->
+<meta name="robots" content="noindex">
+<title>Mystika by Mer in Balance · Barre, Pilates &amp; Yoga in Sant Cugat</title>
+<meta name="description" content="Barre, Pilates and yoga studio in Sant Cugat, Barcelona. Classes that blend movement, intention and moments of connection: astrology, tarot, meditation and journaling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=1">
+<link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/">
+<link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/">
+</head>
+<body>
+
+<!-- Iconos (se reutilizan con <use href="#i-...">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></symbol>
+    <symbol id="i-moonstar" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><path d="M29 9a15 15 0 1 0 10 25A13 13 0 0 1 29 9Z"/><path d="M36 10v8M32 14h8"/></symbol>
+    <symbol id="i-circle3" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="15" r="5"/><circle cx="12" cy="21" r="4"/><circle cx="36" cy="21" r="4"/><path d="M14 40c0-6 4.5-10 10-10s10 4 10 10M4 36c0-4.5 3.5-8 8-8M44 36c0-4.5-3.5-8-8-8"/></symbol>
+    <symbol id="i-crescent" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M15.5 3.5A8.5 8.5 0 1 0 20.5 17a7 7 0 0 1-5-13.5Z"/></symbol>
+    <symbol id="i-half" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 2.5l1.6 7.9 7.9 1.6-7.9 1.6L12 21.5l-1.6-7.9L2.5 12l7.9-1.6Z"/></symbol>
+    <symbol id="i-astro" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="2.5" fill="var(--lino)"/></symbol>
+    <symbol id="i-solar" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+    <symbol id="i-mat" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" stroke-dasharray="2 2.2"/></symbol>
+    <symbol id="i-barre" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 8.5h19M5.5 8.5V21M18.5 8.5V21"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 14c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0M2.5 9c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M4 20h16M6 16l10-10 2.5 2.5-10 10H6Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M3 20c4-1 5-5 9-6s5-5 9-9"/><circle cx="21" cy="5" r="1.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ CABECERA ============ -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Mystika, home"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+    <ul class="nav">
+      <li><a href="#clases">Classes</a></li>
+      <li><a href="#experiencias">Experiences</a></li>
+      <li><a href="#universo">Universe</a></li>
+      <li><a href="#mer">About Mer</a></li>
+      <li><a href="#tarifas">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Language"><a href="../" lang="es" hreflang="es">ES</a><span aria-hidden="true">/</span><a href="./" lang="en" aria-current="page">EN</a></div>
+      <a href="#horarios" class="btn btn-solid">Book</a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" aria-label="Menu">
+  <a href="#clases">Classes</a>
+  <a href="#experiencias">Experiences</a>
+  <a href="#universo">Mystika Universe</a>
+  <a href="#mer">About Mer</a>
+  <a href="#espacio">The space</a>
+  <a href="#tarifas">Pricing</a>
+  <a href="#horarios">Schedule</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Sant Cugat del Vallès – Barcelona</p>
+      <p class="script">A space to</p>
+      <h1>return<br>to you.</h1>
+      <p class="lead">Barre, Pilates and yoga with something more: astrology, tarot, meditation and journaling to care for your body, listen to your inner world and find your own rhythm.</p>
+      <div class="btns">
+        <a href="#horarios" class="btn btn-solid">Book a class</a>
+        <a href="#clases" class="btn btn-line">See the classes</a>
+      </div>
+    </div>
+    <div class="arch">
+      <div class="orbit" aria-hidden="true"></div>
+      <div class="arch-shape">
+        <img src="../img/hero.jpg" alt="Mystika barre studio with linen curtains and warm light" width="1086" height="1448" fetchpriority="high">
+      </div>
+      <div class="moon" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PILARES ============ -->
+<section class="pillars">
+  <div class="wrap">
+    <div class="pillar">
+      <svg><use href="#i-sun"/></svg>
+      <h3>Movement</h3>
+      <p>Barre, Pilates and yoga</p>
+      <a href="#clases" class="link">Discover the classes</a>
+    </div>
+    <div class="pillar">
+      <svg><use href="#i-moonstar"/></svg>
+      <h3>Connection</h3>
+      <p>Meditation, journaling, astrology and tarot</p>
+      <a href="#experiencias" class="link">Explore the experiences</a>
+    </div>
+    <div class="pillar">
+      <svg><use href="#i-circle3"/></svg>
+      <h3>Community</h3>
+      <p>Events, workshops and retreats</p>
+      <a href="#universo" class="link">Join Mystika</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLASES ============ -->
+<section id="clases">
+  <div class="wrap">
+    <div class="classes-head">
+      <h2>Here, no class is just a class.</h2>
+      <p class="lead">Some sessions focus on training; others bring in astrology, tarot, meditation or journaling. They all share one purpose: to move, reconnect and find your balance.</p>
+    </div>
+
+    <!-- GRUPO 1 -->
+    <div class="group">
+      <div class="group-head">
+        <h3>Essential movement</h3>
+        <p>The foundation: strength, control and mobility.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-barre"/></svg><span><span class="class-title">Barre</span><span class="class-tag">Strength, grace and movement.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A dynamic class that combines elements of ballet, Pilates and functional training to build strength, muscular endurance, balance and coordination.</p>
+            <p>Through controlled movements, small repetitions and flowing sequences at the barre and on the mat, you will work your whole body, especially legs, glutes and core.</p>
+            <p>A challenging, fun practice where precision and consistency take centre stage. No ballet experience needed: just the wish to move and enjoy yourself.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal for:</strong> toning, building muscular endurance, improving balance and breaking out of your routine.</span></div>
+            <p class="mantra">Small movements. Big changes.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-mat"/></svg><span><span class="class-title">Pilates Mat</span><span class="class-tag">Connect with your body. Strengthen from within.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A mindful practice that combines strength, control, stability and mobility to help you build a stronger, more balanced relationship with your body.</p>
+            <p>Through exercises on the mat, you will work your deep muscles, core, posture and coordination, paying attention to your breath and to the quality of every movement.</p>
+            <p>A class to gain strength and stability, improve your posture and feel more connected to yourself, at your own pace.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal for:</strong> improving strength, posture, body control and mobility.</span></div>
+            <p class="mantra">Your body is your home. Learn to live in it.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-wave"/></svg><span><span class="class-title">Yoga</span><span class="class-tag">Find the balance between movement and stillness.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A practice that connects body, breath and mind through postures, mindful transitions and moments of full awareness.</p>
+            <p>During the session we will work on mobility, balance, flexibility and strength, adapting the practice to the pace and needs of the group. The breath will help us stay present in every movement and create a space to disconnect from the outside world.</p>
+            <p>Depending on the style of the session, the practice may be more dynamic and flowing or slower and more restorative.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal for:</strong> improving mobility, cultivating presence and finding a balance between activity and rest.</span></div>
+            <p class="mantra">Breathe in presence. Breathe out what you no longer need.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- GRUPO 2 -->
+    <div class="group" id="experiencias">
+      <div class="group-head">
+        <h3>Mystika experiences</h3>
+        <p>Movement with intention. Barre or Pilates format, depending on the schedule.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-astro"/></svg><span><span class="class-title">Astro Barre</span><span class="class-tag">Move with intention. Connect with your energy.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Astro Barre brings together the intensity and precision of barre with the inspiration of astrology to create an experience that goes beyond conventional training.</p>
+            <p>We will start by activating the body with a barre sequence designed to build strength, endurance and control. Each class follows an astrological theme that guides us in connecting movement with the moment we are living.</p>
+            <p>Depending on the session, we will explore a sign, a planetary energy, a moon phase or a theme of self-discovery, through short reflections and ideas to carry that intention into your everyday life.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal for:</strong> those who want to train with energy and add a layer of self-discovery to their practice.</span></div>
+            <p class="mantra">Movement can also be a way of listening to yourself.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-spark"/></svg><span><span class="class-title">Mystic Flow</span><span class="class-tag">One class. One card. A message for you.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Mystic Flow is an experience that combines mindful movement, inner connection and the symbolism of tarot.</p>
+            <p>Through a movement practice, we will create a space to release the tensions of the day, come back to the body and listen to how we feel. At the end, you will intuitively choose a card and discover the message that comes with it.</p>
+            <p>Each card comes with a personal reflection and a journal prompt, so you leave with more than the feeling of having trained: a small space to observe yourself and connect within.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre or Pilates, depending on the scheduled class. The format is shown in the booking schedule.</span>
+              <span><strong>Ideal for:</strong> those looking to combine movement, introspection and a different kind of experience.</span>
+            </div>
+            <p class="mantra">It is not about finding every answer, but about asking yourself the right questions.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-half"/></svg><span><span class="class-title">Lunar Flow</span><span class="class-tag">Honour your cycles. Move at your own pace.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A mindful movement practice inspired by the cycles of the Moon and by the connection with our inner world.</p>
+            <p>Through movement sequences, we will explore a way of training that is more connected to our sensations and needs. Each session may be inspired by a moon phase or by a theme related to cycles, intuition, new beginnings or the process of letting go.</p>
+            <p>The experience closes with an intention or reflection that will stay with you beyond the mat.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre or Pilates, depending on the scheduled class. The format is shown in the booking schedule.</span>
+              <span><strong>Ideal for:</strong> those who want a mindful practice with room for inner connection and self-discovery.</span>
+            </div>
+            <p class="mantra">You don’t always have to be at your brightest. You also need space to turn inward.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-crescent"/></svg><span><span class="class-title">Slow Moon</span><span class="class-tag">Slow down. Breathe. Come back to yourself.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A space to slow down and give yourself a moment of calm in the middle of your routine.</p>
+            <p>Slow Moon combines gentle movement, stretching, mobility, conscious breathing and relaxation to release tension and build a kinder connection with your body.</p>
+            <p>The practice unfolds without rushing, respecting how each person feels and leaving room for pause and presence. It may include moments of meditation, short reflections or journaling prompts inspired by the theme of the session.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Pilates or Barre, depending on the scheduled class, at a slow and mindful pace.</span>
+              <span><strong>Ideal for:</strong> those looking to switch off, improve their mobility and find a space of calm and wellbeing.</span>
+            </div>
+            <p class="mantra">Not all growth needs to be rushed.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-solar"/></svg><span><span class="class-title">Solar Heat</span><span class="class-tag">Activate your strength. Ignite your energy.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>A dynamic experience inspired by the energy of the Sun, vitality and self-confidence.</p>
+            <p>Through a more energetic movement practice, you will work on strength, muscular endurance and body control. The intensity of the session lets you challenge yourself, break out of inertia and connect with your energy through movement.</p>
+            <p>Solar Heat stands for action, determination and the ability to take up your own space. An experience to finish the class feeling strong, active and present.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre or Pilates, depending on the scheduled class, always with a dynamic, energetic focus.</span>
+              <span><strong>Ideal for:</strong> those who enjoy dynamic workouts and want to build strength, endurance and energy.</span>
+            </div>
+            <p class="mantra">Take up your space. Trust your strength. Shine your way.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIENESTAR ============ -->
+<section class="dark" id="comunidad">
+  <div class="wrap">
+    <p class="kicker">Beyond the mat</p>
+    <h2>Wellbeing happens here too.</h2>
+    <p class="lead" style="margin-top:24px">Workshops, rituals and retreats that create moments of pause, reflection and connection.</p>
+    <div class="rituals">
+      <div class="ritual"><svg><use href="#i-crescent"/></svg><h3>Astrology</h3><p>Getting to know the sky to get to know yourself a little better.</p></div>
+      <div class="ritual"><svg><use href="#i-spark"/></svg><h3>Tarot</h3><p>Spaces to listen to the message of the cards.</p></div>
+      <div class="ritual"><svg><use href="#i-pen"/></svg><h3>Journaling</h3><p>Questions, writing and inner clarity.</p></div>
+      <div class="ritual"><svg><use href="#i-path"/></svg><h3>Retreats</h3><p>Experiences to disconnect from the outside and come back to yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIVERSO MYSTIKA (NEWSLETTER) ============ -->
+<section class="universe" id="universo">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Mystika Universe</p>
+      <h2>If this resonates with you, stay close.</h2>
+      <p class="lead" style="margin-top:24px">Subscribe to our newsletter and receive what is moving in the sky and in the studio, straight to your inbox.</p>
+      <ul class="perks">
+        <li><svg><use href="#i-astro"/></svg><div><h3>Monthly transits</h3><p>The energy each month brings and how to carry it into your practice and your daily life.</p></div></li>
+        <li><svg><use href="#i-half"/></svg><div><h3>Moons and eclipses</h3><p>Moon phases, eclipses and small rituals to go with them.</p></div></li>
+        <li><svg><use href="#i-spark"/></svg><div><h3>Events before anyone else</h3><p>Workshops, retreats and special classes, so you can book your spot first.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="signup" id="signup">
+      <!-- NEWSLETTER: cuando tengas la herramienta (Brevo, MailerLite...), sustituye
+           action="#" por la URL que te den, o pega aquí su formulario. -->
+      <form action="#" method="post">
+        <h3>Join the universe</h3>
+        <p class="intro">When the moon and the stars have something to tell you, we will write to you.</p>
+        <label class="field"><span>Name</span><input type="text" name="nombre" autocomplete="given-name"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="consent"><input type="checkbox" name="consentimiento" required><span>I want to receive the Mystika newsletter and I accept the <a href="#">privacy policy</a>.</span></label>
+        <button type="submit" class="btn btn-solid">Subscribe</button>
+        <p class="small">You can unsubscribe at any time.</p>
+      </form>
+      <div class="thanks" role="status">
+        <svg><use href="#i-crescent"/></svg>
+        <h3>You’re in.</h3>
+        <p>Check your inbox: we have sent you an email to confirm your subscription.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE MER ============ -->
+<section id="mer">
+  <div class="wrap split">
+    <div class="photo"><img src="../img/mer.jpg?v=3" alt="Mer, founder of Mystika" width="864" height="1080" loading="lazy"></div>
+    <div>
+      <p class="kicker">About Mer</p>
+      <h2>This is not just a studio.<br>It is my story.</h2>
+      <p class="lead" style="margin-top:28px">For a long time I did what I was supposed to do. Until a moment came when I no longer recognised myself in that life.</p>
+      <p>Coming back to my body, listening to myself and building a life more aligned with who I am changed the way I understand wellbeing.</p>
+      <p>Mystika was born from that process, and from the wish to create a space where other women can also pause, connect and find their own rhythm.</p>
+      <p class="signature">Mer</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL ESPACIO ============ -->
+<section class="space" id="espacio">
+  <div class="wrap split rev">
+    <div class="photo wide"><span class="placeholder">Photo of the space</span></div>
+    <div>
+      <p class="kicker">The space</p>
+      <h2>A small refuge in Sant Cugat.</h2>
+      <p class="lead" style="margin-top:28px">A studio designed for you to move, breathe, pause and feel at home.</p>
+      <a class="link" href="https://maps.google.com/?q=Sant+Cugat+del+Vallès" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFAS ============ -->
+<section id="tarifas">
+  <div class="wrap">
+    <p class="kicker">Ways to live Mystika</p>
+    <h2>Choose your rhythm.</h2>
+    <p class="lead" style="margin-top:22px">A flexible approach so you can find the frequency that suits you best.</p>
+    <div class="plans">
+      <div class="plan">
+        <span class="name">Essential</span>
+        <h3>1 class / week</h3>
+        <p>To make a moment for yourself every week.</p>
+        <div class="price">—€ <small>/ month</small></div>
+        <a href="#horarios" class="btn btn-line">Get started</a>
+      </div>
+      <div class="plan feat">
+        <span class="name">Balance</span>
+        <h3>2 classes / week</h3>
+        <p>To make movement part of your routine and enjoy the full Mystika experience.</p>
+        <div class="price">—€ <small>/ month</small></div>
+        <a href="#horarios" class="btn">Get started</a>
+      </div>
+      <div class="plan">
+        <span class="name">Experience</span>
+        <h3>3 classes / week</h3>
+        <p>To make Mystika part of your week.</p>
+        <div class="price">—€ <small>/ month</small></div>
+        <a href="#horarios" class="btn btn-line">Get started</a>
+      </div>
+    </div>
+    <p class="plans-note">Workshops, events and retreats are booked separately.</p>
+  </div>
+</section>
+
+<!-- ============ HORARIOS ============ -->
+<section class="schedule" id="horarios">
+  <div class="wrap">
+    <p class="kicker">Schedule and bookings</p>
+    <h2>Your practice, your rhythm.</h2>
+    <p class="lead" style="margin-top:22px">Check this week’s classes and book your spot.</p>
+    <!-- PEGAR AQUÍ EL WIDGET DE RESERVAS -->
+    <div class="widget" id="widget-reservas">
+      <strong>The schedule widget goes here</strong>
+      <span>This block will be replaced by the code from the booking software.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Frequently asked questions</p>
+      <h2>Before your first class.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Do I need any previous experience?<span class="plus"></span></summary>
+        <p>No. Every class adapts to your level, and you will always have options to make each exercise gentler or more intense. If it is your first time, Barre or Pilates Mat are a great place to start.</p>
+      </details>
+      <details>
+        <summary>Is Mystika a Pilates studio?<span class="plus"></span></summary>
+        <p>It is a movement studio: barre, Pilates and yoga. Some classes add astrology, tarot, meditation or journaling, but movement is always at the heart of it.</p>
+      </details>
+      <details>
+        <summary>What makes the classes different?<span class="plus"></span></summary>
+        <p>Each experience has its own intention. In some the focus is training; in others, the practice is paired with a moon phase, an astrological theme or a tarot card with a journal prompt.</p>
+      </details>
+      <details>
+        <summary>How do I know if a class is Barre or Pilates?<span class="plus"></span></summary>
+        <p>Mystic Flow, Lunar Flow, Slow Moon and Solar Heat can be in Barre or Pilates format. The format of each session is shown in the booking schedule.</p>
+      </details>
+      <details>
+        <summary>What should I bring?<span class="plus"></span></summary>
+        <p>Comfortable clothes, a bottle of water and a towel. We take care of the rest.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="closing">
+  <div class="wrap">
+    <p class="script">Make space</p>
+    <h2>for you.</h2>
+    <p>Choose your practice and book your spot.</p>
+    <div class="btns">
+      <a href="#horarios" class="btn btn-solid">Book a class</a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" class="btn btn-line">Instagram</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#" class="logo"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+      <p style="margin-top:18px;color:var(--niebla)">Your body. Your balance. Your rhythm.</p>
+    </div>
+    <div>
+      <h4>Studio</h4>
+      <ul><li>Calle —, Sant Cugat del Vallès</li><li><a href="mailto:hola@mystika.es">hola@mystika.es</a></li><li><a href="tel:+34000000000">+34 000 000 000</a></li></ul>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul><li><a href="#clases">Classes</a></li><li><a href="#horarios">Schedule</a></li><li><a href="#tarifas">Pricing</a></li><li><a href="#comunidad">Community</a></li><li><a href="#universo">Newsletter</a></li></ul>
+    </div>
+    <div>
+      <h4>Follow us</h4>
+      <ul><li><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 Mystika by Mer in Balance</span>
+      <a href="#">Legal notice</a><a href="#">Privacy</a><a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../main.js?v=1"></script>
+</body>
+</html>

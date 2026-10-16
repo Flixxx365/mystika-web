@@ -6,8 +6,13 @@ Web estática: HTML, CSS y JavaScript sin dependencias. No necesita servidor ni 
 
 ## Archivos
 
-- `index.html`: toda la web (estructura, estilos y scripts).
+- `index.html`: la web en español (versión principal).
+- `en/index.html`: la misma web en inglés. Cualquier cambio de texto o estructura se hace en las dos.
+- `styles.css`: el diseño (colores, tipografías, espaciados), compartido por los dos idiomas.
+- `main.js`: menú móvil y formulario de newsletter.
 - `img/`: fotos de la web (hero, Mer, el espacio).
+
+Al cambiar `styles.css`, `main.js` o una foto, sube el número `?v=` donde se enlaza para que los navegadores no muestren la versión antigua.
 
 ## Pendiente antes del lanzamiento
 
