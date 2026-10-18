@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/">
 <link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/">
 </head>
@@ -32,6 +32,12 @@
     <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 14c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0M2.5 9c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0"/></symbol>
     <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M4 20h16M6 16l10-10 2.5 2.5-10 10H6Z"/></symbol>
     <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M3 20c4-1 5-5 9-6s5-5 9-9"/><circle cx="21" cy="5" r="1.5"/></symbol>
+    <symbol id="ph-new" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/></symbol>
+    <symbol id="ph-crescent" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17a5 8.5 0 0 0 0-17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-quarter" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-gibbous" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17a5 8.5 0 0 1 0-17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-full" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="currentColor"/></symbol>
+    <symbol id="ph-halo" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="7" fill="currentColor" stroke-width="1.1"/><circle cx="12" cy="12" r="10.6" fill="none" stroke-width=".8" stroke-dasharray="1.6 1.6"/></symbol>
   </defs>
 </svg>
 
@@ -359,52 +365,59 @@
     <p class="kicker">Formas de vivir Mystika</p>
     <h2>Elige tu ritmo.</h2>
     <p class="lead" style="margin-top:22px">Una propuesta flexible para que encuentres la frecuencia que mejor encaja contigo.</p>
-    <h3 class="plans-group">Cuotas mensuales</h3>
+    <h3 class="plans-group">Sin cuota mensual</h3>
     <div class="plans">
       <div class="plan">
-        <span class="name">Lunar 8</span>
-        <h3>8 clases al mes</h3>
-        <p>Dos prácticas por semana para integrar el movimiento en tu rutina.</p>
-        <div class="price">65 € <small>/ mes</small></div>
-        <a href="#horarios" class="btn btn-line">Empezar</a>
-      </div>
-      <div class="plan feat">
-        <span class="name">Lunar 12</span>
-        <h3>12 clases al mes</h3>
-        <p>Tres prácticas por semana para hacer de Mystika parte de tu semana.</p>
-        <div class="price">85 € <small>/ mes</small></div>
-        <a href="#horarios" class="btn">Empezar</a>
-      </div>
-      <div class="plan">
-        <span class="name">Full Moon</span>
-        <h3>Clases ilimitadas</h3>
-        <p>Sin límites: ven cuando lo necesites y vive todas las experiencias.</p>
-        <div class="price">109 € <small>/ mes</small></div>
-        <a href="#horarios" class="btn btn-line">Empezar</a>
-      </div>
-    </div>
-    <h3 class="plans-group">Sin cuota mensual</h3>
-    <div class="plans small">
-      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-new"/></svg>
         <span class="name">First Moon</span>
         <h3>Clase de prueba</h3>
-        <p>Tu primera clase para conocer Mystika.</p>
+        <p>Todo comienza con un primer paso. Descubre Mystika, conecta con el espacio y encuentra la práctica que te hace sentir bien.</p>
         <div class="price">12 €</div>
         <a href="#horarios" class="btn btn-line">Reservar</a>
       </div>
       <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-crescent"/></svg>
         <span class="name">One Session</span>
         <h3>Clase suelta</h3>
-        <p>Una práctica cuando te apetezca.</p>
+        <p>Un momento solo para ti. Muévete, desconecta del exterior y regálate una pausa para volver a conectar contigo.</p>
         <div class="price">22 €</div>
         <a href="#horarios" class="btn btn-line">Reservar</a>
       </div>
       <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-quarter"/></svg>
         <span class="name">Moon Cycle</span>
-        <h3>Bono 10 clases</h3>
-        <p>10 clases para usar a tu ritmo durante 12 meses.</p>
+        <h3>Bono de 10 clases</h3>
+        <p>Tu bienestar, a tu ritmo. Disfruta de 10 clases con la libertad de organizarte como mejor te encaje y hacer del movimiento parte de tu vida. Caducidad de 12 meses.</p>
         <div class="price">135 €</div>
         <a href="#horarios" class="btn btn-line">Reservar</a>
+      </div>
+    </div>
+    <h3 class="plans-group">Cuotas mensuales</h3>
+    <div class="plans">
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-gibbous"/></svg>
+        <span class="name">Lunar 8</span>
+        <h3>8 clases al mes</h3>
+        <p>Crea tu propio ritual. Ocho momentos al mes para fortalecer tu cuerpo, cuidar tu mente y dedicarte ese tiempo que mereces.</p>
+        <div class="price">65 € <small>/ mes</small></div>
+        <a href="#horarios" class="btn btn-line">Empezar</a>
+      </div>
+      <div class="plan feat">
+        <svg class="phase" aria-hidden="true"><use href="#ph-full"/></svg>
+        <span class="name">Lunar 12</span>
+        <h3>12 clases al mes</h3>
+        <p>Encuentra tu equilibrio a través del movimiento. Doce oportunidades al mes para priorizarte, ganar fuerza y cultivar una conexión más profunda contigo.</p>
+        <div class="price">85 € <small>/ mes</small></div>
+        <a href="#horarios" class="btn">Empezar</a>
+      </div>
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-halo"/></svg>
+        <span class="name">Mystika Unlimited</span>
+        <h3>Clases ilimitadas</h3>
+        <p>Tu espacio, tu ritmo, sin límites. Disfruta de todas las clases que quieras y convierte el movimiento en parte de tu estilo de vida.</p>
+        <p class="perk">Además, forma parte de <strong>Mystika Inner Circle</strong>, con encuentros exclusivos para la comunidad, rituales mensuales y ventajas especiales en eventos y retiros.</p>
+        <div class="price">109 € <small>/ mes</small></div>
+        <a href="#horarios" class="btn btn-line">Empezar</a>
       </div>
     </div>
     <p class="plans-note">Precios con IVA incluido. También puedes reservar a través de ClassPass y Urban Sports Club. Talleres, eventos y retiros se reservan aparte.</p>

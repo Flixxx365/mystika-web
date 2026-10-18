@@ -263,4 +263,9 @@ footer a:hover{text-decoration:underline}
 .nav a[aria-current]{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
 .drawer a[aria-current]{color:var(--niebla)}
 .hero{overflow-x:clip}
-@media(min-width:960px){.plan h3+p{min-height:3.3em}}
+.plan .phase{width:30px;height:30px;color:var(--cacao);margin-bottom:20px}
+.plan.feat .phase{color:var(--lino)}
+.plan .price{margin-top:auto;padding-top:26px}
+.plan .btn{margin-top:0}
+.plan .perk{margin-top:14px;padding-top:14px;border-top:1px solid var(--linea);font-size:14px}
+.plan .perk strong{font-weight:600;color:var(--tinta)}
