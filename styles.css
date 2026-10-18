@@ -171,7 +171,12 @@ details[open] .plus::after{transform:rotate(0)}
 .space{background:var(--arena)}
 
 /* ============ TARIFAS ============ */
-.plans{display:grid;gap:16px;margin-top:52px}
+.plans{display:grid;gap:16px;margin-top:20px}
+.plans-group{font-size:24px;margin-top:52px;padding-bottom:14px;border-bottom:1px solid var(--tinta)}
+.per{font-size:14px;margin:-18px 0 24px}
+.plans.small .plan{padding:28px 26px}
+.plans.small .plan h3{font-size:26px}
+.plans.small .price{font-size:36px;margin:22px 0 24px}
 .plan{background:var(--nacar);border:1px solid var(--linea);padding:36px 30px;display:flex;flex-direction:column}
 .plan .name{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--niebla)}
 .plan h3{font-size:34px;margin:10px 0 12px}
@@ -258,3 +263,4 @@ footer a:hover{text-decoration:underline}
 .nav a[aria-current]{text-decoration:underline;text-underline-offset:7px;text-decoration-thickness:1px}
 .drawer a[aria-current]{color:var(--niebla)}
 .hero{overflow-x:clip}
+@media(min-width:960px){.plan h3+p{min-height:3.3em}}
