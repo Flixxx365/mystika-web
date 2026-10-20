@@ -272,3 +272,6 @@ footer a:hover{text-decoration:underline}
 .booking{margin-top:44px;background:var(--nacar);border:1px solid var(--linea);padding:44px 28px;display:grid;justify-items:center;text-align:center;gap:22px}
 .booking svg{width:44px;height:44px;stroke:var(--cacao)}
 .booking p{color:var(--niebla);max-width:52ch}
+.booking-frame{margin-top:44px;border:1px solid var(--linea);background:var(--nacar)}
+.booking-frame iframe{display:block;width:100%;height:min(82vh,860px);min-height:560px;border:0}
+.booking-note{margin-top:16px;font-size:14px;color:var(--niebla)}

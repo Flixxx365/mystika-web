@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=6">
+<link rel="stylesheet" href="../styles.css?v=7">
 <link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/">
 <link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/">
 </head>
@@ -430,11 +430,10 @@
     <h2>Your practice, your rhythm.</h2>
     <p class="lead" style="margin-top:22px">Check this week’s classes and book your spot.</p>
     <!-- Si algún día pasáis a Lorari Pro, el widget "Horario y reservas" se pega aquí en lugar de este bloque -->
-    <div class="booking" id="widget-reservas">
-      <svg aria-hidden="true"><use href="#i-moonstar"/></svg>
-      <p>Bookings are made on our Lorari platform, where you can see every class of the week, check available spots and pay for your pack or membership.</p>
-      <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-solid">See schedule and book</a>
+    <div class="booking-frame" id="widget-reservas">
+      <iframe src="https://mystika.lorari.com" title="Mystika class schedule and booking" loading="lazy" allow="payment"></iframe>
     </div>
+    <p class="booking-note">Schedule not showing properly? <a href="https://mystika.lorari.com" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
   </div>
 </section>
 

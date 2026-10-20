@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 <link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/">
 <link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/">
 </head>
@@ -430,11 +430,10 @@
     <h2>Tu práctica, tu ritmo.</h2>
     <p class="lead" style="margin-top:22px">Consulta la programación de la semana y reserva tu plaza.</p>
     <!-- Si algún día pasáis a Lorari Pro, el widget "Horario y reservas" se pega aquí en lugar de este bloque -->
-    <div class="booking" id="widget-reservas">
-      <svg aria-hidden="true"><use href="#i-moonstar"/></svg>
-      <p>Las reservas se hacen en nuestra plataforma Lorari, donde verás todas las clases de la semana, las plazas libres y podrás pagar tu bono o cuota.</p>
-      <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-solid">Ver horario y reservar</a>
+    <div class="booking-frame" id="widget-reservas">
+      <iframe src="https://mystika.lorari.com" title="Horario de clases y reservas de Mystika" loading="lazy" allow="payment"></iframe>
     </div>
+    <p class="booking-note">¿No se ve bien el horario? <a href="https://mystika.lorari.com" target="_blank" rel="noopener">Ábrelo en una pestaña nueva</a>.</p>
   </div>
 </section>
 
