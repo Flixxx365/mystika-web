@@ -269,3 +269,6 @@ footer a:hover{text-decoration:underline}
 .plan .btn{margin-top:0}
 .plan .perk{margin-top:14px;padding-top:14px;border-top:1px solid var(--linea);font-size:14px}
 .plan .perk strong{font-weight:600;color:var(--tinta)}
+.booking{margin-top:44px;background:var(--nacar);border:1px solid var(--linea);padding:44px 28px;display:grid;justify-items:center;text-align:center;gap:22px}
+.booking svg{width:44px;height:44px;stroke:var(--cacao)}
+.booking p{color:var(--niebla);max-width:52ch}
