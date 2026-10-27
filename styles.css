@@ -289,3 +289,7 @@ footer a:hover{text-decoration:underline}
 .media-body h3{font-size:30px}
 .media-body p{color:var(--niebla);font-size:15px;margin-bottom:12px}
 @media(min-width:960px){.media-grid{grid-template-columns:1fr 1fr}}
+.media-frame.spotify{aspect-ratio:auto;height:352px}
+.media-frame.spotify.loaded{background:transparent}
+.media-frame.spotify iframe{border-radius:12px}
+@media(min-width:960px){.media-frame{aspect-ratio:auto;height:352px}}

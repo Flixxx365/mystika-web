@@ -20,5 +20,6 @@
     const f = document.createElement('iframe');
     f.src = btn.dataset.src; f.title = btn.dataset.title;
     f.allow = 'autoplay; encrypted-media; picture-in-picture; clipboard-write'; f.allowFullscreen = true;
+    btn.parentNode.classList.add('loaded');
     btn.parentNode.replaceChild(f, btn);
   }));
