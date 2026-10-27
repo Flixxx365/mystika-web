@@ -1,0 +1,17 @@
+/* Cambios de la versión de prueba (se pasarán a styles.css si se aprueban) */
+.test-band{background:var(--rosa);color:var(--tinta);text-align:center;font-size:13px;padding:8px 16px}
+.hero-offer{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:15px;color:var(--niebla)}
+.hero-offer svg{width:22px;height:22px;flex:none;color:var(--cacao)}
+.hero-offer b{font-weight:600;color:var(--tinta)}
+.hero-offer a{color:var(--cacao);font-weight:500;text-underline-offset:4px}
+@media(max-width:959px){.hero .moon{display:none}.hero{padding-bottom:56px}}
+#clases{padding-top:72px}
+.swipe-hint{display:none}
+@media(max-width:959px){
+  .swipe-hint{display:block;font-size:13px;color:var(--niebla);margin-top:12px}
+  .plans{grid-auto-flow:column;grid-auto-columns:84%;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;
+         margin-top:14px;margin-right:calc(-1 * var(--gutter));padding-right:var(--gutter);padding-bottom:6px;scrollbar-width:none}
+  .plans::-webkit-scrollbar{display:none}
+  .plan{scroll-snap-align:start;padding:30px 24px}
+  .plans-group{margin-top:40px}
+}
