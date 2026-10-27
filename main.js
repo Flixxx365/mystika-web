@@ -15,3 +15,10 @@
   // Línea bajo la cabecera al hacer scroll
   const header = document.getElementById('top');
   addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), {passive:true});
+  // Reproductores de YouTube/Spotify: solo se cargan al pulsar
+  document.querySelectorAll('.media-play').forEach(btn => btn.addEventListener('click', () => {
+    const f = document.createElement('iframe');
+    f.src = btn.dataset.src; f.title = btn.dataset.title;
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; clipboard-write'; f.allowFullscreen = true;
+    btn.parentNode.replaceChild(f, btn);
+  }));

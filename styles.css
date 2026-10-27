@@ -289,4 +289,3 @@ footer a:hover{text-decoration:underline}
 .media-body h3{font-size:30px}
 .media-body p{color:var(--niebla);font-size:15px;margin-bottom:12px}
 @media(min-width:960px){.media-grid{grid-template-columns:1fr 1fr}}
-.test-band{background:var(--rosa);color:var(--tinta);text-align:center;font-size:13px;padding:8px 16px}
