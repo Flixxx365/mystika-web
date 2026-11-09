@@ -310,3 +310,15 @@ footer a:hover{text-decoration:underline}
   .plan{scroll-snap-align:start;padding:30px 24px}
   .plans-group{margin-top:40px}
 }
+
+/* Grupos a demanda */
+.demand-list{margin-top:56px;border-top:1px solid var(--tinta)}
+.demand{display:grid;gap:18px;padding:40px 0;border-bottom:1px solid var(--linea)}
+.demand h3{font-size:30px}
+.demand .sub{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--niebla);margin-top:10px}
+.demand p{color:var(--tinta)}
+.demand p+p{margin-top:12px}
+.demand .note{font-size:14px;color:var(--niebla);margin-top:18px}
+.demand-cta{margin-top:48px;max-width:56ch;color:var(--niebla)}
+.demand-cta a{color:var(--tinta)}
+@media(min-width:960px){.demand{grid-template-columns:.8fr 1.2fr;gap:80px;padding:56px 0}}
