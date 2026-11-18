@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- QUITAR esta línea el día del lanzamiento: evita que Google indexe la web mientras está en pruebas -->
+<meta name="robots" content="noindex">
+<title>Mystika by Mer in Balance · Barre, Pilates i Ioga a Sant Cugat</title>
+<meta name="description" content="Estudi de barre, Pilates i ioga a Sant Cugat. Classes que combinen moviment, intenció i moments de connexió: astrologia, tarot, meditació i journaling.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Jost:wght@400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=11">
+<link rel="alternate" hreflang="es" href="https://flixxx365.github.io/mystika-web/">
+<link rel="alternate" hreflang="ca" href="https://flixxx365.github.io/mystika-web/ca/">
+<link rel="alternate" hreflang="en" href="https://flixxx365.github.io/mystika-web/en/">
+</head>
+<body>
+
+<!-- Iconos (se reutilizan con <use href="#i-...">) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-sun" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="24" r="8"/><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M11.3 36.7l4.2-4.2M32.5 15.5l4.2-4.2"/></symbol>
+    <symbol id="i-moonstar" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><path d="M29 9a15 15 0 1 0 10 25A13 13 0 0 1 29 9Z"/><path d="M36 10v8M32 14h8"/></symbol>
+    <symbol id="i-circle3" viewBox="0 0 48 48" fill="none" stroke-width="1.3"><circle cx="24" cy="15" r="5"/><circle cx="12" cy="21" r="4"/><circle cx="36" cy="21" r="4"/><path d="M14 40c0-6 4.5-10 10-10s10 4 10 10M4 36c0-4.5 3.5-8 8-8M44 36c0-4.5-3.5-8-8-8"/></symbol>
+    <symbol id="i-crescent" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M15.5 3.5A8.5 8.5 0 1 0 20.5 17a7 7 0 0 1-5-13.5Z"/></symbol>
+    <symbol id="i-half" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 0 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 2.5l1.6 7.9 7.9 1.6-7.9 1.6L12 21.5l-1.6-7.9L2.5 12l7.9-1.6Z"/></symbol>
+    <symbol id="i-astro" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/><circle cx="12" cy="12" r="2.5" fill="var(--lino)"/></symbol>
+    <symbol id="i-sunrise" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 18h19M6.5 18a5.5 5.5 0 0 1 11 0M12 5v3.5M5.3 9.3l2.3 2.3M18.7 9.3l-2.3 2.3M2.5 14.5h2.5M19 14.5h2.5"/></symbol>
+    <symbol id="i-solar" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></symbol>
+    <symbol id="i-mat" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" stroke-dasharray="2 2.2"/></symbol>
+    <symbol id="i-barre" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 8.5h19M5.5 8.5V21M18.5 8.5V21"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M2.5 14c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0M2.5 9c3.2-4.5 6.3-4.5 9.5 0s6.3 4.5 9.5 0"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M4 20h16M6 16l10-10 2.5 2.5-10 10H6Z"/></symbol>
+    <symbol id="i-path" viewBox="0 0 24 24" fill="none" stroke-width="1.1"><path d="M3 20c4-1 5-5 9-6s5-5 9-9"/><circle cx="21" cy="5" r="1.5"/></symbol>
+    <symbol id="ph-new" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5"/></symbol>
+    <symbol id="ph-crescent" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17a5 8.5 0 0 0 0-17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-quarter" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-gibbous" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17a5 8.5 0 0 1 0-17Z" fill="currentColor"/></symbol>
+    <symbol id="ph-full" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.1"><circle cx="12" cy="12" r="8.5" fill="currentColor"/></symbol>
+    <symbol id="ph-halo" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="7" fill="currentColor" stroke-width="1.1"/><circle cx="12" cy="12" r="10.6" fill="none" stroke-width=".8" stroke-dasharray="1.6 1.6"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ CABECERA ============ -->
+<header class="top" id="top">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Mystika, inicio"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+    <ul class="nav">
+      <li><a href="#clases">Classes</a></li>
+      <li><a href="#tarifas">Tarifes</a></li>
+      <li><a href="#horarios">Horaris</a></li>
+      <li><a href="#mer">Sobre Mer</a></li>
+      <li><a href="astrologia.html">Astrologia i Tarot</a></li>
+      <li><a href="#universo">Newsletter</a></li>
+      <li><a href="#faq">Preguntes</a></li>
+    </ul>
+    <div class="top-actions">
+      <div class="lang" role="group" aria-label="Idioma"><a href="../" lang="es" hreflang="es">ES</a><span aria-hidden="true">/</span><a href="../" lang="ca" aria-current="page">CA</a><span aria-hidden="true">/</span><a href="../en/" lang="en" hreflang="en">EN</a></div>
+      <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-solid">Reservar</a>
+      <button class="burger" aria-label="Abrir menú" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+<nav class="drawer" aria-label="Menú">
+  <a href="#clases">Classes</a>
+  <a href="#tarifas">Tarifes</a>
+  <a href="#horarios">Horaris</a>
+  <a href="#mer">Sobre Mer</a>
+  <a href="#espacio">L'espai</a>
+  <a href="astrologia.html">Astrologia i Tarot</a>
+  <a href="#en-casa">Practica a casa</a>
+  <a href="#universo">Newsletter</a>
+  <a href="#faq">Preguntes</a>
+</nav>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Sant Cugat del Vallès – Barcelona</p>
+      <p class="script">Un espai per</p>
+      <h1>tornar<br>a tu.</h1>
+      <p class="lead">Barre, Pilates i ioga amb alguna cosa més: astrologia, tarot, meditació i journaling per cuidar el cos, escoltar el teu món interior i trobar el teu propi ritme.</p>
+      <div class="btns">
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-solid">Reservar una classe</a>
+        <a href="#clases" class="btn btn-line">Veure les classes</a>
+      </div>
+      <p class="hero-offer"><svg aria-hidden="true"><use href="#ph-new"/></svg><span>Primera vegada? La teva classe de prova <b>First Moon</b> per 12 €. <a href="https://mystika.lorari.com" target="_blank" rel="noopener">Reserva-la</a></span></p>
+    </div>
+    <div class="arch">
+      <div class="orbit" aria-hidden="true"></div>
+      <div class="arch-shape">
+        <img src="../img/hero.jpg" alt="Sala de barre de Mystika, amb cortines de lli i llum càlida" width="1086" height="1448" fetchpriority="high">
+      </div>
+      <div class="moon" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLASES ============ -->
+<section id="clases">
+  <div class="wrap">
+    <div class="classes-head">
+      <h2>Aquí cap classe és simplement una classe.</h2>
+      <p class="lead">Algunes sessions se centren en l'entrenament; unes altres incorporen astrologia, tarot, meditació o journaling. Totes comparteixen un propòsit: moure't, reconnectar i trobar el teu equilibri.</p>
+    </div>
+
+    <!-- GRUPO 1 -->
+    <div class="group">
+      <div class="group-head">
+        <h3>Moviment essencial</h3>
+        <p>La base: força, control i mobilitat.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-barre"/></svg><span><span class="class-title">Barre</span><span class="class-tag">Força, elegància i moviment.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una classe dinàmica que combina elements del ballet, el Pilates i l'entrenament funcional per treballar la força, la resistència muscular, l'equilibri i la coordinació.</p>
+            <p>A través de moviments controlats, repeticions petites i seqüències fluïdes a la barra i a l'estora, activaràs tot el cos, especialment cames, glutis i abdomen.</p>
+            <p>Una pràctica desafiant i divertida en la qual la precisió i la constància són les protagonistes. No cal experiència prèvia en ballet: només ganes de moure't i gaudir.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal per a:</strong> tonificar, guanyar resistència muscular, millorar l'equilibri i sortir de la rutina.</span></div>
+            <p class="mantra">Petits moviments. Grans canvis.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-mat"/></svg><span><span class="class-title">Pilates Mat</span><span class="class-tag">Connecta amb el teu cos. Enforteix des de dins.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una pràctica conscient que combina força, control, estabilitat i mobilitat per ajudar-te a construir una relació més forta i equilibrada amb el teu cos.</p>
+            <p>A través d'exercicis sobre l'estora, treballaràs la musculatura profunda, l'abdomen, la postura i la coordinació, parant atenció a la respiració i a la qualitat de cada moviment.</p>
+            <p>Una classe per guanyar força i estabilitat, millorar la teva postura i sentir-te més connectada amb tu mateixa, respectant el teu propi ritme.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal per a:</strong> millorar la força, la postura, el control corporal i la mobilitat.</span></div>
+            <p class="mantra">El teu cos és la teva llar. Aprèn a habitar-lo.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-wave"/></svg><span><span class="class-title">Ioga</span><span class="class-tag">Troba l'equilibri entre moviment i quietud.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una pràctica que connecta cos, respiració i ment a través de postures, transicions conscients i moments d'atenció plena.</p>
+            <p>Durant la sessió treballarem la mobilitat, l'equilibri, la flexibilitat i la força, adaptant la pràctica al ritme i a les necessitats del grup. La respiració ens ajudarà a mantenir la presència en cada moviment i a crear un espai per desconnectar de l'exterior.</p>
+            <p>Segons l'estil de la sessió, la pràctica podrà ser més dinàmica i fluida o més pausada i restauradora.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal per a:</strong> millorar la mobilitat, cultivar la presència i trobar un equilibri entre activitat i descans.</span></div>
+            <p class="mantra">Inspira presència. Expira el que ja no necessites.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- GRUPO 2 -->
+    <div class="group" id="experiencias">
+      <div class="group-head">
+        <h3>Experiències Mystika</h3>
+        <p>Moviment amb intenció. Format Barre o Pilates segons l'horari.</p>
+      </div>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-astro"/></svg><span><span class="class-title">Astro Barre</span><span class="class-tag">Mou-te amb intenció. Connecta amb la teva energia.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Astro Barre uneix la intensitat i la precisió del barre amb la inspiració de l'astrologia per crear una experiència que va més enllà de l'entrenament convencional.</p>
+            <p>Començarem activant el cos amb una seqüència de barre dissenyada per treballar força, resistència i control. La classe anirà acompanyada d'una temàtica astrològica que ens servirà de fil conductor per connectar el moviment amb el nostre moment vital.</p>
+            <p>Segons la sessió, explorarem un signe, una energia planetària, una fase lunar o un tema d'autoconeixement, a través de petites reflexions i propostes per dur aquesta intenció al teu dia a dia.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta"><span><strong>Ideal per a:</strong> qui vol entrenar amb energia i afegir una dimensió d'autoconeixement a la seva pràctica.</span></div>
+            <p class="mantra">El moviment també pot ser una manera d'escoltar-te.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-spark"/></svg><span><span class="class-title">Mystic Flow</span><span class="class-tag">Una classe. Una carta. Un missatge per a tu.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Mystic Flow és una experiència que combina moviment conscient, connexió interior i el simbolisme del tarot.</p>
+            <p>A través d'una pràctica de moviment, crearem un espai per deixar anar les tensions del dia, tornar al cos i escoltar com ens sentim. En acabar, tindràs l'oportunitat d'escollir intuïtivament una carta i descobrir el missatge que l'acompanya.</p>
+            <p>Cada carta estarà vinculada a una reflexió personal i a una pregunta per al teu journal, perquè te'n puguis endur alguna cosa més que la sensació d'haver entrenat: un petit espai per observar-te i connectar amb tu.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre o Pilates, segons la classe programada. La modalitat apareix a l'horari de reserves.</span>
+              <span><strong>Ideal per a:</strong> qui busca combinar moviment, introspecció i una experiència diferent.</span>
+            </div>
+            <p class="mantra">No es tracta de trobar totes les respostes, sinó de fer-te les preguntes adequades.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-half"/></svg><span><span class="class-title">Lunar Flow</span><span class="class-tag">Honra els teus cicles. Mou-te al teu ritme.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una pràctica de moviment conscient inspirada en els cicles de la Lluna i en la connexió amb el nostre món interior.</p>
+            <p>A través de seqüències de moviment, explorarem una manera d'entrenar més connectada amb les nostres sensacions i necessitats. Cada sessió podrà inspirar-se en una fase lunar o en una temàtica relacionada amb els cicles, la intuïció, els nous començaments o el procés d'alliberar.</p>
+            <p>L'experiència es completarà amb una intenció o reflexió que t'acompanyarà més enllà de l'estora.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre o Pilates, segons la classe programada. La modalitat apareix a l'horari de reserves.</span>
+              <span><strong>Ideal per a:</strong> qui desitja una pràctica conscient, amb espai per a la connexió interior i l'autoconeixement.</span>
+            </div>
+            <p class="mantra">No cal estar sempre en el teu màxim esplendor. També necessites espai per recollir-te.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-crescent"/></svg><span><span class="class-title">Slow Moon</span><span class="class-tag">Baixa el ritme. Respira. Torna a tu.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Un espai per desaccelerar i regalar-te un moment de calma enmig de la rutina.</p>
+            <p>Slow Moon combina moviments suaus, estiraments, mobilitat, respiració conscient i relaxació per alliberar tensions i cultivar una connexió més amable amb el cos.</p>
+            <p>La pràctica es desenvolupa sense presses, respectant les sensacions de cada persona i deixant espai per a la pausa i la presència. Pot incorporar moments de meditació, petites reflexions o propostes de journaling inspirades en la temàtica de la sessió.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Pilates o Barre, segons la classe programada, amb un ritme pausat i conscient.</span>
+              <span><strong>Ideal per a:</strong> qui busca desconnectar, millorar la seva mobilitat i trobar un espai de calma i benestar.</span>
+            </div>
+            <p class="mantra">No tot creixement necessita pressa.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-solar"/></svg><span><span class="class-title">Solar Heat</span><span class="class-tag">Activa la teva força. Encén la teva energia.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una experiència dinàmica de cardio amb exercicis d'impacte, inspirada en l'energia del Sol, la vitalitat i la confiança en una mateixa.</p>
+            <p>A través d'una pràctica de moviment més enèrgica, treballaràs la força, la resistència muscular i el control corporal. La intensitat de la sessió et permetrà desafiar-te, sortir de la inèrcia i connectar amb la teva energia des del moviment.</p>
+            <p>Solar Heat representa l'acció, la determinació i la capacitat d'ocupar el teu propi espai. Una experiència per acabar la classe sentint-te forta, activa i present.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> Barre o Pilates, segons la classe programada, sempre amb un enfocament dinàmic i energètic.</span>
+              <span><strong>Ideal per a:</strong> qui gaudeix dels entrenaments dinàmics i vol treballar força, resistència i energia.</span>
+            </div>
+            <p class="mantra">Ocupa el teu espai. Confia en la teva força. Brilla a la teva manera.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="class">
+        <summary><svg class="glyph"><use href="#i-sunrise"/></svg><span><span class="class-title">Solar Strength</span><span class="class-tag">Força i energia.</span></span><span class="plus"></span></summary>
+        <div class="class-body">
+          <div>
+            <p>Una classe dissenyada per despertar la teva força, activar la teva energia i connectar amb la teva versió més poderosa.</p>
+            <p>A través d'exercicis de força, moviments controlats i seqüències dinàmiques, treballarem tot el cos, posant una atenció especial en la tonificació muscular, la resistència i l'estabilitat.</p>
+            <p>Una pràctica intensa, desafiant i plena d'energia, on aprendràs a connectar amb la teva força tant física com mental.</p>
+          </div>
+          <div class="col-b">
+            <div class="class-meta">
+              <span><strong>Format:</strong> només força, sense impacte.</span>
+              <span><strong>Ideal per a:</strong> qui vol tonificar, guanyar estabilitat i treballar la força amb control.</span>
+            </div>
+            <p class="mantra">Perquè brillar també és reconèixer la teva pròpia força.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TARIFAS ============ -->
+<section id="tarifas">
+  <div class="wrap">
+    <p class="kicker">Maneres de viure Mystika</p>
+    <h2>Tria el teu ritme.</h2>
+    <p class="lead" style="margin-top:22px">Una proposta flexible perquè trobis la freqüència que millor encaixa amb tu.</p>
+    <h3 class="plans-group">Sense quota mensual</h3>
+    <p class="swipe-hint">Llisca per veure-les totes</p>
+    <div class="plans">
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-new"/></svg>
+        <span class="name">First Moon</span>
+        <h3>Classe de prova</h3>
+        <p>Tot comença amb un primer pas. Descobreix Mystika, connecta amb l'espai i troba la pràctica que et fa sentir bé.</p>
+        <div class="price">12 €</div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-line">Reservar</a>
+      </div>
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-crescent"/></svg>
+        <span class="name">One Session</span>
+        <h3>Classe solta</h3>
+        <p>Un moment només per a tu. Mou-te, desconnecta de l'exterior i regala't una pausa per tornar a connectar amb tu.</p>
+        <div class="price">22 €</div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-line">Reservar</a>
+      </div>
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-quarter"/></svg>
+        <span class="name">Moon Cycle</span>
+        <h3>Bono de 10 classes</h3>
+        <p>El teu benestar, al teu ritme. Gaudeix de 10 classes amb la llibertat d'organitzar-te com millor t'encaixi i fer del moviment part de la teva vida. Caducitat de 12 mesos.</p>
+        <div class="price">135 €</div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-line">Reservar</a>
+      </div>
+    </div>
+    <h3 class="plans-group">Cuotas mensuales</h3>
+    <p class="swipe-hint">Llisca per veure-les totes</p>
+    <div class="plans">
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-gibbous"/></svg>
+        <span class="name">Lunar 8</span>
+        <h3>8 classes al mes</h3>
+        <p>Crea el teu propi ritual. Vuit moments al mes per enfortir el cos, cuidar la ment i dedicar-te el temps que mereixes.</p>
+        <div class="price">65 € <small>/ mes</small></div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-line">Empezar</a>
+      </div>
+      <div class="plan feat">
+        <svg class="phase" aria-hidden="true"><use href="#ph-full"/></svg>
+        <span class="name">Lunar 12</span>
+        <h3>12 classes al mes</h3>
+        <p>Troba el teu equilibri a través del moviment. Dotze oportunitats al mes per prioritzar-te, guanyar força i cultivar una connexió més profunda amb tu.</p>
+        <div class="price">85 € <small>/ mes</small></div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn">Empezar</a>
+      </div>
+      <div class="plan">
+        <svg class="phase" aria-hidden="true"><use href="#ph-halo"/></svg>
+        <span class="name">Mystika Unlimited</span>
+        <h3>Classes il·limitades</h3>
+        <p>Gaudeix del moviment sense límits i de beneficis exclusius en retirs i esdeveniments, juntament amb el teu calendari astral mensual i rituals per connectar amb tu i amb els cicles de l'univers.</p>
+        <div class="price">109 € <small>/ mes</small></div>
+        <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-line">Empezar</a>
+      </div>
+    </div>
+    <p class="plans-note">Preus amb IVA inclòs. També pots reservar a través de ClassPass i Urban Sports Club. Tallers, esdeveniments i retirs es reserven a part.</p>
+  </div>
+</section>
+
+<!-- ============ HORARIOS ============ -->
+<section class="schedule" id="horarios">
+  <div class="wrap">
+    <p class="kicker">Horaris i reserves</p>
+    <h2>La teva pràctica, el teu ritme.</h2>
+    <p class="lead" style="margin-top:22px">Consulta la programació de la setmana i reserva la teva plaça.</p>
+    <!-- Si algún día pasáis a Lorari Pro, el widget "Horario y reservas" se pega aquí en lugar de este bloque -->
+    <div class="booking-frame" id="widget-reservas">
+      <iframe src="https://mystika.lorari.com" title="Horari de classes i reserves de Mystika" loading="lazy" allow="payment"></iframe>
+    </div>
+    <p class="booking-note">No es veu bé l'horari? <a href="https://mystika.lorari.com" target="_blank" rel="noopener">Obre'l en una pestanya nova</a>.</p>
+  </div>
+</section>
+
+<!-- ============ SOBRE MER ============ -->
+<section id="mer">
+  <div class="wrap split">
+    <div class="photo"><img src="../img/mer.jpg?v=3" alt="Mer, fundadora de Mystika" width="864" height="1080" loading="lazy"></div>
+    <div>
+      <p class="kicker">Sobre Mer</p>
+      <h2>Això no és només un estudi.<br>És la meva història.</h2>
+      <p class="lead" style="margin-top:28px">Durant molt de temps vaig fer el que se suposava que havia de fer. Fins que va arribar un moment en què vaig deixar de reconèixer-me en aquella vida.</p>
+      <p>Tornar al cos, escoltar-me i construir una vida més alineada amb mi va canviar la meva manera d'entendre el benestar.</p>
+      <p>Mystika neix d'aquell procés i de les ganes de crear un espai on altres dones també puguin aturar-se, connectar i trobar el seu propi ritme.</p>
+      <p class="signature">Mer</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL ESPACIO ============ -->
+<section class="space" id="espacio">
+  <div class="wrap split rev">
+    <div class="photo wide"><img src="../img/espacio.jpg?v=1" alt="Façana de Mystika a Sant Cugat" width="1440" height="900" loading="lazy"></div>
+    <div>
+      <p class="kicker">L'espai</p>
+      <h2>Un petit refugi a Sant Cugat.</h2>
+      <p class="lead" style="margin-top:28px">Un estudi pensat per moure't, respirar, aturar-te i sentir-te a casa.</p>
+      <a class="link" href="https://maps.google.com/?q=Sant+Cugat+del+Vallès" target="_blank" rel="noopener">Com arribar</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIENESTAR ============ -->
+<section class="dark" id="comunidad">
+  <div class="wrap">
+    <p class="kicker">Més enllà de l'estora</p>
+    <h2>El benestar també passa aquí.</h2>
+    <p class="lead" style="margin-top:24px">Tallers, rituals i retirs per crear moments de pausa, reflexió i connexió.</p>
+    <div class="rituals">
+      <div class="ritual"><svg><use href="#i-crescent"/></svg><h3>Astrologia</h3><p>Conèixer el cel per conèixer-te una mica més.</p></div>
+      <div class="ritual"><svg><use href="#i-spark"/></svg><h3>Tarot</h3><p>Espais per escoltar el missatge de les cartes.</p></div>
+      <div class="ritual"><svg><use href="#i-pen"/></svg><h3>Journaling</h3><p>Preguntes, escriptura i claredat interior.</p></div>
+      <div class="ritual"><svg><use href="#i-path"/></svg><h3>Retirs</h3><p>Experiències per desconnectar del soroll i retrobar-te.</p></div>
+    </div>
+    <a class="link more" href="astrologia.html">Serveis d'astrologia i tarot</a>
+  </div>
+</section>
+
+<!-- ============ GRUPOS A DEMANDA ============ -->
+<section class="on-demand" id="a-demanda">
+  <div class="wrap">
+    <p class="kicker">Acompanyar-te en cada etapa</p>
+    <h2>Moviment al teu ritme.</h2>
+    <p class="lead" style="margin-top:24px">Grups petits per moure't amb seguretat i al teu ritme, en cada etapa de la vida. S'organitzen segons la demanda.</p>
+    <div class="demand-list">
+      <article class="demand">
+        <div>
+          <h3>Move at Your Pace</h3>
+          <p class="sub">Iniciació al moviment &amp; Seniors</p>
+        </div>
+        <div>
+          <p>Mai és tard per començar a moure't, cuidar-te i sentir-te bé amb tu mateixa.</p>
+          <p>Un espai pensat per a persones que volen iniciar-se en l'activitat física, recuperar l'hàbit de moure's o mantenir-se actives a qualsevol edat.</p>
+          <p>A través d'exercicis adaptats de pilates, força suau, mobilitat i equilibri, treballarem de manera progressiva, respectant el ritme i les necessitats de cada persona.</p>
+          <p>Perquè l'important no és quant fas, sinó com et sents fent-ho.</p>
+          <p class="note">Grups reduïts i personalitzats, disponibles sota demanda.</p>
+        </div>
+      </article>
+
+      <article class="demand">
+        <div>
+          <h3>Mama to Be</h3>
+          <p class="sub">Moviment durant l'embaràs</p>
+        </div>
+        <div>
+          <p>El teu cos està vivint una transformació increïble i mereix sentir-se acompanyat durant tot el procés.</p>
+          <p>Un espai de moviment conscient pensat per a futures mames que volen mantenir-se actives, connectar amb el seu cos i cuidar-se durant l'embaràs.</p>
+          <p>Combinarem pilates adaptat, mobilitat, exercicis de força i respiració, sempre respectant cada etapa de l'embaràs i les necessitats individuals, amb professionals especialitzades.</p>
+          <p>Un moment per a tu, per escoltar-te i connectar amb aquesta nova etapa.</p>
+          <p class="note">Grups privats i reduïts, disponibles sota demanda i prèvia valoració de la idoneïtat de l'activitat.</p>
+        </div>
+      </article>
+
+      <article class="demand">
+        <div>
+          <h3>Reconnect Mama</h3>
+          <p class="sub">Moviment &amp; recuperació postpart</p>
+        </div>
+        <div>
+          <p>Després de donar vida, també mereixes dedicar temps a tu. 🤍</p>
+          <p>Un espai per reconnectar amb el teu cos, recuperar progressivament la teva força i sentir-te bé a través del moviment.</p>
+          <p>Combinarem pilates adaptat, mobilitat, respiració i enfortiment, respectant els teus temps i necessitats.</p>
+          <p>El millor? El teu bebè també és benvingut! Podràs gaudir d'aquest moment d'autocura al costat del teu petit, en un ambient proper i sense pressions.</p>
+          <p>Perquè no es tracta de tornar a ser qui eres, sinó de connectar amb qui ets ara. ✨</p>
+          <p class="note">Grups reduïts i personalitzats, disponibles sota demanda. T'agradaria formar part de Reconnect Mama? Escriu-nos i t'informarem de com unir-te a un dels nostres grups.</p>
+        </div>
+      </article>
+    </div>
+    <p class="demand-cta">T'interessa algun d'aquests grups? Escriu-nos a <a href="mailto:hola@mystika.es">hola@mystika.es</a> i t'avisarem quan se'n formi un.</p>
+  </div>
+</section>
+
+<!-- ============ PRACTICA EN CASA (YouTube + Spotify) ============ -->
+<section class="at-home" id="en-casa">
+  <div class="wrap">
+    <p class="kicker">Practica a casa</p>
+    <h2>Mystika també a casa.</h2>
+    <p class="lead" style="margin-top:22px">Vídeos i meditacions de Mer per seguir cuidant-te entre classe i classe, estiguis on estiguis.</p>
+    <div class="media-grid">
+      <article class="media-card">
+        <div class="media-frame">
+          <button class="media-play" type="button" data-src="https://www.youtube-nocookie.com/embed/videoseries?list=UUAnT63zvUKOkSnyrCTzRutg" data-title="Últims vídeos de Mer in Balance a YouTube">
+            <svg aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><path d="M20 16v16l13-8Z" fill="currentColor" stroke="none"/></svg>
+            <span>Veure els últims vídeos</span>
+          </button>
+        </div>
+        <div class="media-body">
+          <span class="name">YouTube · Mer in Balance</span>
+          <h3>Mou-te amb Mer</h3>
+          <p>Vídeos sobre moviment, benestar i autoconeixement per practicar des de casa.</p>
+          <a class="link" href="https://www.youtube.com/@merinbalance" target="_blank" rel="noopener">Veure el canal</a>
+        </div>
+      </article>
+      <article class="media-card">
+        <div class="media-frame spotify">
+          <button class="media-play" type="button" data-src="https://open.spotify.com/embed/show/1JBgNaAWQnKplnVZUnUqmo" data-title="Meditacions de Mer in Balance a Spotify">
+            <svg aria-hidden="true" viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><path d="M29 13a12 12 0 1 0 7 21a10 10 0 0 1-7-21Z" fill="currentColor" stroke="none"/></svg>
+            <span>Escoltar les meditacions</span>
+          </button>
+        </div>
+        <div class="media-body">
+          <span class="name">Spotify · Meditacions</span>
+          <h3>Medita amb Mer</h3>
+          <p>Meditacions guiades per aturar-te, respirar i escoltar-te.</p>
+          <a class="link" href="https://open.spotify.com/show/1JBgNaAWQnKplnVZUnUqmo" target="_blank" rel="noopener">Escoltar a Spotify</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNIVERSO MYSTIKA (NEWSLETTER) ============ -->
+<section class="universe" id="universo">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Universo Mystika</p>
+      <h2>Si això ressona amb tu, queda't a prop.</h2>
+      <p class="lead" style="margin-top:24px">Subscriu-te a la nostra newsletter i rep al teu correu el que es mou al cel i a l'estudi.</p>
+      <ul class="perks">
+        <li><svg><use href="#i-astro"/></svg><div><h3>Trànsits del mes</h3><p>Quina energia porta cada mes i com portar-la a la teva pràctica i al teu dia a dia.</p></div></li>
+        <li><svg><use href="#i-half"/></svg><div><h3>Llunes i eclipsis</h3><p>Fases lunars, eclipsis i petits rituals per acompanyar-los.</p></div></li>
+        <li><svg><use href="#i-spark"/></svg><div><h3>Esdeveniments abans que ningú</h3><p>Tallers, retirs i classes especials, perquè reservis la teva plaça primer.</p></div></li>
+      </ul>
+    </div>
+
+    <div class="signup" id="signup">
+      <!-- NEWSLETTER: cuando tengas la herramienta (Brevo, MailerLite...), sustituye
+           action="#" por la URL que te den, o pega aquí su formulario. -->
+      <form action="#" method="post">
+        <h3>Uneix-te a l'univers</h3>
+        <p class="intro">Quan la lluna i les estrelles tinguin alguna cosa a explicar-te, t'escriurem.</p>
+        <label class="field"><span>Nom</span><input type="text" name="nombre" autocomplete="given-name"></label>
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="consent"><input type="checkbox" name="consentimiento" required><span>Vull rebre la newsletter de Mystika i accepto la <a href="#">política de privacitat</a>.</span></label>
+        <button type="submit" class="btn btn-solid">Subscriure'm</button>
+        <p class="small">Pots donar-te de baixa quan vulguis.</p>
+      </form>
+      <div class="thanks" role="status">
+        <svg><use href="#i-crescent"/></svg>
+        <h3>Ja en formes part.</h3>
+        <p>Revisa el teu correu: t'hem enviat un missatge per confirmar la subscripció.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Preguntes freqüents</p>
+      <h2>Abans de la teva primera classe.</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Necessito experiència prèvia?<span class="plus"></span></summary>
+        <p>No. Cada classe s'adapta al teu nivell i sempre tindràs opcions per fer cada exercici més suau o més intens. Si és la teva primera vegada, Barre o Pilates Mat són un bon punt de partida.</p>
+      </details>
+      <details>
+        <summary>Mystika és un estudi de Pilates?<span class="plus"></span></summary>
+        <p>És un estudi de moviment: barre, Pilates i ioga. Algunes classes afegeixen astrologia, tarot, meditació o journaling, però el moviment sempre és al centre.</p>
+      </details>
+      <details>
+        <summary>Què fa diferents les classes?<span class="plus"></span></summary>
+        <p>Cada experiència té la seva pròpia intenció. En unes el focus és entrenar; en altres, la pràctica s'acompanya d'una fase lunar, un tema astrològic o una carta de tarot amb una pregunta per al teu journal.</p>
+      </details>
+      <details>
+        <summary>Com sé si una classe és Barre o Pilates?<span class="plus"></span></summary>
+        <p>Mystic Flow, Lunar Flow, Slow Moon i Solar Heat poden ser en format Barre o Pilates. La modalitat de cada sessió apareix a l'horari de reserves.</p>
+      </details>
+      <details>
+        <summary>Què he de portar?<span class="plus"></span></summary>
+        <p>Roba còmoda, una ampolla d'aigua i una tovallola. De la resta ens n'encarreguem nosaltres.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIERRE ============ -->
+<section class="closing">
+  <div class="wrap">
+    <p class="script">Fes espai</p>
+    <h2>per a tu.</h2>
+    <p>Tria la teva pràctica i reserva la teva plaça.</p>
+    <div class="btns">
+      <a href="https://mystika.lorari.com" target="_blank" rel="noopener" class="btn btn-solid">Reservar una classe</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div>
+      <a href="#" class="logo"><b>MYSTIKA</b><span>by Mer in Balance</span></a>
+      <p style="margin-top:18px;color:var(--niebla)">El teu cos. El teu equilibri. El teu ritme.</p>
+    </div>
+    <div>
+      <h4>Estudi</h4>
+      <ul><li>Carrer —, Sant Cugat del Vallès</li><li><a href="mailto:hola@mystika.es">hola@mystika.es</a></li><li><a href="tel:+34000000000">+34 000 000 000</a></li></ul>
+    </div>
+    <div>
+      <h4>Explora</h4>
+      <ul><li><a href="#clases">Classes</a></li><li><a href="astrologia.html">Astrologia i Tarot</a></li><li><a href="#horarios">Horaris</a></li><li><a href="#tarifas">Tarifes</a></li><li><a href="#comunidad">Comunitat</a></li><li><a href="#universo">Newsletter</a></li></ul>
+    </div>
+    <div>
+      <h4>Segueix-nos</h4>
+      <ul><!-- Instagram: añadir aquí cuando exista la cuenta --><li><a href="https://www.youtube.com/@merinbalance" target="_blank" rel="noopener">YouTube</a></li><li><a href="https://open.spotify.com/show/1JBgNaAWQnKplnVZUnUqmo" target="_blank" rel="noopener">Spotify</a></li></ul>
+    </div>
+    <div class="legal">
+      <span>© 2026 Mystika by Mer in Balance</span>
+      <a href="#">Avís legal</a><a href="#">Privacitat</a><a href="#">Cookies</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../main.js?v=4"></script>
+</body>
+</html>
