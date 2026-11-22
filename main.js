@@ -9,10 +9,16 @@
       body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false);
     }));
   }
-  // Newsletter: mientras no esté conectada a una herramienta, solo muestra el mensaje de gracias
+  // Newsletter (Brevo, doble confirmación): se envía sin salir de la página y se muestra el mensaje de gracias.
+  // Si el envío falla, el formulario se envía de forma normal a Brevo.
   const form = document.querySelector('#signup form');
   if (form) form.addEventListener('submit', e => {
-    if (form.getAttribute('action') === '#') { e.preventDefault(); document.getElementById('signup').classList.add('sent'); }
+    if (form.dataset.fallback) return;
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]'); if (btn) btn.disabled = true;
+    fetch(form.action, { method: 'POST', body: new FormData(form), mode: 'no-cors' })
+      .then(() => document.getElementById('signup').classList.add('sent'))
+      .catch(() => { form.dataset.fallback = '1'; form.submit(); });
   });
   // Línea bajo la cabecera al hacer scroll
   const header = document.getElementById('top');

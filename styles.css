@@ -326,3 +326,4 @@ footer a:hover{text-decoration:underline}
 @media(min-width:960px){.demand{grid-template-columns:.8fr 1.2fr;gap:64px;padding:40px 0}}
 
 @media(max-width:400px){.top-actions{gap:4px}.top .btn{padding:9px 8px}.lang a{padding:8px 2px}.logo{flex:0 0 auto}}
+.signup .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
