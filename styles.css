@@ -322,3 +322,5 @@ footer a:hover{text-decoration:underline}
 .demand-cta{margin-top:48px;max-width:56ch;color:var(--niebla)}
 .demand-cta a{color:var(--tinta)}
 @media(min-width:960px){.demand{grid-template-columns:.8fr 1.2fr;gap:64px;padding:40px 0}}
+
+@media(max-width:400px){.top-actions{gap:4px}.top .btn{padding:9px 8px}.lang a{padding:8px 2px}.logo{flex:0 0 auto}}
