@@ -80,11 +80,11 @@ button.btn-line:hover{background:var(--cacao)}
 .hero .script{font-family:var(--script);font-size:clamp(40px,8vw,58px);line-height:1;color:var(--niebla);margin-bottom:-4px}
 .hero h1{font-size:clamp(72px,17vw,148px);line-height:.92;letter-spacing:-.025em}
 .hero .lead{margin-top:28px}
-.arch{position:relative;aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}
-.arch-shape{position:absolute;inset:0;border-radius:999px 999px 0 0;background:linear-gradient(170deg,#DCC2B7 0%,#E8D8CE 100%);overflow:hidden;display:grid;place-items:center}
-.arch-shape img{width:100%;height:100%;object-fit:cover}
+.arch{position:relative;aspect-ratio:1086/1448;max-width:460px;width:100%;justify-self:center}
+.arch-shape{position:absolute;inset:0;z-index:1;border-radius:50% 50% 0 0/24% 24% 0 0;background:linear-gradient(170deg,#DCC2B7 0%,#E8D8CE 100%);overflow:hidden;display:grid;place-items:center}
+.arch-shape img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
 .placeholder{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(62,50,44,.45)}
-.moon{position:absolute;width:22%;aspect-ratio:1;border-radius:50%;background:var(--cacao);right:-4%;top:9%;animation:rise 1.6s cubic-bezier(.2,.7,.2,1) .3s both}
+.moon{position:absolute;z-index:0;width:22%;aspect-ratio:1;border-radius:50%;background:var(--cacao);right:-9%;top:-6%;animation:rise 1.6s cubic-bezier(.2,.7,.2,1) .3s both}
 .orbit{position:absolute;inset:-5% -5% auto;aspect-ratio:1;border:1px solid var(--rosa);border-radius:50%;pointer-events:none}
 @keyframes rise{from{transform:translate(-120%,60%);opacity:0}to{transform:none;opacity:1}}
 @media(min-width:960px){.hero{padding:48px 0 56px}.hero .wrap{grid-template-columns:1.1fr .9fr}}
