@@ -27,7 +27,7 @@
 /* ---------- Analítica (Google Analytics) con aviso de cookies ----------
    Solo se carga GA4 si la persona acepta. Se guarda su elección en localStorage. */
 (function () {
-  var GA_ID = 'G-7JCP4TLM71';
+  var GA_ID = 'G-XHKLYMFV54';
   var KEY = 'mystika_cookies';
   function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
