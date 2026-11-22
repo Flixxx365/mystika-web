@@ -1,12 +1,14 @@
   // Menú móvil
   const body = document.body, burger = document.querySelector('.burger');
-  burger.addEventListener('click', () => {
-    const open = body.classList.toggle('menu-open');
-    burger.setAttribute('aria-expanded', open);
-  });
-  document.querySelectorAll('.drawer a').forEach(a => a.addEventListener('click', () => {
-    body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false);
-  }));
+  if (burger) {
+    burger.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.drawer a').forEach(a => a.addEventListener('click', () => {
+      body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', false);
+    }));
+  }
   // Newsletter: mientras no esté conectada a una herramienta, solo muestra el mensaje de gracias
   const form = document.querySelector('#signup form');
   if (form) form.addEventListener('submit', e => {
@@ -14,7 +16,7 @@
   });
   // Línea bajo la cabecera al hacer scroll
   const header = document.getElementById('top');
-  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), {passive:true});
+  if (header) addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), {passive:true});
   // Reproductores de YouTube/Spotify: solo se cargan al pulsar
   document.querySelectorAll('.media-play').forEach(btn => btn.addEventListener('click', () => {
     const f = document.createElement('iframe');
@@ -22,6 +24,17 @@
     f.allow = 'autoplay; encrypted-media; picture-in-picture; clipboard-write'; f.allowFullscreen = true;
     btn.parentNode.classList.add('loaded');
     btn.parentNode.replaceChild(f, btn);
+  }));
+  // Política de cookies: botón para cambiar la elección (borra la elección y las cookies de Analytics)
+  document.querySelectorAll('[data-cookie-reset]').forEach(b => b.addEventListener('click', () => {
+    try { localStorage.removeItem('mystika_cookies'); } catch (e) {}
+    document.cookie.split(';').forEach(c => {
+      const n = c.split('=')[0].trim();
+      if (/^_ga/.test(n)) ['', location.hostname, '.' + location.hostname].forEach(d => {
+        document.cookie = n + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+      });
+    });
+    location.reload();
   }));
 
 /* ---------- Analítica (Google Analytics) con aviso de cookies ----------

@@ -35,6 +35,8 @@ section{padding:32px 0}
 .btn-solid{background:var(--cacao);color:var(--lino)}
 .btn-solid:hover{background:var(--tinta);border-color:var(--tinta)}
 .btn-line{color:var(--cacao)}
+button.btn-line{background:transparent;cursor:pointer}
+button.btn-line:hover{background:var(--cacao)}
 .btn-line:hover{background:var(--cacao);color:var(--lino)}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .btn-light{background:var(--lino);color:var(--cacao);border-color:var(--lino)}
