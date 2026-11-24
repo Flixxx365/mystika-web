@@ -328,3 +328,7 @@ footer a:hover{text-decoration:underline}
 
 @media(max-width:400px){.top-actions{gap:4px}.top .btn{padding:9px 8px}.lang a{padding:8px 2px}.logo{flex:0 0 auto}}
 .signup .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* Tarifas con 4 opciones por grupo */
+@media(min-width:960px){.plans.four{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1180px){.plans.four{grid-template-columns:repeat(4,1fr)}.plans.four .plan{padding:32px 24px}.plans.four .plan h3{font-size:28px}.plans.four .price{font-size:40px}}
