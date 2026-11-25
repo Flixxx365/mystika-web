@@ -1,0 +1,15 @@
+# Mantiene activo el proyecto gratuito de Supabase de Mystic Flow
+# (los proyectos Free se pausan tras una semana sin actividad).
+name: Mystic Flow · mantener activo
+on:
+  schedule:
+    - cron: "17 9 * * 1,4"   # lunes y jueves
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -fsS -X POST "https://pkernilbszwmnhjelcwk.supabase.co/functions/v1/mystic-flow/solicitar-enlace" \
+            -H "Content-Type: application/json" \
+            -d '{"email":"mantener-activo@mystikabymerinbalance.com"}'
