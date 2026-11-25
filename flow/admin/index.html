@@ -1,0 +1,844 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel · Mystic Flow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marfil:#FFFAF6; --lino:#F4EDE6; --arena:#EADFD5; --nacar:#FAF6F1; --rosa:#D9BFB4;
+  --cacao:#5F4B41; --tinta:#3E322C; --niebla:#74625A; --linea:#DCCCC0; --gold:#B8967A; --dorado:#C8A46B; --pink:#A9737A;
+  --serif:"Cormorant Garamond", Georgia, serif; --sans:"Montserrat", system-ui, sans-serif; --script:"Pinyon Script", cursive;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --lino:#2A221E; --nacar:#332822; --arena:#3B2F29; --tinta:#F4EDE6; --niebla:#CBB9AD; --linea:#4A3C34; --cacao:#E6D7CD; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--lino);color:var(--tinta);font-family:var(--sans);font-weight:300;min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased;font-size:14.5px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+button,input,select,textarea{font:inherit;color:inherit}
+.wrap{max-width:1000px;margin:0 auto;padding:20px 16px 60px}
+.logo{text-align:center}
+.logo .moon{font-size:24px;color:var(--gold);line-height:1}
+.logo b{display:block;font-weight:400;font-size:17px;letter-spacing:.32em;margin-top:4px}
+.logo span{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin-top:2px}
+.script{font-family:var(--script);font-size:38px;color:var(--niebla);line-height:1}
+.muted{color:var(--niebla)}
+.small{font-size:12.5px}
+.hidden{display:none!important}
+
+/* Barra superior */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:16px;border-bottom:1px solid var(--linea)}
+.top .logo{text-align:left;display:flex;align-items:center;gap:10px}
+.top .logo b{margin:0;font-size:15px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{background:transparent;border:1px solid var(--linea);border-radius:999px;padding:8px 16px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--niebla);cursor:pointer}
+.tab.on{background:var(--cacao);border-color:var(--cacao);color:var(--lino)}
+
+/* Bloques */
+.page{margin-top:24px}
+.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.page-head h1{font-size:32px}
+.card{background:var(--nacar);border:1px solid var(--linea);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+.card h2{font-size:22px;color:var(--cacao);margin-bottom:10px}
+.grid{display:grid;gap:10px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+label{display:block;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--niebla);margin-bottom:4px;font-weight:400}
+input[type=text],input[type=email],input[type=date],input[type=time],input[type=number],input[type=datetime-local],select,textarea{
+  width:100%;background:var(--lino);border:1px solid var(--linea);border-radius:10px;padding:10px 12px;font-size:14.5px;outline:none}
+textarea{min-height:90px;resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+.check{display:flex;align-items:center;gap:8px;text-transform:none;letter-spacing:0;font-size:14px;color:var(--tinta)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:999px;padding:11px 20px;background:var(--cacao);color:var(--lino);font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.btn:hover{opacity:.9}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.ghost{background:transparent;color:var(--cacao);border:1px solid var(--cacao)}
+.btn.mini{padding:6px 12px;font-size:10.5px;letter-spacing:.08em}
+.btn.danger{background:transparent;color:var(--pink);border:1px solid var(--pink)}
+.btn.block{width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row.end{justify-content:flex-end}
+.spacer{flex:1}
+.link{background:none;border:0;color:var(--niebla);text-decoration:underline;cursor:pointer;font-size:12.5px}
+
+/* Listas */
+.list{display:grid;gap:8px}
+.item{display:flex;align-items:center;gap:14px;background:var(--nacar);border:1px solid var(--linea);border-radius:12px;padding:12px 16px;cursor:pointer;text-align:left;width:100%}
+.item:hover{border-color:var(--gold)}
+.item .date{font-family:var(--serif);font-size:20px;min-width:150px}
+.item .meta{flex:1;color:var(--niebla);font-size:13px}
+.section-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin:18px 0 8px}
+
+/* Tabla de asistentes */
+.att{width:100%;border-collapse:collapse}
+.att th{text-align:left;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--niebla);font-weight:400;padding:8px 8px;border-bottom:1px solid var(--linea)}
+.att td{padding:10px 8px;border-bottom:1px solid var(--linea);vertical-align:top}
+.att td .acts{display:flex;gap:6px;flex-wrap:wrap}
+.att .nm{font-weight:400}
+.att .em{color:var(--niebla);font-size:12.5px;word-break:break-all}
+@media (max-width:720px){
+  .att thead{display:none}
+  .att, .att tbody, .att tr, .att td{display:block;width:100%}
+  .att tr{border:1px solid var(--linea);border-radius:12px;padding:10px 12px;margin-bottom:8px;background:var(--nacar)}
+  .att td{border:0;padding:3px 0}
+}
+.badge{display:inline-block;border-radius:999px;padding:3px 10px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;border:1px solid var(--linea);color:var(--niebla);white-space:nowrap}
+.b-enviado{background:var(--arena);color:var(--tinta);border-color:var(--arena)}
+.b-abierto{background:var(--rosa);color:#3E322C;border-color:var(--rosa)}
+.b-elegida{background:var(--cacao);color:var(--lino);border-color:var(--cacao)}
+.b-caducado{color:var(--pink);border-color:var(--pink)}
+.b-cerrada{color:var(--pink);border-color:var(--pink)}
+.b-abierta{background:var(--arena);color:var(--tinta);border-color:var(--arena)}
+.stats{display:flex;gap:16px;flex-wrap:wrap;margin-top:4px;color:var(--niebla);font-size:13px}
+.stats b{font-family:var(--serif);font-size:22px;color:var(--tinta);font-weight:500;margin-right:4px}
+
+/* Cartas */
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.tile{background:linear-gradient(180deg,var(--nacar),var(--arena));border:1.5px solid var(--dorado);border-radius:12px;padding:10px 8px;text-align:center;cursor:pointer;aspect-ratio:96/156;display:flex;flex-direction:column;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tile .num{font-family:var(--serif);font-size:16px;position:relative}
+.tile .glyph{font-size:30px;color:var(--gold);position:relative}
+.tile .nm{font-family:var(--serif);font-size:15px;line-height:1.1;position:relative}
+.tile.off{opacity:.45}
+.tile .off-tag{position:absolute;bottom:38px;left:50%;transform:translateX(-50%);z-index:2;background:var(--nacar)}
+.tile.has-img .num,.tile.has-img .glyph,.tile.has-img .nm{display:none}
+
+/* Diálogo */
+dialog{border:1px solid var(--linea);border-radius:16px;background:var(--nacar);color:var(--tinta);padding:22px;width:min(640px,94vw);max-height:90vh;margin:auto}
+dialog::backdrop{background:rgba(62,50,44,.45)}
+dialog h2{font-size:26px;margin-bottom:12px}
+.preview-img{width:120px;border-radius:10px;border:1.5px solid var(--dorado);display:block}
+
+/* Login */
+.login{max-width:380px;margin:8vh auto 0;text-align:center}
+.login h1{font-size:34px;margin-top:6px}
+.login form{margin-top:24px;text-align:left;display:grid;gap:10px}
+.login input{border-radius:999px;padding:14px 20px;background:var(--nacar)}
+.login .btn{padding:15px 20px;font-size:13px}
+
+/* Avisos */
+#toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--tinta);color:var(--lino);padding:12px 20px;border-radius:999px;font-size:13.5px;box-shadow:0 10px 30px rgba(0,0,0,.2);opacity:0;pointer-events:none;transition:opacity .25s;z-index:50;max-width:92vw;text-align:center}
+#toast.on{opacity:1}
+#toast.err{background:var(--pink)}
+.empty{text-align:center;color:var(--niebla);padding:24px 10px}
+.preview-list{max-height:220px;overflow:auto;border:1px solid var(--linea);border-radius:10px;padding:8px 12px;margin-top:10px;font-size:13px;background:var(--lino)}
+.qr img{width:160px;height:160px;background:#fff;padding:8px;border-radius:10px}
+</style>
+</head>
+<body>
+
+<!-- ================= LOGIN ================= -->
+<main class="wrap hidden" id="v-login">
+  <div class="login">
+    <header class="logo"><div class="moon">☾</div><b>MYSTIKA</b><span>by Mer in Balance</span></header>
+    <p class="script" style="margin-top:28px">Mystic Flow</p>
+    <h1>Panel de administración</h1>
+    <form id="f-login" novalidate>
+      <input id="l-email" type="email" placeholder="Tu correo" autocomplete="email" required>
+      <button class="btn block" type="submit">Enviarme el acceso</button>
+    </form>
+    <form id="f-code" class="hidden" novalidate>
+      <p class="muted small" style="text-align:center">Te hemos enviado un correo. Pulsa el enlace o escribe aquí el código.</p>
+      <input id="l-code" type="text" inputmode="numeric" placeholder="Código de 6 dígitos" autocomplete="one-time-code">
+      <button class="btn block" type="submit">Entrar</button>
+      <button class="link" type="button" data-act="login-otra">Usar otro correo</button>
+    </form>
+    <p class="muted small" id="l-msg" style="margin-top:14px;min-height:1.2em"></p>
+  </div>
+</main>
+
+<!-- ================= APP ================= -->
+<div class="wrap hidden" id="v-app">
+  <header class="top">
+    <div class="logo"><span class="moon">☾</span><b>MYSTIKA</b><span class="muted" style="margin:0">Mystic Flow</span></div>
+    <nav class="tabs">
+      <button class="tab" data-act="tab" data-tab="sesiones">Sesiones</button>
+      <button class="tab" data-act="tab" data-tab="alumnas">Alumnas</button>
+      <button class="tab" data-act="tab" data-tab="cartas">Cartas</button>
+      <button class="tab" data-act="tab" data-tab="ajustes">Ajustes</button>
+    </nav>
+    <button class="link" data-act="salir">Salir</button>
+  </header>
+
+  <!-- Sesiones -->
+  <section class="page" id="p-sesiones">
+    <div class="page-head"><h1>Sesiones</h1></div>
+    <div class="card">
+      <h2>Nueva sesión</h2>
+      <form id="f-sesion" class="grid g2">
+        <div><label for="s-fecha">Fecha</label><input id="s-fecha" type="date" required></div>
+        <div><label for="s-hora">Hora</label><input id="s-hora" type="time" value="19:00" required></div>
+        <div><label for="s-formato">Formato</label><select id="s-formato"><option>Barre</option><option>Pilates</option></select></div>
+        <div><label for="s-titulo">Título</label><input id="s-titulo" type="text" value="Mystic Flow"></div>
+        <div><label for="s-semanas">Repetir cada semana</label>
+          <select id="s-semanas"><option value="1">Solo esta</option><option value="4">4 semanas</option><option value="8">8 semanas</option><option value="12">12 semanas</option></select></div>
+        <div style="display:flex;align-items:flex-end"><button class="btn block" type="submit">Crear</button></div>
+      </form>
+    </div>
+    <div id="s-lista"></div>
+  </section>
+
+  <!-- Detalle de sesión -->
+  <section class="page hidden" id="p-sesion">
+    <button class="link" data-act="tab" data-tab="sesiones">← Todas las sesiones</button>
+    <div class="page-head" style="margin-top:8px">
+      <div>
+        <p class="script" style="font-size:30px" id="d-formato"></p>
+        <h1 id="d-fecha"></h1>
+        <div class="stats" id="d-stats"></div>
+      </div>
+      <div class="row" id="d-acciones"></div>
+    </div>
+
+    <div class="card">
+      <div class="row" style="align-items:flex-end">
+        <div style="flex:1;min-width:200px"><label for="d-hasta">El QR acepta solicitudes hasta</label><input id="d-hasta" type="datetime-local"></div>
+        <button class="btn ghost" data-act="guardar-hasta">Guardar</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Añadir asistentes</h2>
+      <p class="muted small">Pega la lista exportada de Lorari (CSV) o los correos, uno por línea. También puedes subir el archivo .csv.</p>
+      <textarea id="d-pegar" placeholder="ana@ejemplo.com&#10;Laura Pérez; laura@ejemplo.com"></textarea>
+      <div class="row" style="margin-top:10px">
+        <input type="file" id="d-archivo" accept=".csv,.txt,text/csv,text/plain" style="max-width:260px">
+        <span class="spacer"></span>
+        <button class="btn ghost" data-act="previsualizar">Revisar lista</button>
+      </div>
+      <div id="d-preview" class="hidden">
+        <div class="preview-list" id="d-preview-list"></div>
+        <div class="row end" style="margin-top:10px"><button class="btn" data-act="importar" id="d-importar">Añadir</button></div>
+      </div>
+      <div class="section-label">Añadir a una alumna</div>
+      <form id="f-una" class="grid g2">
+        <div><label for="u-nombre">Nombre</label><input id="u-nombre" type="text"></div>
+        <div><label for="u-email">Correo</label><input id="u-email" type="email" required></div>
+        <div style="display:flex;align-items:flex-end"><button class="btn block" type="submit">Añadir</button></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <div class="row" style="margin-bottom:10px">
+        <h2 style="margin:0">Asistentes</h2>
+        <span class="spacer"></span>
+        <button class="btn ghost mini" data-act="refrescar">Actualizar</button>
+        <button class="btn mini" data-act="enviar-pendientes" id="d-enviar-pend">Enviar enlace a pendientes</button>
+      </div>
+      <div id="d-asistentes"></div>
+    </div>
+  </section>
+
+  <!-- Alumnas -->
+  <section class="page hidden" id="p-alumnas">
+    <div class="page-head"><h1>Alumnas</h1><input id="a-buscar" type="text" placeholder="Buscar por nombre o correo" style="max-width:300px"></div>
+    <div id="a-lista"></div>
+  </section>
+
+  <!-- Cartas -->
+  <section class="page hidden" id="p-cartas">
+    <div class="page-head"><h1>Cartas</h1><p class="muted small">Toca una carta para editar sus textos o subir su imagen.</p></div>
+    <div class="cards" id="c-grid"></div>
+  </section>
+
+  <!-- Ajustes -->
+  <section class="page hidden" id="p-ajustes">
+    <div class="page-head"><h1>Ajustes</h1></div>
+    <div class="card">
+      <h2>Tiempos y límites</h2>
+      <form id="f-ajustes" class="grid g2">
+        <div><label for="j-ventana">Horas de acceso tras abrir el enlace</label><input id="j-ventana" type="number" min="0.5" max="72" step="0.5"></div>
+        <div><label for="j-valido">Horas de validez de un enlace sin abrir</label><input id="j-valido" type="number" min="1" max="720"></div>
+        <div><label for="j-solicitud">Horas tras la clase en que funciona el QR</label><input id="j-solicitud" type="number" min="1" max="720"></div>
+        <div><label for="j-max">Solicitudes máximas por correo y hora</label><input id="j-max" type="number" min="1" max="100"></div>
+        <div><label for="j-meses">Meses que se conservan los datos</label><input id="j-meses" type="number" min="1" max="120"></div>
+        <div style="display:flex;align-items:flex-end"><button class="btn block" type="submit">Guardar</button></div>
+      </form>
+      <p class="muted small" style="margin-top:10px">El cambio de "horas tras la clase" se aplica a las sesiones nuevas. En las ya creadas se cambia desde cada sesión.</p>
+    </div>
+    <div class="card">
+      <h2>QR permanente</h2>
+      <p class="muted small">Este QR lleva a la página donde la alumna escribe su correo. No da acceso por sí mismo.</p>
+      <div class="row" style="margin-top:10px;align-items:flex-start">
+        <div class="qr" id="j-qr"></div>
+        <div style="flex:1;min-width:200px">
+          <p id="j-url" style="word-break:break-all"></p>
+          <div class="row" style="margin-top:10px">
+            <button class="btn ghost mini" data-act="copiar-url">Copiar enlace</button>
+            <button class="btn mini" data-act="descargar-qr">Descargar QR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Correo y datos</h2>
+      <div class="row">
+        <button class="btn ghost" data-act="probar-correo">Enviarme un correo de prueba</button>
+        <button class="btn danger" data-act="purgar">Borrar datos antiguos</button>
+      </div>
+      <p class="muted small" style="margin-top:10px">"Borrar datos antiguos" elimina las sesiones (con sus asistencias y cartas) más antiguas que el plazo de conservación, las fichas de alumna sin sesiones y el registro de actividad de más de 90 días.</p>
+    </div>
+  </section>
+</div>
+
+<!-- Editor de alumna -->
+<dialog id="dlg-alumna">
+  <form method="dialog" id="f-alumna" class="grid">
+    <h2>Alumna</h2>
+    <div><label for="e-nombre">Nombre</label><input id="e-nombre" type="text"></div>
+    <div><label for="e-email">Correo</label><input id="e-email" type="email" required></div>
+    <div><label for="e-idioma">Idioma</label><select id="e-idioma"><option value="es">Español</option><option value="ca">Català</option><option value="en">English</option></select></div>
+    <div id="e-historial" class="muted small"></div>
+    <div class="row" style="margin-top:6px">
+      <button class="btn danger mini" type="button" data-act="borrar-alumna">Borrar ficha</button>
+      <span class="spacer"></span>
+      <button class="btn ghost" value="cancel" formnovalidate>Cancelar</button>
+      <button class="btn" type="submit" value="ok">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Editor de carta -->
+<dialog id="dlg-carta">
+  <form method="dialog" id="f-carta" class="grid">
+    <h2 id="k-titulo"></h2>
+    <div class="row" style="align-items:flex-start">
+      <img class="preview-img hidden" id="k-img" alt="">
+      <div style="flex:1;min-width:200px">
+        <label for="k-archivo">Imagen (PNG, JPG o WEBP, máx. 5 MB)</label>
+        <input id="k-archivo" type="file" accept="image/png,image/jpeg,image/webp">
+        <label class="check" style="margin-top:12px"><input type="checkbox" id="k-activa"> Carta activa (puede salir en las tiradas)</label>
+      </div>
+    </div>
+    <div><label for="k-nombre">Nombre</label><input id="k-nombre" type="text" required></div>
+    <div><label for="k-kw">Palabras clave</label><input id="k-kw" type="text" required></div>
+    <div><label for="k-sig">Significado</label><textarea id="k-sig" required></textarea></div>
+    <div><label for="k-con">Consejo</label><textarea id="k-con" required></textarea></div>
+    <div><label for="k-men">Mensaje para ti</label><textarea id="k-men" required></textarea></div>
+    <div><label for="k-preg">Pregunta de journaling</label><textarea id="k-preg" required></textarea></div>
+    <div><label for="k-rit">Pequeño ritual</label><textarea id="k-rit" required></textarea></div>
+    <div><label for="k-afi">Afirmación</label><textarea id="k-afi" required></textarea></div>
+    <div class="row end">
+      <button class="btn ghost" value="cancel" formnovalidate>Cancelar</button>
+      <button class="btn" type="submit" value="ok">Guardar</button>
+    </div>
+  </form>
+</dialog>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script src="../config.js"></script>
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+const CFG = window.MF_CONFIG;
+const sb = createClient(CFG.SUPABASE_URL, CFG.SUPABASE_PUBLISHABLE_KEY);
+const $ = (id) => document.getElementById(id);
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const GLYPHS = ["✶","☽","✧","☾","✦","❂","✺","☊","✹","✵","☉","⚖","✷","☾","✴","☌","⚡","✯","✶","☆","☀","◎"];
+const ESTADOS = { pendiente: "Pendiente", enviado: "Enlace enviado", abierto: "Abierto", elegida: "Carta elegida", caducado: "Caducado" };
+
+let sesionActual = null;
+let previewFilas = [];
+let alumnaEditando = null;
+let cartaEditando = null;
+let cartas = [];
+let dentro = false;
+
+// ---------------------------------------------------------------- utilidades
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fFecha = new Intl.DateTimeFormat("es-ES", { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+const fLarga = new Intl.DateTimeFormat("es-ES", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+const fHora = new Intl.DateTimeFormat("es-ES", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+const fecha = (ts) => ts ? fFecha.format(new Date(ts)) : "";
+const hora = (ts) => ts ? fHora.format(new Date(ts)) : "";
+const p2 = (n) => String(n).padStart(2, "0");
+const aInputLocal = (ts) => { const d = new Date(ts); return `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}T${p2(d.getHours())}:${p2(d.getMinutes())}`; };
+
+let toastT;
+function toast(msg, err = false) {
+  const t = $("toast"); t.textContent = msg; t.className = "on" + (err ? " err" : "");
+  clearTimeout(toastT); toastT = setTimeout(() => (t.className = ""), err ? 5000 : 2800);
+}
+function fallo(e) { console.error(e); toast(traducir(e?.message || String(e)), true); }
+function traducir(m) {
+  const t = {
+    no_autorizado: "No tienes permiso para hacer esto.",
+    sesion_no_encontrada: "No se encuentra la sesión.",
+    acceso_no_encontrado: "No se encuentra esa asistencia.",
+    sin_carta: "Esta alumna todavía no ha elegido carta.",
+    "Failed to fetch": "No hay conexión con el servidor.",
+  };
+  for (const k in t) if (m.includes(k)) return t[k];
+  return m;
+}
+async function ok({ data, error }) { if (error) throw error; return data; }
+
+async function fn(body) {
+  const { data, error } = await sb.functions.invoke("mystic-flow/admin", { body });
+  if (error) {
+    let msg = error.message;
+    try { const j = await error.context.json(); msg = j.error || j.message || msg; } catch { /* sin cuerpo */ }
+    throw new Error(msg);
+  }
+  return data;
+}
+
+function ocupado(btn, si) { if (!btn) return; btn.disabled = si; }
+
+// ---------------------------------------------------------------- acceso
+function mostrarLogin() { dentro = false; $("v-app").classList.add("hidden"); $("v-login").classList.remove("hidden"); }
+
+async function entrar() {
+  if (dentro) return;
+  let admin = false;
+  try { admin = await ok(await sb.rpc("es_admin")); } catch (e) { fallo(e); }
+  if (!admin) {
+    await sb.auth.signOut();
+    mostrarLogin();
+    $("l-msg").textContent = "Este correo no tiene acceso al panel.";
+    return;
+  }
+  dentro = true;
+  $("v-login").classList.add("hidden");
+  $("v-app").classList.remove("hidden");
+  irA("sesiones");
+}
+
+$("f-login").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("l-email").value.trim().toLowerCase();
+  if (!EMAIL_RE.test(email)) { $("l-msg").textContent = "Escribe un correo válido."; return; }
+  const b = e.submitter; ocupado(b, true);
+  const { error } = await sb.auth.signInWithOtp({
+    email, options: { shouldCreateUser: false, emailRedirectTo: location.origin + location.pathname },
+  });
+  ocupado(b, false);
+  // Mismo mensaje exista o no la cuenta.
+  if (error && !/signups not allowed|not found/i.test(error.message)) { $("l-msg").textContent = traducir(error.message); return; }
+  $("f-login").classList.add("hidden"); $("f-code").classList.remove("hidden");
+  $("l-msg").textContent = "";
+});
+
+$("f-code").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const token = $("l-code").value.replace(/\D/g, "");
+  if (token.length < 6) { $("l-msg").textContent = "Escribe el código del correo."; return; }
+  const { error } = await sb.auth.verifyOtp({ email: $("l-email").value.trim().toLowerCase(), token, type: "email" });
+  if (error) $("l-msg").textContent = "El código no es válido o ha caducado.";
+});
+
+sb.auth.onAuthStateChange((ev, session) => {
+  if (session && (ev === "SIGNED_IN" || ev === "INITIAL_SESSION")) setTimeout(entrar, 0);
+  if (ev === "SIGNED_OUT" || (ev === "INITIAL_SESSION" && !session)) mostrarLogin();
+});
+
+// ---------------------------------------------------------------- navegación
+function irA(tab) {
+  document.querySelectorAll(".page").forEach((p) => p.classList.add("hidden"));
+  document.querySelectorAll(".tab").forEach((t) => t.classList.toggle("on", t.dataset.tab === tab || (tab === "sesion" && t.dataset.tab === "sesiones")));
+  $("p-" + tab).classList.remove("hidden");
+  window.scrollTo(0, 0);
+  if (tab === "sesiones") cargarSesiones().catch(fallo);
+  if (tab === "alumnas") cargarAlumnas().catch(fallo);
+  if (tab === "cartas") cargarCartas().catch(fallo);
+  if (tab === "ajustes") cargarAjustes().catch(fallo);
+}
+
+// ---------------------------------------------------------------- sesiones
+$("s-fecha").value = new Date().toISOString().slice(0, 10);
+
+$("f-sesion").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const b = e.submitter; ocupado(b, true);
+  try {
+    const inicio = new Date(`${$("s-fecha").value}T${$("s-hora").value}`);
+    const n = await ok(await sb.rpc("admin_crear_sesiones", {
+      p_fecha_hora: inicio.toISOString(), p_formato: $("s-formato").value,
+      p_titulo: $("s-titulo").value, p_semanas: Number($("s-semanas").value),
+    }));
+    toast(n === 1 ? "Sesión creada" : `${n} sesiones creadas`);
+    await cargarSesiones();
+  } catch (err) { fallo(err); } finally { ocupado(b, false); }
+});
+
+async function cargarSesiones() {
+  const desde = new Date(Date.now() - 90 * 864e5).toISOString();
+  const ses = await ok(await sb.from("sesiones").select("*").gte("fecha_hora", desde).order("fecha_hora", { ascending: true }));
+  const ids = ses.map((s) => s.id);
+  const acc = ids.length ? await ok(await sb.from("accesos").select("sesion_id, carta_elegida").in("sesion_id", ids)) : [];
+  const cuenta = {};
+  for (const a of acc) { const c = (cuenta[a.sesion_id] ??= { t: 0, e: 0 }); c.t++; if (a.carta_elegida !== null) c.e++; }
+
+  const ahora = Date.now() - 3 * 36e5;
+  const prox = ses.filter((s) => new Date(s.fecha_hora).getTime() >= ahora);
+  const pas = ses.filter((s) => new Date(s.fecha_hora).getTime() < ahora).reverse();
+  const fila = (s) => {
+    const c = cuenta[s.id] ?? { t: 0, e: 0 };
+    return `<button class="item" data-act="abrir-sesion" data-id="${s.id}">
+      <span class="date">${esc(fecha(s.fecha_hora))}</span>
+      <span class="meta">${esc(s.formato)} · ${esc(s.titulo)}<br>${c.t} asistentes · ${c.e} cartas elegidas</span>
+      <span class="badge b-${s.estado}">${s.estado === "abierta" ? "Abierta" : "Cerrada"}</span></button>`;
+  };
+  $("s-lista").innerHTML =
+    `<div class="section-label">Próximas y de hoy</div><div class="list">${prox.map(fila).join("") || '<p class="empty">No hay sesiones próximas.</p>'}</div>` +
+    `<div class="section-label">Anteriores (últimos 90 días)</div><div class="list">${pas.map(fila).join("") || '<p class="empty">Todavía no hay sesiones anteriores.</p>'}</div>`;
+}
+
+async function abrirSesion(id) {
+  sesionActual = await ok(await sb.from("sesiones").select("*").eq("id", id).single());
+  previewFilas = []; $("d-preview").classList.add("hidden"); $("d-pegar").value = ""; $("d-archivo").value = "";
+  pintarCabeceraSesion();
+  irA("sesion");
+  await cargarAsistentes();
+}
+
+function pintarCabeceraSesion() {
+  const s = sesionActual;
+  $("d-formato").textContent = `${s.titulo} · ${s.formato}`;
+  $("d-fecha").textContent = fLarga.format(new Date(s.fecha_hora));
+  $("d-hasta").value = aInputLocal(s.solicitud_hasta);
+  $("d-acciones").innerHTML =
+    `<span class="badge b-${s.estado}">${s.estado === "abierta" ? "Abierta" : "Cerrada"}</span>
+     <button class="btn ghost mini" data-act="alternar-sesion">${s.estado === "abierta" ? "Cerrar sesión" : "Reabrir sesión"}</button>
+     <button class="btn danger mini" data-act="borrar-sesion">Borrar</button>`;
+}
+
+async function cargarAsistentes() {
+  const filas = await ok(await sb.from("v_accesos").select("*").eq("sesion_id", sesionActual.id).order("nombre", { ascending: true, nullsFirst: false }));
+  const n = (e) => filas.filter((f) => f.estado === e).length;
+  $("d-stats").innerHTML = `<span><b>${filas.length}</b>asistentes</span><span><b>${n("elegida")}</b>cartas elegidas</span><span><b>${n("pendiente")}</b>sin enlace</span>`;
+  $("d-enviar-pend").textContent = `Enviar enlace a pendientes (${n("pendiente")})`;
+  $("d-enviar-pend").disabled = n("pendiente") === 0;
+
+  if (!filas.length) { $("d-asistentes").innerHTML = '<p class="empty">Todavía no hay asistentes. Pega la lista de Lorari arriba.</p>'; return; }
+
+  $("d-asistentes").innerHTML = `<table class="att"><thead><tr><th>Alumna</th><th>Estado</th><th>Carta</th><th>Acciones</th></tr></thead><tbody>${
+    filas.map((f) => {
+      const det = [];
+      if (f.enlace_enviado_en) det.push(`Enlace: ${hora(f.enlace_enviado_en)}${f.envios_enlace > 1 ? ` (${f.envios_enlace} envíos)` : ""}`);
+      if (f.ventana_inicio) det.push(`Abierto: ${hora(f.ventana_inicio)} · hasta ${hora(f.ventana_hasta)}`);
+      if (f.lectura_enviada_en) det.push(`Lectura enviada: ${hora(f.lectura_enviada_en)}`);
+      const acts = [];
+      acts.push(`<button class="btn mini ${f.estado === "pendiente" ? "" : "ghost"}" data-act="enviar-enlace" data-id="${f.id}">${f.enlace_enviado_en ? "Reenviar enlace" : "Enviar enlace"}</button>`);
+      if (f.enlace_enviado_en && f.estado !== "elegida") acts.push(`<button class="btn ghost mini" data-act="ampliar" data-id="${f.id}">+3 h</button>`);
+      if (f.estado === "elegida") {
+        acts.push(`<button class="btn ghost mini" data-act="reenviar-lectura" data-id="${f.id}">Reenviar lectura</button>`);
+        acts.push(`<button class="btn ghost mini" data-act="reabrir" data-id="${f.id}">Reabrir elección</button>`);
+      }
+      acts.push(`<button class="btn danger mini" data-act="quitar" data-id="${f.id}">Quitar</button>`);
+      return `<tr>
+        <td><div class="nm">${esc(f.nombre || "—")}</div><div class="em">${esc(f.email)}</div></td>
+        <td><span class="badge b-${f.estado}">${ESTADOS[f.estado]}</span><div class="muted small" style="margin-top:4px">${det.map(esc).join("<br>")}</div></td>
+        <td>${f.carta_nombre ? `<span style="font-family:var(--serif);font-size:17px">${esc(f.carta_romano)} · ${esc(f.carta_nombre)}</span>` : '<span class="muted">—</span>'}</td>
+        <td><div class="acts">${acts.join("")}</div></td></tr>`;
+    }).join("")
+  }</tbody></table>`;
+}
+
+// ---- Importar asistentes (CSV de Lorari, lista de correos o "Nombre; correo")
+function partirCSV(l, sep) {
+  const out = []; let cur = "", q = false;
+  for (let i = 0; i < l.length; i++) {
+    const ch = l[i];
+    if (q) { if (ch === '"') { if (l[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === sep) { out.push(cur); cur = ""; }
+    else cur += ch;
+  }
+  out.push(cur);
+  return out.map((s) => s.trim());
+}
+
+function interpretarLista(texto) {
+  const lineas = texto.replace(/^﻿/, "").split(/\r?\n/).filter((l) => l.trim());
+  if (!lineas.length) return [];
+  const sep = [";", "\t", ","].map((s) => [s, lineas[0].split(s).length]).sort((a, b) => b[1] - a[1])[0][0];
+  const cab = partirCSV(lineas[0], sep).map((c) => c.toLowerCase());
+  const conCabecera = !cab.some((c) => c.includes("@")) && cab.some((c) => /mail|correo|nombre|name|nom\b|cliente/.test(c));
+  let iEmail = -1, iNom = -1, iApe = -1;
+  if (conCabecera) {
+    iEmail = cab.findIndex((c) => /mail|correo/.test(c));
+    iNom = cab.findIndex((c) => /^(nombre|name|first|nom\b|cliente|alumna)/.test(c));
+    iApe = cab.findIndex((c) => /apellido|surname|last|cognom/.test(c));
+  }
+  const vistos = new Set(); const out = [];
+  for (const l of conCabecera ? lineas.slice(1) : lineas) {
+    const cs = partirCSV(l, sep);
+    let email = iEmail >= 0 ? cs[iEmail] : "";
+    if (!EMAIL_RE.test(email || "")) { const m = l.match(/[^\s@,;<>"'()]+@[^\s@,;<>"'()]+\.[^\s@,;<>"'()]+/); email = m ? m[0] : ""; }
+    if (!email) continue;
+    email = email.trim().toLowerCase();
+    if (vistos.has(email)) continue;
+    vistos.add(email);
+    let nombre = "";
+    if (iNom >= 0) nombre = [cs[iNom], iApe >= 0 ? cs[iApe] : ""].filter(Boolean).join(" ");
+    else {
+      const m = l.match(/^\s*"?([^"<@;,\t]+?)"?\s*<[^>]+@[^>]+>/);
+      nombre = m ? m[1] : cs.filter((c) => c && !c.includes("@") && !/\d/.test(c)).slice(0, 2).join(" ");
+    }
+    out.push({ email, nombre: nombre.trim() });
+  }
+  return out;
+}
+
+$("d-archivo").addEventListener("change", async () => {
+  const f = $("d-archivo").files[0];
+  if (!f) return;
+  $("d-pegar").value = await f.text();
+  previsualizar();
+});
+
+function previsualizar() {
+  previewFilas = interpretarLista($("d-pegar").value);
+  if (!previewFilas.length) { toast("No he encontrado ningún correo en la lista.", true); $("d-preview").classList.add("hidden"); return; }
+  $("d-preview-list").innerHTML = previewFilas.map((f) => `<div>${esc(f.nombre || "—")} · <span class="muted">${esc(f.email)}</span></div>`).join("");
+  $("d-importar").textContent = `Añadir ${previewFilas.length} ${previewFilas.length === 1 ? "alumna" : "alumnas"}`;
+  $("d-preview").classList.remove("hidden");
+}
+
+async function importar(filas, btn) {
+  ocupado(btn, true);
+  try {
+    const r = await ok(await sb.rpc("admin_importar_asistentes", { p_sesion_id: sesionActual.id, p_filas: filas }));
+    const partes = [`${r.anadidas} añadidas`];
+    if (r.ya_estaban) partes.push(`${r.ya_estaban} ya estaban`);
+    if (r.nuevas_alumnas) partes.push(`${r.nuevas_alumnas} fichas nuevas`);
+    if (r.invalidos.length) partes.push(`${r.invalidos.length} correos no válidos`);
+    toast(partes.join(" · "), r.invalidos.length > 0);
+    await cargarAsistentes();
+    return true;
+  } catch (e) { fallo(e); return false; } finally { ocupado(btn, false); }
+}
+
+$("f-una").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const email = $("u-email").value.trim().toLowerCase();
+  if (!EMAIL_RE.test(email)) { toast("Escribe un correo válido.", true); return; }
+  if (await importar([{ email, nombre: $("u-nombre").value.trim() }], e.submitter)) { $("u-email").value = ""; $("u-nombre").value = ""; }
+});
+
+// ---------------------------------------------------------------- alumnas
+let alumnasCache = [];
+async function cargarAlumnas() {
+  alumnasCache = await ok(await sb.from("alumnas").select("id, nombre, email, idioma, created_at, accesos(count)").order("nombre", { ascending: true, nullsFirst: false }).limit(2000));
+  pintarAlumnas();
+}
+function pintarAlumnas() {
+  const q = $("a-buscar").value.trim().toLowerCase();
+  const lista = alumnasCache.filter((a) => !q || (a.nombre || "").toLowerCase().includes(q) || a.email.includes(q));
+  $("a-lista").innerHTML = lista.length
+    ? `<div class="list">${lista.map((a) => `<button class="item" data-act="editar-alumna" data-id="${a.id}">
+        <span style="flex:1"><span class="nm">${esc(a.nombre || "—")}</span><br><span class="muted small">${esc(a.email)}</span></span>
+        <span class="muted small">${a.accesos?.[0]?.count ?? 0} sesiones · ${esc(a.idioma.toUpperCase())}</span></button>`).join("")}</div>`
+    : '<p class="empty">No hay alumnas que coincidan.</p>';
+}
+$("a-buscar").addEventListener("input", pintarAlumnas);
+
+async function editarAlumna(id) {
+  alumnaEditando = alumnasCache.find((a) => a.id === id);
+  if (!alumnaEditando) return;
+  $("e-nombre").value = alumnaEditando.nombre || "";
+  $("e-email").value = alumnaEditando.email;
+  $("e-idioma").value = alumnaEditando.idioma;
+  $("e-historial").textContent = "Cargando historial…";
+  $("dlg-alumna").showModal();
+  const h = await ok(await sb.from("accesos").select("carta_elegida, sesiones(fecha_hora, formato), cartas(romano, nombre)").eq("alumna_id", id));
+  h.sort((a, b) => new Date(b.sesiones.fecha_hora) - new Date(a.sesiones.fecha_hora));
+  $("e-historial").innerHTML = h.length
+    ? "<b>Historial</b><br>" + h.map((x) => `${esc(fecha(x.sesiones.fecha_hora))} · ${esc(x.sesiones.formato)} · ${x.cartas ? esc(x.cartas.romano + " " + x.cartas.nombre) : "sin carta"}`).join("<br>")
+    : "Sin sesiones.";
+}
+
+$("f-alumna").addEventListener("submit", async (e) => {
+  if (e.submitter?.value !== "ok") return;
+  e.preventDefault();
+  try {
+    await ok(await sb.from("alumnas").update({ nombre: $("e-nombre").value, email: $("e-email").value, idioma: $("e-idioma").value }).eq("id", alumnaEditando.id));
+    $("dlg-alumna").close(); toast("Ficha guardada"); await cargarAlumnas();
+  } catch (err) { fallo(/duplicate|unique/i.test(err.message) ? new Error("Ya existe otra alumna con ese correo.") : err); }
+});
+
+// ---------------------------------------------------------------- cartas
+const urlImagen = (ruta, v) => ruta ? sb.storage.from("cartas").getPublicUrl(ruta).data.publicUrl + (v ? `?v=${encodeURIComponent(v)}` : "") : null;
+
+async function cargarCartas() {
+  cartas = await ok(await sb.from("cartas").select("*").order("numero"));
+  $("c-grid").innerHTML = cartas.map((c) => {
+    const img = urlImagen(c.imagen, c.updated_at);
+    return `<button class="tile ${c.activa ? "" : "off"} ${img ? "has-img" : ""}" data-act="editar-carta" data-n="${c.numero}" aria-label="${esc(c.romano + " " + c.nombre)}">
+      ${img ? `<img src="${esc(img)}" alt="" loading="lazy">` : ""}
+      ${c.activa ? "" : '<span class="badge b-caducado off-tag">Inactiva</span>'}
+      <span class="num">${esc(c.romano)}</span><span class="glyph">${GLYPHS[c.numero]}</span><span class="nm">${esc(c.nombre)}</span></button>`;
+  }).join("");
+}
+
+function editarCarta(n) {
+  cartaEditando = cartas.find((c) => c.numero === n);
+  const c = cartaEditando;
+  $("k-titulo").textContent = `${c.romano} · ${c.nombre}`;
+  $("k-nombre").value = c.nombre; $("k-kw").value = c.palabras_clave; $("k-sig").value = c.significado;
+  $("k-con").value = c.consejo; $("k-men").value = c.mensaje; $("k-preg").value = c.pregunta;
+  $("k-rit").value = c.ritual; $("k-afi").value = c.afirmacion; $("k-activa").checked = c.activa;
+  $("k-archivo").value = "";
+  const img = urlImagen(c.imagen, c.updated_at);
+  $("k-img").classList.toggle("hidden", !img); if (img) $("k-img").src = img;
+  $("dlg-carta").showModal();
+}
+
+const slug = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+
+$("f-carta").addEventListener("submit", async (e) => {
+  if (e.submitter?.value !== "ok") return;
+  e.preventDefault();
+  const b = e.submitter; ocupado(b, true);
+  const c = cartaEditando;
+  try {
+    const cambios = {
+      nombre: $("k-nombre").value.trim(), palabras_clave: $("k-kw").value.trim(), significado: $("k-sig").value.trim(),
+      consejo: $("k-con").value.trim(), mensaje: $("k-men").value.trim(), pregunta: $("k-preg").value.trim(),
+      ritual: $("k-rit").value.trim(), afirmacion: $("k-afi").value.trim(), activa: $("k-activa").checked,
+    };
+    if (!cambios.activa && cartas.filter((x) => x.activa && x.numero !== c.numero).length < 3) throw new Error("Tiene que haber al menos 3 cartas activas.");
+    const f = $("k-archivo").files[0];
+    if (f) {
+      if (f.size > 5 * 1024 * 1024) throw new Error("La imagen pesa más de 5 MB.");
+      const ext = (f.name.split(".").pop() || "png").toLowerCase();
+      const ruta = `${c.romano}-${slug(cambios.nombre)}.${ext}`;
+      await ok(await sb.storage.from("cartas").upload(ruta, f, { upsert: true, contentType: f.type, cacheControl: "3600" }));
+      if (c.imagen && c.imagen !== ruta) await sb.storage.from("cartas").remove([c.imagen]);
+      cambios.imagen = ruta;
+    }
+    await ok(await sb.from("cartas").update(cambios).eq("numero", c.numero));
+    $("dlg-carta").close(); toast("Carta guardada"); await cargarCartas();
+  } catch (err) { fallo(err); } finally { ocupado(b, false); }
+});
+
+// ---------------------------------------------------------------- ajustes
+async function cargarAjustes() {
+  const a = await ok(await sb.from("ajustes").select("*").eq("id", 1).single());
+  $("j-ventana").value = a.ventana_horas; $("j-valido").value = a.enlace_valido_horas;
+  $("j-solicitud").value = a.solicitud_horas; $("j-max").value = a.max_solicitudes_hora; $("j-meses").value = a.conservacion_meses;
+  $("j-url").textContent = CFG.APP_URL;
+  pintarQR();
+}
+
+let qrDataUrl = null;
+async function pintarQR() {
+  if (qrDataUrl) return;
+  try {
+    const QR = (await import("https://esm.sh/qrcode@1.5.4")).default;
+    qrDataUrl = await QR.toDataURL(CFG.APP_URL, { width: 1024, margin: 2, color: { dark: "#3E322C", light: "#FFFFFF" } });
+    $("j-qr").innerHTML = `<img src="${qrDataUrl}" alt="QR de Mystic Flow">`;
+  } catch (e) { console.error(e); $("j-qr").innerHTML = '<p class="muted small">No se pudo generar el QR.</p>'; }
+}
+
+$("f-ajustes").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const b = e.submitter; ocupado(b, true);
+  try {
+    await ok(await sb.from("ajustes").update({
+      ventana_horas: Number($("j-ventana").value), enlace_valido_horas: Number($("j-valido").value),
+      solicitud_horas: Number($("j-solicitud").value), max_solicitudes_hora: Number($("j-max").value),
+      conservacion_meses: Number($("j-meses").value), updated_at: new Date().toISOString(),
+    }).eq("id", 1));
+    toast("Ajustes guardados");
+  } catch (err) { fallo(err); } finally { ocupado(b, false); }
+});
+
+// ---------------------------------------------------------------- acciones (clics)
+const acciones = {
+  "tab": (d) => irA(d.tab),
+  "salir": async () => { await sb.auth.signOut(); },
+  "login-otra": () => { $("f-code").classList.add("hidden"); $("f-login").classList.remove("hidden"); $("l-msg").textContent = ""; },
+  "abrir-sesion": (d) => abrirSesion(d.id),
+  "refrescar": () => cargarAsistentes(),
+  "previsualizar": () => previsualizar(),
+  "importar": async (d, b) => {
+    if (await importar(previewFilas, b)) { previewFilas = []; $("d-preview").classList.add("hidden"); $("d-pegar").value = ""; $("d-archivo").value = ""; }
+  },
+  "guardar-hasta": async () => {
+    const v = $("d-hasta").value; if (!v) return;
+    sesionActual = await ok(await sb.from("sesiones").update({ solicitud_hasta: new Date(v).toISOString() }).eq("id", sesionActual.id).select().single());
+    toast("Guardado");
+  },
+  "alternar-sesion": async () => {
+    const estado = sesionActual.estado === "abierta" ? "cerrada" : "abierta";
+    sesionActual = await ok(await sb.from("sesiones").update({ estado }).eq("id", sesionActual.id).select().single());
+    pintarCabeceraSesion();
+    toast(estado === "cerrada" ? "Sesión cerrada: el QR ya no envía enlaces para esta sesión" : "Sesión abierta");
+  },
+  "borrar-sesion": async () => {
+    if (!confirm("¿Borrar esta sesión? Se borrarán también sus asistentes y las cartas elegidas. No se puede deshacer.")) return;
+    await ok(await sb.from("sesiones").delete().eq("id", sesionActual.id));
+    toast("Sesión borrada"); irA("sesiones");
+  },
+  "enviar-enlace": async (d, b) => {
+    ocupado(b, true);
+    try {
+      const r = await fn({ accion: "enviar-enlaces", sesion_id: sesionActual.id, acceso_ids: [d.id] });
+      r.enviados ? toast("Enlace enviado") : toast("No se pudo enviar: " + (r.resultados?.[0]?.error || "error"), true);
+      await cargarAsistentes();
+    } finally { ocupado(b, false); }
+  },
+  "enviar-pendientes": async (d, b) => {
+    if (!confirm("¿Enviar el enlace a todas las asistentes que todavía no lo tienen?")) return;
+    ocupado(b, true); b.textContent = "Enviando…";
+    try {
+      const r = await fn({ accion: "enviar-enlaces", sesion_id: sesionActual.id, solo_pendientes: true });
+      toast(`${r.enviados} de ${r.total} enlaces enviados`, r.enviados < r.total);
+    } finally { await cargarAsistentes(); }
+  },
+  "ampliar": async (d) => { await ok(await sb.rpc("admin_ampliar", { p_acceso_id: d.id, p_horas: 3 })); toast("Acceso ampliado 3 horas"); await cargarAsistentes(); },
+  "reabrir": async (d) => {
+    if (!confirm("¿Reabrir la elección? La alumna volverá a ver las mismas 3 cartas y podrá elegir de nuevo mientras su enlace siga activo.")) return;
+    await ok(await sb.rpc("admin_reabrir", { p_acceso_id: d.id, p_nuevo_sorteo: false }));
+    toast("Elección reabierta. Si su acceso ha caducado, reenvíale el enlace."); await cargarAsistentes();
+  },
+  "reenviar-lectura": async (d, b) => {
+    ocupado(b, true);
+    try { await fn({ accion: "reenviar-lectura", acceso_id: d.id }); toast("Lectura reenviada"); await cargarAsistentes(); }
+    finally { ocupado(b, false); }
+  },
+  "quitar": async (d) => {
+    if (!confirm("¿Quitar a esta alumna de la sesión? Se borrará su carta de esta sesión.")) return;
+    await ok(await sb.from("accesos").delete().eq("id", d.id)); toast("Quitada de la sesión"); await cargarAsistentes();
+  },
+  "editar-alumna": (d) => editarAlumna(d.id),
+  "borrar-alumna": async () => {
+    if (!confirm("¿Borrar la ficha de esta alumna y todo su historial de cartas? Úsalo si te lo pide (derecho de supresión). No se puede deshacer.")) return;
+    await ok(await sb.from("alumnas").delete().eq("id", alumnaEditando.id));
+    $("dlg-alumna").close(); toast("Ficha borrada"); await cargarAlumnas();
+  },
+  "editar-carta": (d) => editarCarta(Number(d.n)),
+  "copiar-url": async () => { await navigator.clipboard.writeText(CFG.APP_URL); toast("Enlace copiado"); },
+  "descargar-qr": () => {
+    if (!qrDataUrl) return;
+    const a = document.createElement("a"); a.href = qrDataUrl; a.download = "qr-mystic-flow.png"; a.click();
+  },
+  "probar-correo": async (d, b) => {
+    ocupado(b, true);
+    try { await fn({ accion: "probar-correo" }); toast("Correo de prueba enviado a tu dirección"); }
+    finally { ocupado(b, false); }
+  },
+  "purgar": async () => {
+    if (!confirm("¿Borrar los datos más antiguos que el plazo de conservación? No se puede deshacer.")) return;
+    const r = await ok(await sb.rpc("mf_purgar"));
+    toast(`Borradas: ${r.sesiones} sesiones, ${r.alumnas} fichas, ${r.eventos} registros`);
+  },
+};
+
+document.addEventListener("click", async (e) => {
+  const b = e.target.closest("[data-act]");
+  if (!b || !acciones[b.dataset.act]) return;
+  e.preventDefault();
+  try { await acciones[b.dataset.act](b.dataset, b); } catch (err) { fallo(err); ocupado(b, false); }
+});
+</script>
+</body>
+</html>

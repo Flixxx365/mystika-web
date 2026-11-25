@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Mystic Flow · Mystika</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --marfil:#FFFAF6; --lino:#F4EDE6; --arena:#EADFD5; --nacar:#FAF6F1; --rosa:#D9BFB4;
+  --cacao:#5F4B41; --tinta:#3E322C; --niebla:#74625A; --linea:#DCCCC0; --gold:#B8967A; --dorado:#C8A46B; --pink:#A9737A;
+  --serif:"Cormorant Garamond", Georgia, serif; --sans:"Montserrat", system-ui, sans-serif; --script:"Pinyon Script", cursive;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --lino:#2A221E; --nacar:#332822; --arena:#3B2F29; --tinta:#F4EDE6; --niebla:#CBB9AD; --linea:#4A3C34; --cacao:#E6D7CD; }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--lino);color:var(--tinta);font-family:var(--sans);font-weight:300;min-height:100vh;line-height:1.55;-webkit-font-smoothing:antialiased}
+.app{max-width:440px;margin:0 auto;min-height:100vh;padding:28px 16px 40px;display:flex;flex-direction:column;align-items:center}
+.logo{text-align:center;margin-bottom:22px}
+.logo .moon{font-size:28px;color:var(--gold);line-height:1}
+.logo b{display:block;font-family:var(--sans);font-weight:400;font-size:19px;letter-spacing:.32em;margin-top:6px}
+.logo span{display:block;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla);margin-top:4px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15}
+.screen{display:none;width:100%;text-align:center;animation:fade .5s ease}
+.screen.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.script{font-family:var(--script);font-size:46px;color:var(--niebla);line-height:1}
+.title{font-size:34px;margin-top:6px}
+.sub{color:var(--niebla);margin:10px auto 0;max-width:32ch;font-size:15px}
+.field{margin-top:28px;text-align:left}
+.field input{width:100%;background:var(--nacar);border:1px solid var(--linea);border-radius:999px;padding:15px 20px;font:400 16px var(--sans);color:var(--tinta);outline:none}
+.field input:focus{border-color:var(--gold)}
+.btn{display:block;width:100%;margin-top:14px;border:0;border-radius:999px;padding:16px 20px;background:var(--cacao);color:var(--lino);font:500 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:opacity .2s}
+.btn:hover{opacity:.9}
+.btn:disabled{opacity:.4;cursor:default}
+.btn.ghost{background:transparent;color:var(--cacao);border:1px solid var(--cacao)}
+.note{font-size:12.5px;color:var(--niebla);margin-top:18px}
+.error{color:var(--pink);font-size:13.5px;margin-top:10px;min-height:1em}
+.icon-big{font-size:44px;color:var(--gold);margin:22px 0 6px}
+.loader{width:42px;height:42px;margin:40px auto 0;border-radius:50%;border:2px solid var(--linea);border-top-color:var(--gold);animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Selección de cartas */
+.spread{display:flex;justify-content:center;gap:14px;margin:34px 0 10px;perspective:1000px}
+.pick{width:96px;height:156px;border:0;background:none;padding:0;cursor:pointer;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.7,.2,1);position:relative}
+.pick:hover:not(:disabled){transform:translateY(-6px)}
+.pick:disabled{cursor:default}
+.pick.waiting{animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{50%{transform:translateY(-6px)}}
+.pick .face,.pick .back{position:absolute;inset:0;border-radius:12px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.pick .back{background:linear-gradient(160deg,#B99A94,#8D6F69);border:1.5px solid var(--dorado);box-shadow:0 10px 24px rgba(62,50,44,.18);display:grid;place-content:center}
+.pick .back::before{content:"";position:absolute;inset:7px;border:1px solid rgba(200,164,107,.6);border-radius:8px}
+.pick .back span{font-size:34px;color:var(--dorado);line-height:1}
+.pick .back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pick .face{transform:rotateY(180deg);background:var(--nacar);border:1.5px solid var(--dorado);box-shadow:0 10px 24px rgba(62,50,44,.18);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:10px 8px}
+.pick .face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pick.flipped{transform:rotateY(180deg)}
+.pick.dim{opacity:.4}
+.pick .face .num{font-family:var(--serif);font-size:15px}
+.pick .face .moon{font-size:30px;color:var(--gold)}
+.pick .face .nm{font-family:var(--serif);font-size:13px;line-height:1.1}
+
+/* Lectura */
+.reading{margin-top:30px;text-align:left;display:none}
+.reading.on{display:block;animation:fade .6s ease}
+.card-big{width:190px;height:310px;margin:0 auto;border-radius:16px;background:linear-gradient(180deg,var(--nacar),var(--arena));border:1.5px solid var(--dorado);box-shadow:0 18px 40px rgba(62,50,44,.22);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:20px 14px;position:relative;overflow:hidden;transform:scale(.6) rotate(-6deg);opacity:0;transition:transform 1.1s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.card-big.show{transform:none;opacity:1}
+.card-big img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card-big .roman{font-family:var(--serif);font-size:24px}
+.card-big .glyph{font-size:72px;color:var(--gold);line-height:1;margin:8px 0}
+.card-big .cname{font-family:var(--serif);font-size:22px;line-height:1.1;border-top:1px solid var(--linea);padding-top:10px;width:100%}
+.card-head{text-align:center;margin-top:22px}
+.card-head h2{font-size:30px}
+.kw{font-family:var(--serif);font-style:italic;color:var(--cacao);font-size:17px;margin-top:6px}
+.blocks{margin-top:22px;display:grid;gap:12px}
+.block{background:var(--nacar);border:1px solid var(--linea);border-radius:14px;padding:16px 18px}
+.block h3{font-size:19px;margin-bottom:6px;color:var(--cacao)}
+.block p{font-size:15px;color:var(--tinta)}
+.block.q p{font-family:var(--serif);font-style:italic;font-size:18px}
+.block.afi p{font-family:var(--serif);font-size:18px;text-align:center}
+.sent-box{margin-top:18px;text-align:center;font-size:14px;color:var(--niebla)}
+.sent-box.ok{color:var(--cacao);font-weight:500}
+.footer-mark{margin-top:auto;padding-top:34px;text-align:center;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--niebla)}
+.small-link{background:none;border:0;color:var(--niebla);font:400 12px var(--sans);text-decoration:underline;cursor:pointer;margin-top:14px}
+@media (prefers-reduced-motion: reduce){ *{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<main class="app">
+
+  <header class="logo">
+    <div class="moon">☾</div>
+    <b>MYSTIKA</b>
+    <span>by Mer in Balance</span>
+  </header>
+
+  <!-- Cargando -->
+  <section class="screen on" id="s-load"><div class="loader" aria-label="Cargando"></div></section>
+
+  <!-- 1. Pedir enlace (QR) -->
+  <section class="screen" id="s-login">
+    <p class="script">Mystic Flow</p>
+    <h1 class="title">Tu carta te espera</h1>
+    <p class="sub">Experiencia exclusiva para asistentes de Mystic Flow. Escribe el correo con el que te apuntaste y te enviaremos tu enlace personal.</p>
+    <form class="field" id="f-login" novalidate>
+      <input id="email" type="email" placeholder="Tu correo electrónico" autocomplete="email" required>
+      <button class="btn" type="submit">Recibir mi enlace</button>
+      <p class="error" id="login-error"></p>
+    </form>
+  </section>
+
+  <!-- 2. Enlace pedido -->
+  <section class="screen" id="s-check">
+    <p class="script">Casi está</p>
+    <h1 class="title">Revisa tu correo</h1>
+    <div class="icon-big">✉</div>
+    <p class="sub">Si estás en la lista de asistentes, en unos minutos te llegará un correo a <strong id="c-mail"></strong> con tu enlace personal.</p>
+    <p class="note">Mira también en Promociones o Spam. Si no te llega, avisa a Mer en el estudio.</p>
+    <button class="small-link" id="c-otro">Escribir otro correo</button>
+  </section>
+
+  <!-- 3. Elegir carta -->
+  <section class="screen" id="s-pick">
+    <p class="script">Confía en tu intuición</p>
+    <h1 class="title" id="p-title">Respira y elige</h1>
+    <p class="sub">Elige la carta que más te llame. Solo puedes elegir una.</p>
+    <div class="spread" id="spread"></div>
+    <p class="error" id="pick-error"></p>
+  </section>
+
+  <!-- 4. Lectura -->
+  <section class="screen" id="s-read">
+    <div class="card-head">
+      <p class="script" id="r-script">Tu carta</p>
+      <h2 id="r-title"></h2>
+      <p class="kw" id="r-kw"></p>
+    </div>
+    <div style="margin-top:20px"><div class="card-big" id="r-card"></div></div>
+    <div class="reading" id="r-body">
+      <div class="blocks">
+        <div class="block"><h3>Significado</h3><p id="r-sig"></p></div>
+        <div class="block"><h3>Consejo</h3><p id="r-con"></p></div>
+        <div class="block"><h3>Mensaje para ti</h3><p id="r-men"></p></div>
+        <div class="block q"><h3>Pregunta de journaling</h3><p id="r-preg"></p></div>
+        <div class="block"><h3>Pequeño ritual</h3><p id="r-rit"></p></div>
+        <div class="block afi"><h3>Afirmación</h3><p id="r-afi"></p></div>
+      </div>
+      <p class="sent-box" id="sent-box"></p>
+      <button class="btn ghost" id="btn-retry" style="display:none">Volver a enviar a mi correo</button>
+      <p class="note" id="r-window"></p>
+    </div>
+  </section>
+
+  <!-- 5. Enlace caducado o no válido -->
+  <section class="screen" id="s-expired">
+    <p class="script">Mystic Flow</p>
+    <h1 class="title" id="x-title">Este enlace ha caducado</h1>
+    <p class="sub" id="x-sub">Tu acceso era por tiempo limitado. Si ya elegiste tu carta, la tienes en tu correo.</p>
+    <button class="btn" id="x-pedir">Pedir un enlace nuevo</button>
+  </section>
+
+  <!-- Error de conexión -->
+  <section class="screen" id="s-error">
+    <p class="script">Vaya</p>
+    <h1 class="title">Algo no ha ido bien</h1>
+    <p class="sub">No hemos podido conectar. Revisa tu conexión e inténtalo de nuevo.</p>
+    <button class="btn" id="e-retry">Reintentar</button>
+  </section>
+
+  <p class="footer-mark">Mystika · Mystic Flow</p>
+</main>
+
+<script src="./config.js"></script>
+<script>
+(function () {
+  const CFG = window.MF_CONFIG;
+  const API = CFG.SUPABASE_URL.replace(/\/$/, "") + "/functions/v1/mystic-flow/";
+  const GLYPHS = ["✶","☽","✧","☾","✦","❂","✺","☊","✹","✵","☉","⚖","✷","☾","✴","☌","⚡","✯","✶","☆","☀","◎"];
+  const KEY = "mf_token";
+  const $ = (id) => document.getElementById(id);
+  const fHora = new Intl.DateTimeFormat("es-ES", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Madrid" });
+
+  let token = null;
+  let reintento = null;
+
+  function show(id) {
+    document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("on", s.id === id));
+    window.scrollTo(0, 0);
+  }
+
+  async function api(fn, body) {
+    const r = await fetch(API + fn, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "apikey": CFG.SUPABASE_PUBLISHABLE_KEY },
+      body: JSON.stringify(body),
+    });
+    let data = {};
+    try { data = await r.json(); } catch (e) { /* sin cuerpo */ }
+    if (r.status >= 500) throw new Error(data.error || "servidor");
+    return { status: r.status, data };
+  }
+
+  function conError(fnReintento) {
+    reintento = fnReintento;
+    show("s-error");
+  }
+  $("e-retry").addEventListener("click", () => { show("s-load"); reintento && reintento(); });
+
+  /* ---------- Token: llega en el enlace del correo (#t=...) ---------- */
+  function leerToken() {
+    const m = location.hash.match(/[#&]t=([A-Za-z0-9_-]{43})/);
+    if (m) {
+      try { sessionStorage.setItem(KEY, m[1]); } catch (e) {}
+      // Quita el token de la barra de direcciones (por si hace una captura o comparte la página)
+      history.replaceState(null, "", location.pathname + location.search);
+      return m[1];
+    }
+    try { return sessionStorage.getItem(KEY); } catch (e) { return null; }
+  }
+  function olvidarToken() { token = null; try { sessionStorage.removeItem(KEY); } catch (e) {} }
+
+  /* ---------- 1. Pedir enlace ---------- */
+  $("f-login").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const v = $("email").value.trim().toLowerCase();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) { $("login-error").textContent = "Escribe un correo válido."; return; }
+    $("login-error").textContent = "";
+    const b = e.submitter || document.querySelector("#f-login .btn");
+    b.disabled = true;
+    try {
+      const r = await api("solicitar-enlace", { email: v });
+      if (r.status === 400) { $("login-error").textContent = "Escribe un correo válido."; return; }
+      $("c-mail").textContent = v;
+      show("s-check");
+    } catch (err) {
+      $("login-error").textContent = "No hemos podido conectar. Inténtalo de nuevo.";
+    } finally { b.disabled = false; }
+  });
+  $("c-otro").addEventListener("click", () => { $("email").value = ""; show("s-login"); });
+  $("x-pedir").addEventListener("click", () => { olvidarToken(); show("s-login"); });
+
+  /* ---------- 2. Abrir enlace ---------- */
+  async function abrir() {
+    let r;
+    try { r = await api("lectura", { token, accion: "abrir" }); }
+    catch (e) { return conError(abrir); }
+    const d = r.data;
+    if (d.estado === "ok") {
+      if (d.elegida && d.carta) return mostrarLectura(d, false);
+      return mostrarTirada(d);
+    }
+    olvidarToken();
+    if (d.estado === "invalido") {
+      $("x-title").textContent = "Este enlace ya no es válido";
+      $("x-sub").textContent = "Puede que hayas pedido un enlace más nuevo. Usa el último correo que te hemos enviado o pide otro.";
+    }
+    show("s-expired");
+  }
+
+  /* ---------- 3. Elegir ---------- */
+  function mostrarTirada(d) {
+    if (d.nombre) $("p-title").textContent = `${d.nombre.split(" ")[0]}, respira y elige`;
+    const box = $("spread"); box.innerHTML = "";
+    for (let i = 0; i < 3; i++) {
+      const b = document.createElement("button");
+      b.className = "pick"; b.setAttribute("aria-label", "Carta " + (i + 1));
+      b.innerHTML = '<div class="back"><span>☾</span></div><div class="face"></div>';
+      b.addEventListener("click", () => elegir(i, b));
+      box.appendChild(b);
+    }
+    show("s-pick");
+  }
+
+  async function elegir(i, btn) {
+    const picks = document.querySelectorAll(".pick");
+    picks.forEach((p, k) => { p.disabled = true; if (k !== i) p.classList.add("dim"); });
+    btn.classList.add("waiting");
+    $("pick-error").textContent = "";
+    let r;
+    try { r = await api("lectura", { token, accion: "elegir", posicion: i }); }
+    catch (e) {
+      btn.classList.remove("waiting");
+      picks.forEach((p) => { p.disabled = false; p.classList.remove("dim"); });
+      $("pick-error").textContent = "No hemos podido conectar. Vuelve a tocar tu carta.";
+      return;
+    }
+    const d = r.data;
+    if (d.estado !== "ok") { olvidarToken(); return show("s-expired"); }
+    // Si ya había elegido antes (por ejemplo, en otra pestaña), se gira la carta que eligió.
+    const elegida = picks[d.posicion] || btn;
+    picks.forEach((p, k) => p.classList.toggle("dim", k !== d.posicion));
+    btn.classList.remove("waiting");
+    const c = d.carta;
+    elegida.querySelector(".face").innerHTML = c.imagen_url
+      ? `<img src="${esc(c.imagen_url)}" alt="">`
+      : `<span class="num">${esc(c.romano)}</span><span class="moon">${GLYPHS[c.numero]}</span><span class="nm">${esc(c.nombre)}</span>`;
+    elegida.classList.add("flipped");
+    setTimeout(() => mostrarLectura(d, true), 1100);
+  }
+
+  /* ---------- 4. Lectura ---------- */
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+
+  function mostrarLectura(d, animate) {
+    const c = d.carta;
+    $("r-script").textContent = d.nombre ? `${d.nombre.split(" ")[0]}, tu carta` : "Tu carta";
+    $("r-title").textContent = c.romano + " · " + c.nombre;
+    $("r-kw").textContent = c.palabras_clave;
+    $("r-card").innerHTML = c.imagen_url
+      ? `<img src="${esc(c.imagen_url)}" alt="${esc(c.romano + " · " + c.nombre)}">`
+      : `<div class="roman">${esc(c.romano)}</div><div class="glyph">${GLYPHS[c.numero]}</div><div class="cname">${esc(c.nombre)}</div>`;
+    $("r-sig").textContent = c.significado;
+    $("r-con").textContent = c.consejo;
+    $("r-men").textContent = c.mensaje;
+    $("r-preg").textContent = c.pregunta;
+    $("r-rit").textContent = c.ritual;
+    $("r-afi").textContent = c.afirmacion;
+    pintarEnvio(d.lectura_enviada);
+    $("r-window").textContent = d.ventana_hasta
+      ? `Esta página estará disponible hasta las ${fHora.format(new Date(d.ventana_hasta))}. Tu lectura queda guardada en tu correo.`
+      : "";
+    $("r-card").classList.remove("show");
+    $("r-body").classList.remove("on");
+    show("s-read");
+    if (animate) {
+      setTimeout(() => $("r-card").classList.add("show"), 60);
+      setTimeout(() => $("r-body").classList.add("on"), 900);
+    } else {
+      $("r-card").classList.add("show");
+      $("r-body").classList.add("on");
+    }
+  }
+
+  function pintarEnvio(enviada) {
+    const box = $("sent-box");
+    if (enviada) {
+      box.textContent = "✉ Te hemos enviado tu lectura completa por correo.";
+      box.className = "sent-box ok";
+      $("btn-retry").style.display = "none";
+    } else {
+      box.textContent = "No hemos podido enviarte la lectura por correo.";
+      box.className = "sent-box";
+      $("btn-retry").style.display = "block";
+    }
+  }
+
+  $("btn-retry").addEventListener("click", async () => {
+    const b = $("btn-retry"); b.disabled = true; b.textContent = "Enviando…";
+    try {
+      const r = await api("lectura", { token, accion: "enviar" });
+      if (r.data.estado === "ok") pintarEnvio(r.data.lectura_enviada);
+      else { olvidarToken(); show("s-expired"); }
+    } catch (e) { /* se queda el botón */ }
+    finally { b.disabled = false; b.textContent = "Volver a enviar a mi correo"; }
+  });
+
+  /* ---------- Inicio ---------- */
+  token = leerToken();
+  if (token) abrir(); else show("s-login");
+})();
+</script>
+</body>
+</html>
